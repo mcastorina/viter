@@ -1,0 +1,15 @@
+pub struct IterOut {
+	filter_fn fn(TypeIn) bool
+mut:
+	iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	for true {
+		item := i.iterator.next()?
+		if i.filter_fn(item) {
+			return item
+		}
+	}
+	return none
+}

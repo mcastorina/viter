@@ -1,0 +1,19 @@
+pub struct IterOut {
+	data []TypeIn
+mut:
+	index int
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	if i.index >= i.data.len {
+		return none
+	}
+	i.index++
+	return i.data[i.index - 1]
+}
+
+pub fn iter_TypeIn(arr []TypeIn) IterOut {
+	return IterOut{
+		data: arr
+	}
+}

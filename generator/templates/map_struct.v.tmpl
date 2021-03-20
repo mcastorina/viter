@@ -1,0 +1,10 @@
+pub struct IterOut {
+	map_fn fn(TypeIn) TypeOut
+mut:
+	iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeOut {
+	item := i.iterator.next()?
+	return i.map_fn(item)
+}
