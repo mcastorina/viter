@@ -18,3 +18,37 @@ fn main() {
 	println(out) // ['3!', '5!']
 }
 ```
+
+## Supported Types
+All V primitive types are supported. You cannot use this module with
+custom types (yet).
+
+* `bool`
+* `string`
+* `i8`    `i16`  `int`  `i64`
+* `byte`  `u16`  `u32`  `u64`
+* `rune`
+* `f32` `f64`
+
+## Methods
+A `iter_<type>` function is provided to convert an array of `<type>`
+to a `viter` iterator. Example: `viter.iter_byte([byte(1) 3 3 7])`.
+
+If a method transforms the data, the output type should be appended to
+the function name (e.g. `map_string`).
+
+The currently implemented methods are:
+
+* `filter`
+* `map`
+* `skip`
+* `every`
+* `collect`
+
+## Speed
+This module has ~30k generated lines of code, which means compilation
+will be noticeably slower but still less than 1s in debug mode.
+
+This module uses lazy iterator evaluation, meaning there are no
+intermediate buffers. Each transformation is applied on the element as
+it is iterated over (or once collected).
