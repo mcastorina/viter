@@ -1,5 +1,5 @@
-pub fn (mut i IterIn) every(n int) IterOut {
-	return IterOut{
+pub fn (mut i IterIn) every(n int) &IterOut {
+	return &IterOut{
 		n: n
 		iterator: i
 	}

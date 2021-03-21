@@ -12,8 +12,8 @@ pub fn (mut i IterOut) next() ?TypeIn {
 	return i.data[i.index - 1]
 }
 
-pub fn iter_TypeIn(arr []TypeIn) IterOut {
-	return IterOut{
+pub fn iter_TypeIn(arr []TypeIn) &IterOut {
+	return &IterOut{
 		data: arr
 	}
 }

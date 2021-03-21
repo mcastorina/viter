@@ -1,5 +1,5 @@
-pub fn (mut i IterIn) filter(filter_fn fn(TypeIn) bool) IterOut {
-	return IterOut{
+pub fn (mut i IterIn) filter(filter_fn fn(TypeIn) bool) &IterOut {
+	return &IterOut{
 		filter_fn: filter_fn
 		iterator: i
 	}
