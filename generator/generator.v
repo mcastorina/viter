@@ -19,7 +19,7 @@ fn main() {
 
 	// generate an interface per type
 	for typ in types {
-		println('interface ${typ.capitalize()}Iterator { next() ?$typ }')
+		println('interface ${name(typ)}Iterator { next() ?$typ }')
 	}
 	println('')
 
@@ -34,7 +34,10 @@ fn (c IterConfig) gen_structs(iter string) ?string {
 	template := get_struct_template(iter) or { return error('template not found') }
 	mut structs := []string{cap: c.types.len}
 	for info in c.types {
-		structs << template.replace_each(['TypeIn', info.type_in, 'TypeOut', info.type_out, 'IterOut',
+		s := template.replace_each(['MethodTypeIn', fn_name(info.type_in), 'MethodTypeOut',
+			fn_name(info.type_out),
+		])
+		structs << s.replace_each(['TypeIn', info.type_in, 'TypeOut', info.type_out, 'IterOut',
 			c.iter_out(iter, info), 'IterIn', info.iter_in()])
 	}
 	return structs.join('\n')
@@ -49,8 +52,11 @@ fn (c IterConfig) gen_methods(conf map[string]IterConfig, iter string) string {
 				if iter_info.type_out != info.type_in {
 					continue
 				}
-				methods << template.replace_each(['TypeIn', info.type_in, 'TypeOut', info.type_out,
-					'IterOut', cin.iter_out(it, info), 'IterIn', c.iter_out(iter, iter_info)])
+				s := template.replace_each(['MethodTypeIn', fn_name(info.type_in), 'MethodTypeOut',
+					fn_name(info.type_out),
+				])
+				methods << s.replace_each(['TypeIn', info.type_in, 'TypeOut', info.type_out, 'IterOut',
+					cin.iter_out(it, info), 'IterIn', c.iter_out(iter, iter_info)])
 			}
 		}
 	}

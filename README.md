@@ -24,12 +24,12 @@ Common V primitive types are supported. You cannot use this module with
 custom types (yet). If you would like another primitive type supported,
 please open an issue.
 
-* `bool`
-* `string`
-* `int`
-* `byte`
-* `rune`
-* `f64`
+* `bool` `[]bool`
+* `string` `[]string`
+* `int` `[]int`
+* `byte` `[]byte`
+* `rune` `[]rune`
+* `f64` `[]f64`
 
 ## Methods
 A `iter_<type>` function is provided to convert an array of `<type>`
@@ -49,7 +49,7 @@ The currently implemented methods are:
 * `collect`
 
 ## Speed
-This module has ~6k generated lines of code, which means compilation
+This module has ~30k generated lines of code, which means compilation
 may be noticeably slower but still less than 1s in debug mode.
 
 This module uses lazy iterator evaluation, meaning there are no

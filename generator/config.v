@@ -2,7 +2,8 @@ module main
 
 // Generator configuration
 fn config() (map[string]IterConfig, []string) {
-	types := ['bool', 'string', 'int', 'byte', 'rune', 'f64']
+	types := ['bool', 'string', 'int', 'byte', 'rune', 'f64', '[]bool', '[]string', '[]int', '[]byte',
+		'[]rune', '[]f64']
 
 	single := passthrough(types)
 	return map{
@@ -95,15 +96,26 @@ fn (i TypeInfo) iter_in() string {
 }
 
 fn (i TypeInfo) type_in() string {
-	if i.type_in.starts_with('[]') {
-		return 'SingleArray' + i.type_in[2..].capitalize()
-	}
-	return i.type_in.capitalize()
+	return name(i.type_in)
 }
 
 fn (i TypeInfo) type_out() string {
-	if i.type_out.starts_with('[]') {
-		return 'SingleArray' + i.type_out[2..].capitalize()
+	return name(i.type_out)
+}
+
+fn name(typ string) string {
+	if typ.starts_with('[][]') {
+		return typ[4..].capitalize() + '2DArray'
 	}
-	return i.type_out.capitalize()
+	if typ.starts_with('[]') {
+		return typ[2..].capitalize() + '1DArray'
+	}
+	return typ.capitalize()
+}
+
+fn fn_name(typ string) string {
+	if typ.starts_with('[]') {
+		return typ[2..] + '_arr'
+	}
+	return typ
 }

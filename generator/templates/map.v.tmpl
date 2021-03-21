@@ -1,4 +1,4 @@
-pub fn (mut i IterIn) map_TypeOut(map_fn fn(TypeIn) TypeOut) &IterOut {
+pub fn (mut i IterIn) map_MethodTypeOut(map_fn fn(_ TypeIn) TypeOut) &IterOut {
 	return &IterOut{
 		map_fn: map_fn
 		iterator: i
