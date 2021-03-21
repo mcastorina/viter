@@ -3,11 +3,13 @@ module main
 import os
 
 fn get_method_template(iter string) ?string {
-	return os.read_file('templates/${iter}.v.tmpl')
+	dir := os.dir(@FILE)
+	return os.read_file('$dir/templates/${iter}.v.tmpl')
 }
 
 fn get_struct_template(iter string) ?string {
-	return os.read_file('templates/${iter}_struct.v.tmpl')
+	dir := os.dir(@FILE)
+	return os.read_file('$dir/templates/${iter}_struct.v.tmpl')
 }
 
 fn main() {
