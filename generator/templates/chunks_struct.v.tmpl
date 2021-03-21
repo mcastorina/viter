@@ -1,0 +1,16 @@
+pub struct IterOut {
+	n int
+mut:
+	iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeOut {
+	mut chunks := TypeOut{cap: i.n}
+	for _ in 0..i.n {
+		chunks << i.iterator.next() or { break }
+	}
+	if chunks.len == 0 {
+		return none
+	}
+	return chunks
+}

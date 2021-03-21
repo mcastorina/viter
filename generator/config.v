@@ -15,6 +15,7 @@ fn config() (map[string]IterConfig, []string) {
 		'every':   single
 		'rev':     single
 		'windows': to_array(types)
+		'chunks':  to_array(types)
 		'tap':     single
 	}, types
 }

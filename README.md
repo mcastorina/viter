@@ -45,6 +45,7 @@ The currently implemented methods are:
 * `skip`
 * `every`
 * `windows`
+* `chunks`
 * `rev`
 * `collect`
 * `tap`

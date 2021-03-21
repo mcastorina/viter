@@ -1,0 +1,6 @@
+pub fn (mut i IterIn) chunks(n int) &IterOut {
+	return &IterOut{
+		n: n
+		iterator: i
+	}
+}
