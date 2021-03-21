@@ -47,6 +47,7 @@ The currently implemented methods are:
 * `windows`
 * `rev`
 * `collect`
+* `tap`
 
 ## Speed
 This module has ~30k generated lines of code, which means compilation

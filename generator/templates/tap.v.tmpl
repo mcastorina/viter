@@ -1,0 +1,6 @@
+pub fn (mut i IterIn) tap(tap_fn fn(_ TypeIn)) &IterOut {
+	return &IterOut{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
