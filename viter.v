@@ -44,6 +44,106 @@ pub fn iter_bool(arr []bool) &BoolArrayIterator {
 	}
 }
 
+pub struct StringArrayIterator {
+	data []string
+mut:
+	index int
+}
+
+pub fn (mut i StringArrayIterator) next() ?string {
+	if i.index >= i.data.len {
+		return none
+	}
+	i.index++
+	return i.data[i.index - 1]
+}
+
+pub fn iter_string(arr []string) &StringArrayIterator {
+	return &StringArrayIterator{
+		data: arr
+	}
+}
+
+pub struct IntArrayIterator {
+	data []int
+mut:
+	index int
+}
+
+pub fn (mut i IntArrayIterator) next() ?int {
+	if i.index >= i.data.len {
+		return none
+	}
+	i.index++
+	return i.data[i.index - 1]
+}
+
+pub fn iter_int(arr []int) &IntArrayIterator {
+	return &IntArrayIterator{
+		data: arr
+	}
+}
+
+pub struct ByteArrayIterator {
+	data []byte
+mut:
+	index int
+}
+
+pub fn (mut i ByteArrayIterator) next() ?byte {
+	if i.index >= i.data.len {
+		return none
+	}
+	i.index++
+	return i.data[i.index - 1]
+}
+
+pub fn iter_byte(arr []byte) &ByteArrayIterator {
+	return &ByteArrayIterator{
+		data: arr
+	}
+}
+
+pub struct RuneArrayIterator {
+	data []rune
+mut:
+	index int
+}
+
+pub fn (mut i RuneArrayIterator) next() ?rune {
+	if i.index >= i.data.len {
+		return none
+	}
+	i.index++
+	return i.data[i.index - 1]
+}
+
+pub fn iter_rune(arr []rune) &RuneArrayIterator {
+	return &RuneArrayIterator{
+		data: arr
+	}
+}
+
+pub struct F64ArrayIterator {
+	data []f64
+mut:
+	index int
+}
+
+pub fn (mut i F64ArrayIterator) next() ?f64 {
+	if i.index >= i.data.len {
+		return none
+	}
+	i.index++
+	return i.data[i.index - 1]
+}
+
+pub fn iter_f64(arr []f64) &F64ArrayIterator {
+	return &F64ArrayIterator{
+		data: arr
+	}
+}
+
 pub fn (mut i BoolArrayIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -118,26 +218,6 @@ pub fn (mut i BoolArrayIterator) every(n int) &BoolEveryIterator {
 pub fn (mut i BoolArrayIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
-	}
-}
-
-pub struct StringArrayIterator {
-	data []string
-mut:
-	index int
-}
-
-pub fn (mut i StringArrayIterator) next() ?string {
-	if i.index >= i.data.len {
-		return none
-	}
-	i.index++
-	return i.data[i.index - 1]
-}
-
-pub fn iter_string(arr []string) &StringArrayIterator {
-	return &StringArrayIterator{
-		data: arr
 	}
 }
 
@@ -218,26 +298,6 @@ pub fn (mut i StringArrayIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct IntArrayIterator {
-	data []int
-mut:
-	index int
-}
-
-pub fn (mut i IntArrayIterator) next() ?int {
-	if i.index >= i.data.len {
-		return none
-	}
-	i.index++
-	return i.data[i.index - 1]
-}
-
-pub fn iter_int(arr []int) &IntArrayIterator {
-	return &IntArrayIterator{
-		data: arr
-	}
-}
-
 pub fn (mut i IntArrayIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -312,26 +372,6 @@ pub fn (mut i IntArrayIterator) every(n int) &IntEveryIterator {
 pub fn (mut i IntArrayIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
-	}
-}
-
-pub struct ByteArrayIterator {
-	data []byte
-mut:
-	index int
-}
-
-pub fn (mut i ByteArrayIterator) next() ?byte {
-	if i.index >= i.data.len {
-		return none
-	}
-	i.index++
-	return i.data[i.index - 1]
-}
-
-pub fn iter_byte(arr []byte) &ByteArrayIterator {
-	return &ByteArrayIterator{
-		data: arr
 	}
 }
 
@@ -412,26 +452,6 @@ pub fn (mut i ByteArrayIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct RuneArrayIterator {
-	data []rune
-mut:
-	index int
-}
-
-pub fn (mut i RuneArrayIterator) next() ?rune {
-	if i.index >= i.data.len {
-		return none
-	}
-	i.index++
-	return i.data[i.index - 1]
-}
-
-pub fn iter_rune(arr []rune) &RuneArrayIterator {
-	return &RuneArrayIterator{
-		data: arr
-	}
-}
-
 pub fn (mut i RuneArrayIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -506,26 +526,6 @@ pub fn (mut i RuneArrayIterator) every(n int) &RuneEveryIterator {
 pub fn (mut i RuneArrayIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
-	}
-}
-
-pub struct F64ArrayIterator {
-	data []f64
-mut:
-	index int
-}
-
-pub fn (mut i F64ArrayIterator) next() ?f64 {
-	if i.index >= i.data.len {
-		return none
-	}
-	i.index++
-	return i.data[i.index - 1]
-}
-
-pub fn iter_f64(arr []f64) &F64ArrayIterator {
-	return &F64ArrayIterator{
-		data: arr
 	}
 }
 
@@ -622,6 +622,86 @@ pub fn (mut i BoolFilterIterator) next() ?bool {
 	return none
 }
 
+pub struct StringFilterIterator {
+	filter_fn fn (string) bool
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringFilterIterator) next() ?string {
+	for true {
+		item := i.iterator.next() ?
+		if i.filter_fn(item) {
+			return item
+		}
+	}
+	return none
+}
+
+pub struct IntFilterIterator {
+	filter_fn fn (int) bool
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntFilterIterator) next() ?int {
+	for true {
+		item := i.iterator.next() ?
+		if i.filter_fn(item) {
+			return item
+		}
+	}
+	return none
+}
+
+pub struct ByteFilterIterator {
+	filter_fn fn (byte) bool
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteFilterIterator) next() ?byte {
+	for true {
+		item := i.iterator.next() ?
+		if i.filter_fn(item) {
+			return item
+		}
+	}
+	return none
+}
+
+pub struct RuneFilterIterator {
+	filter_fn fn (rune) bool
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneFilterIterator) next() ?rune {
+	for true {
+		item := i.iterator.next() ?
+		if i.filter_fn(item) {
+			return item
+		}
+	}
+	return none
+}
+
+pub struct F64FilterIterator {
+	filter_fn fn (f64) bool
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64FilterIterator) next() ?f64 {
+	for true {
+		item := i.iterator.next() ?
+		if i.filter_fn(item) {
+			return item
+		}
+	}
+	return none
+}
+
 pub fn (mut i BoolFilterIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -697,22 +777,6 @@ pub fn (mut i BoolFilterIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringFilterIterator {
-	filter_fn fn (string) bool
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringFilterIterator) next() ?string {
-	for true {
-		item := i.iterator.next() ?
-		if i.filter_fn(item) {
-			return item
-		}
-	}
-	return none
 }
 
 pub fn (mut i StringFilterIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -792,22 +856,6 @@ pub fn (mut i StringFilterIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct IntFilterIterator {
-	filter_fn fn (int) bool
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntFilterIterator) next() ?int {
-	for true {
-		item := i.iterator.next() ?
-		if i.filter_fn(item) {
-			return item
-		}
-	}
-	return none
-}
-
 pub fn (mut i IntFilterIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -883,22 +931,6 @@ pub fn (mut i IntFilterIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteFilterIterator {
-	filter_fn fn (byte) bool
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteFilterIterator) next() ?byte {
-	for true {
-		item := i.iterator.next() ?
-		if i.filter_fn(item) {
-			return item
-		}
-	}
-	return none
 }
 
 pub fn (mut i ByteFilterIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -978,22 +1010,6 @@ pub fn (mut i ByteFilterIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct RuneFilterIterator {
-	filter_fn fn (rune) bool
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneFilterIterator) next() ?rune {
-	for true {
-		item := i.iterator.next() ?
-		if i.filter_fn(item) {
-			return item
-		}
-	}
-	return none
-}
-
 pub fn (mut i RuneFilterIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -1069,22 +1085,6 @@ pub fn (mut i RuneFilterIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64FilterIterator {
-	filter_fn fn (f64) bool
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64FilterIterator) next() ?f64 {
-	for true {
-		item := i.iterator.next() ?
-		if i.filter_fn(item) {
-			return item
-		}
-	}
-	return none
 }
 
 pub fn (mut i F64FilterIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -1175,6 +1175,391 @@ pub fn (mut i BoolBoolMapIterator) next() ?bool {
 	return i.map_fn(item)
 }
 
+pub struct BoolStringMapIterator {
+	map_fn fn (bool) string
+mut:
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolStringMapIterator) next() ?string {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct BoolIntMapIterator {
+	map_fn fn (bool) int
+mut:
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolIntMapIterator) next() ?int {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct BoolByteMapIterator {
+	map_fn fn (bool) byte
+mut:
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolByteMapIterator) next() ?byte {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct BoolRuneMapIterator {
+	map_fn fn (bool) rune
+mut:
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolRuneMapIterator) next() ?rune {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct BoolF64MapIterator {
+	map_fn fn (bool) f64
+mut:
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolF64MapIterator) next() ?f64 {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct StringBoolMapIterator {
+	map_fn fn (string) bool
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringBoolMapIterator) next() ?bool {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct StringStringMapIterator {
+	map_fn fn (string) string
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringStringMapIterator) next() ?string {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct StringIntMapIterator {
+	map_fn fn (string) int
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringIntMapIterator) next() ?int {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct StringByteMapIterator {
+	map_fn fn (string) byte
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringByteMapIterator) next() ?byte {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct StringRuneMapIterator {
+	map_fn fn (string) rune
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringRuneMapIterator) next() ?rune {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct StringF64MapIterator {
+	map_fn fn (string) f64
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringF64MapIterator) next() ?f64 {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct IntBoolMapIterator {
+	map_fn fn (int) bool
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntBoolMapIterator) next() ?bool {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct IntStringMapIterator {
+	map_fn fn (int) string
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntStringMapIterator) next() ?string {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct IntIntMapIterator {
+	map_fn fn (int) int
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntIntMapIterator) next() ?int {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct IntByteMapIterator {
+	map_fn fn (int) byte
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntByteMapIterator) next() ?byte {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct IntRuneMapIterator {
+	map_fn fn (int) rune
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntRuneMapIterator) next() ?rune {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct IntF64MapIterator {
+	map_fn fn (int) f64
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntF64MapIterator) next() ?f64 {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct ByteBoolMapIterator {
+	map_fn fn (byte) bool
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteBoolMapIterator) next() ?bool {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct ByteStringMapIterator {
+	map_fn fn (byte) string
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteStringMapIterator) next() ?string {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct ByteIntMapIterator {
+	map_fn fn (byte) int
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteIntMapIterator) next() ?int {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct ByteByteMapIterator {
+	map_fn fn (byte) byte
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteByteMapIterator) next() ?byte {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct ByteRuneMapIterator {
+	map_fn fn (byte) rune
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteRuneMapIterator) next() ?rune {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct ByteF64MapIterator {
+	map_fn fn (byte) f64
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteF64MapIterator) next() ?f64 {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct RuneBoolMapIterator {
+	map_fn fn (rune) bool
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneBoolMapIterator) next() ?bool {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct RuneStringMapIterator {
+	map_fn fn (rune) string
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneStringMapIterator) next() ?string {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct RuneIntMapIterator {
+	map_fn fn (rune) int
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneIntMapIterator) next() ?int {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct RuneByteMapIterator {
+	map_fn fn (rune) byte
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneByteMapIterator) next() ?byte {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct RuneRuneMapIterator {
+	map_fn fn (rune) rune
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneRuneMapIterator) next() ?rune {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct RuneF64MapIterator {
+	map_fn fn (rune) f64
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneF64MapIterator) next() ?f64 {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct F64BoolMapIterator {
+	map_fn fn (f64) bool
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64BoolMapIterator) next() ?bool {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct F64StringMapIterator {
+	map_fn fn (f64) string
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64StringMapIterator) next() ?string {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct F64IntMapIterator {
+	map_fn fn (f64) int
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64IntMapIterator) next() ?int {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct F64ByteMapIterator {
+	map_fn fn (f64) byte
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64ByteMapIterator) next() ?byte {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct F64RuneMapIterator {
+	map_fn fn (f64) rune
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64RuneMapIterator) next() ?rune {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
+pub struct F64F64MapIterator {
+	map_fn fn (f64) f64
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64F64MapIterator) next() ?f64 {
+	item := i.iterator.next() ?
+	return i.map_fn(item)
+}
+
 pub fn (mut i BoolBoolMapIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -1250,17 +1635,6 @@ pub fn (mut i BoolBoolMapIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct BoolStringMapIterator {
-	map_fn fn (bool) string
-mut:
-	iterator BoolIterator
-}
-
-pub fn (mut i BoolStringMapIterator) next() ?string {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i BoolStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -1340,17 +1714,6 @@ pub fn (mut i BoolStringMapIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct BoolIntMapIterator {
-	map_fn fn (bool) int
-mut:
-	iterator BoolIterator
-}
-
-pub fn (mut i BoolIntMapIterator) next() ?int {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i BoolIntMapIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -1426,17 +1789,6 @@ pub fn (mut i BoolIntMapIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct BoolByteMapIterator {
-	map_fn fn (bool) byte
-mut:
-	iterator BoolIterator
-}
-
-pub fn (mut i BoolByteMapIterator) next() ?byte {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i BoolByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -1516,17 +1868,6 @@ pub fn (mut i BoolByteMapIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct BoolRuneMapIterator {
-	map_fn fn (bool) rune
-mut:
-	iterator BoolIterator
-}
-
-pub fn (mut i BoolRuneMapIterator) next() ?rune {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i BoolRuneMapIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -1602,17 +1943,6 @@ pub fn (mut i BoolRuneMapIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct BoolF64MapIterator {
-	map_fn fn (bool) f64
-mut:
-	iterator BoolIterator
-}
-
-pub fn (mut i BoolF64MapIterator) next() ?f64 {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i BoolF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -1692,17 +2022,6 @@ pub fn (mut i BoolF64MapIterator) rev() &F64RevIterator {
 	}
 }
 
-pub struct StringBoolMapIterator {
-	map_fn fn (string) bool
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringBoolMapIterator) next() ?bool {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i StringBoolMapIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -1778,17 +2097,6 @@ pub fn (mut i StringBoolMapIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringStringMapIterator {
-	map_fn fn (string) string
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringStringMapIterator) next() ?string {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i StringStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -1868,17 +2176,6 @@ pub fn (mut i StringStringMapIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct StringIntMapIterator {
-	map_fn fn (string) int
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringIntMapIterator) next() ?int {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i StringIntMapIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -1954,17 +2251,6 @@ pub fn (mut i StringIntMapIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringByteMapIterator {
-	map_fn fn (string) byte
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringByteMapIterator) next() ?byte {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i StringByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -2044,17 +2330,6 @@ pub fn (mut i StringByteMapIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct StringRuneMapIterator {
-	map_fn fn (string) rune
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringRuneMapIterator) next() ?rune {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i StringRuneMapIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -2130,17 +2405,6 @@ pub fn (mut i StringRuneMapIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringF64MapIterator {
-	map_fn fn (string) f64
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringF64MapIterator) next() ?f64 {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i StringF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -2220,17 +2484,6 @@ pub fn (mut i StringF64MapIterator) rev() &F64RevIterator {
 	}
 }
 
-pub struct IntBoolMapIterator {
-	map_fn fn (int) bool
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntBoolMapIterator) next() ?bool {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i IntBoolMapIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -2306,17 +2559,6 @@ pub fn (mut i IntBoolMapIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct IntStringMapIterator {
-	map_fn fn (int) string
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntStringMapIterator) next() ?string {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i IntStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -2396,17 +2638,6 @@ pub fn (mut i IntStringMapIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct IntIntMapIterator {
-	map_fn fn (int) int
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntIntMapIterator) next() ?int {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i IntIntMapIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -2482,17 +2713,6 @@ pub fn (mut i IntIntMapIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct IntByteMapIterator {
-	map_fn fn (int) byte
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntByteMapIterator) next() ?byte {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i IntByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -2572,17 +2792,6 @@ pub fn (mut i IntByteMapIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct IntRuneMapIterator {
-	map_fn fn (int) rune
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntRuneMapIterator) next() ?rune {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i IntRuneMapIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -2658,17 +2867,6 @@ pub fn (mut i IntRuneMapIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct IntF64MapIterator {
-	map_fn fn (int) f64
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntF64MapIterator) next() ?f64 {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i IntF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -2748,17 +2946,6 @@ pub fn (mut i IntF64MapIterator) rev() &F64RevIterator {
 	}
 }
 
-pub struct ByteBoolMapIterator {
-	map_fn fn (byte) bool
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteBoolMapIterator) next() ?bool {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i ByteBoolMapIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -2834,17 +3021,6 @@ pub fn (mut i ByteBoolMapIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteStringMapIterator {
-	map_fn fn (byte) string
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteStringMapIterator) next() ?string {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i ByteStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -2924,17 +3100,6 @@ pub fn (mut i ByteStringMapIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct ByteIntMapIterator {
-	map_fn fn (byte) int
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteIntMapIterator) next() ?int {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i ByteIntMapIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -3010,17 +3175,6 @@ pub fn (mut i ByteIntMapIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteByteMapIterator {
-	map_fn fn (byte) byte
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteByteMapIterator) next() ?byte {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i ByteByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -3100,17 +3254,6 @@ pub fn (mut i ByteByteMapIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct ByteRuneMapIterator {
-	map_fn fn (byte) rune
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteRuneMapIterator) next() ?rune {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i ByteRuneMapIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -3186,17 +3329,6 @@ pub fn (mut i ByteRuneMapIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteF64MapIterator {
-	map_fn fn (byte) f64
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteF64MapIterator) next() ?f64 {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i ByteF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -3276,17 +3408,6 @@ pub fn (mut i ByteF64MapIterator) rev() &F64RevIterator {
 	}
 }
 
-pub struct RuneBoolMapIterator {
-	map_fn fn (rune) bool
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneBoolMapIterator) next() ?bool {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i RuneBoolMapIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -3362,17 +3483,6 @@ pub fn (mut i RuneBoolMapIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct RuneStringMapIterator {
-	map_fn fn (rune) string
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneStringMapIterator) next() ?string {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i RuneStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -3452,17 +3562,6 @@ pub fn (mut i RuneStringMapIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct RuneIntMapIterator {
-	map_fn fn (rune) int
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneIntMapIterator) next() ?int {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i RuneIntMapIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -3538,17 +3637,6 @@ pub fn (mut i RuneIntMapIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct RuneByteMapIterator {
-	map_fn fn (rune) byte
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneByteMapIterator) next() ?byte {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i RuneByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -3628,17 +3716,6 @@ pub fn (mut i RuneByteMapIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct RuneRuneMapIterator {
-	map_fn fn (rune) rune
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneRuneMapIterator) next() ?rune {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i RuneRuneMapIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -3714,17 +3791,6 @@ pub fn (mut i RuneRuneMapIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct RuneF64MapIterator {
-	map_fn fn (rune) f64
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneF64MapIterator) next() ?f64 {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i RuneF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -3804,17 +3870,6 @@ pub fn (mut i RuneF64MapIterator) rev() &F64RevIterator {
 	}
 }
 
-pub struct F64BoolMapIterator {
-	map_fn fn (f64) bool
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64BoolMapIterator) next() ?bool {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i F64BoolMapIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -3890,17 +3945,6 @@ pub fn (mut i F64BoolMapIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64StringMapIterator {
-	map_fn fn (f64) string
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64StringMapIterator) next() ?string {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i F64StringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -3980,17 +4024,6 @@ pub fn (mut i F64StringMapIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct F64IntMapIterator {
-	map_fn fn (f64) int
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64IntMapIterator) next() ?int {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i F64IntMapIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -4066,17 +4099,6 @@ pub fn (mut i F64IntMapIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64ByteMapIterator {
-	map_fn fn (f64) byte
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64ByteMapIterator) next() ?byte {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i F64ByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -4156,17 +4178,6 @@ pub fn (mut i F64ByteMapIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct F64RuneMapIterator {
-	map_fn fn (f64) rune
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64RuneMapIterator) next() ?rune {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
-}
-
 pub fn (mut i F64RuneMapIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -4242,17 +4253,6 @@ pub fn (mut i F64RuneMapIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64F64MapIterator {
-	map_fn fn (f64) f64
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64F64MapIterator) next() ?f64 {
-	item := i.iterator.next() ?
-	return i.map_fn(item)
 }
 
 pub fn (mut i F64F64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -4347,6 +4347,81 @@ pub fn (mut i BoolSkipIterator) next() ?bool {
 	return i.iterator.next()
 }
 
+pub struct StringSkipIterator {
+	n int
+mut:
+	index    int
+	iterator StringIterator
+}
+
+pub fn (mut i StringSkipIterator) next() ?string {
+	for i.index < i.n {
+		i.iterator.next() ?
+		i.index++
+	}
+	return i.iterator.next()
+}
+
+pub struct IntSkipIterator {
+	n int
+mut:
+	index    int
+	iterator IntIterator
+}
+
+pub fn (mut i IntSkipIterator) next() ?int {
+	for i.index < i.n {
+		i.iterator.next() ?
+		i.index++
+	}
+	return i.iterator.next()
+}
+
+pub struct ByteSkipIterator {
+	n int
+mut:
+	index    int
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteSkipIterator) next() ?byte {
+	for i.index < i.n {
+		i.iterator.next() ?
+		i.index++
+	}
+	return i.iterator.next()
+}
+
+pub struct RuneSkipIterator {
+	n int
+mut:
+	index    int
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneSkipIterator) next() ?rune {
+	for i.index < i.n {
+		i.iterator.next() ?
+		i.index++
+	}
+	return i.iterator.next()
+}
+
+pub struct F64SkipIterator {
+	n int
+mut:
+	index    int
+	iterator F64Iterator
+}
+
+pub fn (mut i F64SkipIterator) next() ?f64 {
+	for i.index < i.n {
+		i.iterator.next() ?
+		i.index++
+	}
+	return i.iterator.next()
+}
+
 pub fn (mut i BoolSkipIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -4422,21 +4497,6 @@ pub fn (mut i BoolSkipIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringSkipIterator {
-	n int
-mut:
-	index    int
-	iterator StringIterator
-}
-
-pub fn (mut i StringSkipIterator) next() ?string {
-	for i.index < i.n {
-		i.iterator.next() ?
-		i.index++
-	}
-	return i.iterator.next()
 }
 
 pub fn (mut i StringSkipIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -4516,21 +4576,6 @@ pub fn (mut i StringSkipIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct IntSkipIterator {
-	n int
-mut:
-	index    int
-	iterator IntIterator
-}
-
-pub fn (mut i IntSkipIterator) next() ?int {
-	for i.index < i.n {
-		i.iterator.next() ?
-		i.index++
-	}
-	return i.iterator.next()
-}
-
 pub fn (mut i IntSkipIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -4606,21 +4651,6 @@ pub fn (mut i IntSkipIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteSkipIterator {
-	n int
-mut:
-	index    int
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteSkipIterator) next() ?byte {
-	for i.index < i.n {
-		i.iterator.next() ?
-		i.index++
-	}
-	return i.iterator.next()
 }
 
 pub fn (mut i ByteSkipIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -4700,21 +4730,6 @@ pub fn (mut i ByteSkipIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct RuneSkipIterator {
-	n int
-mut:
-	index    int
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneSkipIterator) next() ?rune {
-	for i.index < i.n {
-		i.iterator.next() ?
-		i.index++
-	}
-	return i.iterator.next()
-}
-
 pub fn (mut i RuneSkipIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -4790,21 +4805,6 @@ pub fn (mut i RuneSkipIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64SkipIterator {
-	n int
-mut:
-	index    int
-	iterator F64Iterator
-}
-
-pub fn (mut i F64SkipIterator) next() ?f64 {
-	for i.index < i.n {
-		i.iterator.next() ?
-		i.index++
-	}
-	return i.iterator.next()
 }
 
 pub fn (mut i F64SkipIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -4898,6 +4898,76 @@ pub fn (mut i BoolEveryIterator) next() ?bool {
 	return ret
 }
 
+pub struct StringEveryIterator {
+	n int
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringEveryIterator) next() ?string {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub struct IntEveryIterator {
+	n int
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntEveryIterator) next() ?int {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub struct ByteEveryIterator {
+	n int
+mut:
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteEveryIterator) next() ?byte {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub struct RuneEveryIterator {
+	n int
+mut:
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneEveryIterator) next() ?rune {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub struct F64EveryIterator {
+	n int
+mut:
+	iterator F64Iterator
+}
+
+pub fn (mut i F64EveryIterator) next() ?f64 {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
 pub fn (mut i BoolEveryIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -4973,20 +5043,6 @@ pub fn (mut i BoolEveryIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringEveryIterator {
-	n int
-mut:
-	iterator StringIterator
-}
-
-pub fn (mut i StringEveryIterator) next() ?string {
-	ret := i.iterator.next() ?
-	for _ in 1 .. i.n {
-		i.iterator.next() or { break }
-	}
-	return ret
 }
 
 pub fn (mut i StringEveryIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -5066,20 +5122,6 @@ pub fn (mut i StringEveryIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct IntEveryIterator {
-	n int
-mut:
-	iterator IntIterator
-}
-
-pub fn (mut i IntEveryIterator) next() ?int {
-	ret := i.iterator.next() ?
-	for _ in 1 .. i.n {
-		i.iterator.next() or { break }
-	}
-	return ret
-}
-
 pub fn (mut i IntEveryIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -5155,20 +5197,6 @@ pub fn (mut i IntEveryIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteEveryIterator {
-	n int
-mut:
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteEveryIterator) next() ?byte {
-	ret := i.iterator.next() ?
-	for _ in 1 .. i.n {
-		i.iterator.next() or { break }
-	}
-	return ret
 }
 
 pub fn (mut i ByteEveryIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -5248,20 +5276,6 @@ pub fn (mut i ByteEveryIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct RuneEveryIterator {
-	n int
-mut:
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneEveryIterator) next() ?rune {
-	ret := i.iterator.next() ?
-	for _ in 1 .. i.n {
-		i.iterator.next() or { break }
-	}
-	return ret
-}
-
 pub fn (mut i RuneEveryIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -5337,20 +5351,6 @@ pub fn (mut i RuneEveryIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64EveryIterator {
-	n int
-mut:
-	iterator F64Iterator
-}
-
-pub fn (mut i F64EveryIterator) next() ?f64 {
-	ret := i.iterator.next() ?
-	for _ in 1 .. i.n {
-		i.iterator.next() or { break }
-	}
-	return ret
 }
 
 pub fn (mut i F64EveryIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
@@ -5450,6 +5450,106 @@ pub fn (mut i BoolRevIterator) next() ?bool {
 	return i.buffer[i.index]
 }
 
+pub struct StringRevIterator {
+mut:
+	buffer   []string
+	index    int
+	iterator StringIterator
+}
+
+pub fn (mut i StringRevIterator) next() ?string {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub struct IntRevIterator {
+mut:
+	buffer   []int
+	index    int
+	iterator IntIterator
+}
+
+pub fn (mut i IntRevIterator) next() ?int {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub struct ByteRevIterator {
+mut:
+	buffer   []byte
+	index    int
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteRevIterator) next() ?byte {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub struct RuneRevIterator {
+mut:
+	buffer   []rune
+	index    int
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneRevIterator) next() ?rune {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub struct F64RevIterator {
+mut:
+	buffer   []f64
+	index    int
+	iterator F64Iterator
+}
+
+pub fn (mut i F64RevIterator) next() ?f64 {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
 pub fn (mut i BoolRevIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
@@ -5525,26 +5625,6 @@ pub fn (mut i BoolRevIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
-}
-
-pub struct StringRevIterator {
-mut:
-	buffer   []string
-	index    int
-	iterator StringIterator
-}
-
-pub fn (mut i StringRevIterator) next() ?string {
-	for true {
-		item := i.iterator.next() or { break }
-		i.buffer << item
-		i.index++
-	}
-	if i.index == 0 {
-		return none
-	}
-	i.index--
-	return i.buffer[i.index]
 }
 
 pub fn (mut i StringRevIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
@@ -5624,26 +5704,6 @@ pub fn (mut i StringRevIterator) rev() &StringRevIterator {
 	}
 }
 
-pub struct IntRevIterator {
-mut:
-	buffer   []int
-	index    int
-	iterator IntIterator
-}
-
-pub fn (mut i IntRevIterator) next() ?int {
-	for true {
-		item := i.iterator.next() or { break }
-		i.buffer << item
-		i.index++
-	}
-	if i.index == 0 {
-		return none
-	}
-	i.index--
-	return i.buffer[i.index]
-}
-
 pub fn (mut i IntRevIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
@@ -5719,26 +5779,6 @@ pub fn (mut i IntRevIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
-}
-
-pub struct ByteRevIterator {
-mut:
-	buffer   []byte
-	index    int
-	iterator ByteIterator
-}
-
-pub fn (mut i ByteRevIterator) next() ?byte {
-	for true {
-		item := i.iterator.next() or { break }
-		i.buffer << item
-		i.index++
-	}
-	if i.index == 0 {
-		return none
-	}
-	i.index--
-	return i.buffer[i.index]
 }
 
 pub fn (mut i ByteRevIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
@@ -5818,26 +5858,6 @@ pub fn (mut i ByteRevIterator) rev() &ByteRevIterator {
 	}
 }
 
-pub struct RuneRevIterator {
-mut:
-	buffer   []rune
-	index    int
-	iterator RuneIterator
-}
-
-pub fn (mut i RuneRevIterator) next() ?rune {
-	for true {
-		item := i.iterator.next() or { break }
-		i.buffer << item
-		i.index++
-	}
-	if i.index == 0 {
-		return none
-	}
-	i.index--
-	return i.buffer[i.index]
-}
-
 pub fn (mut i RuneRevIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
@@ -5913,26 +5933,6 @@ pub fn (mut i RuneRevIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
-}
-
-pub struct F64RevIterator {
-mut:
-	buffer   []f64
-	index    int
-	iterator F64Iterator
-}
-
-pub fn (mut i F64RevIterator) next() ?f64 {
-	for true {
-		item := i.iterator.next() or { break }
-		i.buffer << item
-		i.index++
-	}
-	if i.index == 0 {
-		return none
-	}
-	i.index--
-	return i.buffer[i.index]
 }
 
 pub fn (mut i F64RevIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
