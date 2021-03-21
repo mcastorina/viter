@@ -1,8 +1,8 @@
-import viter
+module viter
 
 fn test_rev_string() ? {
 	data := ['1', '2', '3', '4', '5']
-	mut iter := viter.iter_string(data).rev()
+	mut iter := iter_string(data).rev()
 	assert iter.next() ? == '5'
 	assert iter.next() ? == '4'
 	assert iter.next() ? == '3'
@@ -15,7 +15,7 @@ fn test_rev_string() ? {
 
 fn test_rev_int() ? {
 	data := [1, 2, 3, 4, 5]
-	mut iter := viter.iter_int(data).rev()
+	mut iter := iter_int(data).rev()
 	assert iter.next() ? == 5
 	assert iter.next() ? == 4
 	assert iter.next() ? == 3

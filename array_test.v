@@ -1,31 +1,42 @@
-import viter
+module viter
 
-fn test_every_string() ? {
+fn test_iter_string() ? {
 	data := ['1', '2', '3', '4', '5']
-	mut iter := viter.iter_string(data).every(2)
+	mut iter := iter_string(data)
+
 	assert iter.next() ? == '1'
+	assert iter.next() ? == '2'
 	assert iter.next() ? == '3'
+	assert iter.next() ? == '4'
 	assert iter.next() ? == '5'
 	if _ := iter.next() {
 		assert false
 	}
 }
 
-fn test_every_int() ? {
+fn test_iter_int() ? {
 	data := [1, 2, 3, 4, 5]
-	mut iter := viter.iter_int(data).every(4)
+	mut iter := iter_int(data)
+
 	assert iter.next() ? == 1
+	assert iter.next() ? == 2
+	assert iter.next() ? == 3
+	assert iter.next() ? == 4
 	assert iter.next() ? == 5
 	if _ := iter.next() {
 		assert false
 	}
 }
 
-fn test_every_bool() ? {
+fn test_iter_bool() ? {
 	data := [true, false, true, true, false]
-	mut iter := viter.iter_bool(data).every(3)
+	mut iter := iter_bool(data)
+
+	assert iter.next() ? == true
+	assert iter.next() ? == false
 	assert iter.next() ? == true
 	assert iter.next() ? == true
+	assert iter.next() ? == false
 	if _ := iter.next() {
 		assert false
 	}
