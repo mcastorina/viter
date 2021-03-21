@@ -20,15 +20,16 @@ fn main() {
 ```
 
 ## Supported Types
-All V primitive types are supported. You cannot use this module with
-custom types (yet).
+Common V primitive types are supported. You cannot use this module with
+custom types (yet). If you would like another primitive type supported,
+please open an issue.
 
 * `bool`
 * `string`
-* `i8`    `i16`  `int`  `i64`
-* `byte`  `u16`  `u32`  `u64`
+* `int`
+* `byte`
 * `rune`
-* `f32` `f64`
+* `f64`
 
 ## Methods
 A `iter_<type>` function is provided to convert an array of `<type>`
@@ -46,8 +47,8 @@ The currently implemented methods are:
 * `collect`
 
 ## Speed
-This module has ~30k generated lines of code, which means compilation
-will be noticeably slower but still less than 1s in debug mode.
+This module has ~5k generated lines of code, which means compilation
+may be noticeably slower but still less than 1s in debug mode.
 
 This module uses lazy iterator evaluation, meaning there are no
 intermediate buffers. Each transformation is applied on the element as
