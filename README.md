@@ -44,6 +44,7 @@ The currently implemented methods are:
 * `map`
 * `skip`
 * `every`
+* `windows`
 * `rev`
 * `collect`
 

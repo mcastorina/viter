@@ -2,7 +2,6 @@ module main
 
 // Generator configuration
 fn config() (map[string]IterConfig, []string) {
-	// iters := ['array', 'filter', 'map', 'skip', 'collect', 'every', 'rev']
 	types := ['bool', 'string', 'int', 'byte', 'rune', 'f64']
 
 	single := passthrough(types)
@@ -14,6 +13,7 @@ fn config() (map[string]IterConfig, []string) {
 		'collect': single
 		'every':   single
 		'rev':     single
+		'windows': to_array(types)
 	}, types
 }
 
@@ -64,6 +64,21 @@ fn permute(types []string) IterConfig {
 	}
 }
 
+// TypeOut == []TypeIn
+fn to_array(types []string) IterConfig {
+	mut info := []TypeInfo{cap: types.len}
+	for typ in types {
+		info << TypeInfo{
+			type_in: typ
+			type_out: '[]$typ'
+		}
+	}
+	return IterConfig{
+		types: info
+		kind: .transform
+	}
+}
+
 fn (c IterConfig) iter_out(iter string, info TypeInfo) string {
 	return match c.kind {
 		.passthrough {
@@ -80,9 +95,15 @@ fn (i TypeInfo) iter_in() string {
 }
 
 fn (i TypeInfo) type_in() string {
+	if i.type_in.starts_with('[]') {
+		return 'SingleArray' + i.type_in[2..].capitalize()
+	}
 	return i.type_in.capitalize()
 }
 
 fn (i TypeInfo) type_out() string {
+	if i.type_out.starts_with('[]') {
+		return 'SingleArray' + i.type_out[2..].capitalize()
+	}
 	return i.type_out.capitalize()
 }

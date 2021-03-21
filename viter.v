@@ -221,6 +221,13 @@ pub fn (mut i BoolArrayIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i BoolArrayIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringArrayIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -294,6 +301,13 @@ pub fn (mut i StringArrayIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i StringArrayIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringArrayIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -375,6 +389,13 @@ pub fn (mut i IntArrayIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i IntArrayIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteArrayIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -448,6 +469,13 @@ pub fn (mut i ByteArrayIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i ByteArrayIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteArrayIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -529,6 +557,13 @@ pub fn (mut i RuneArrayIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i RuneArrayIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64ArrayIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -602,6 +637,13 @@ pub fn (mut i F64ArrayIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i F64ArrayIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64ArrayIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -779,6 +821,13 @@ pub fn (mut i BoolFilterIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i BoolFilterIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringFilterIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -852,6 +901,13 @@ pub fn (mut i StringFilterIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i StringFilterIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringFilterIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -933,6 +989,13 @@ pub fn (mut i IntFilterIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i IntFilterIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteFilterIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -1006,6 +1069,13 @@ pub fn (mut i ByteFilterIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i ByteFilterIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteFilterIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1087,6 +1157,13 @@ pub fn (mut i RuneFilterIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i RuneFilterIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64FilterIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -1160,6 +1237,13 @@ pub fn (mut i F64FilterIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i F64FilterIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64FilterIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1637,6 +1721,13 @@ pub fn (mut i BoolBoolMapIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i BoolBoolMapIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -1710,6 +1801,13 @@ pub fn (mut i BoolStringMapIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i BoolStringMapIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolStringMapIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1791,6 +1889,13 @@ pub fn (mut i BoolIntMapIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i BoolIntMapIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -1864,6 +1969,13 @@ pub fn (mut i BoolByteMapIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i BoolByteMapIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolByteMapIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1945,6 +2057,13 @@ pub fn (mut i BoolRuneMapIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i BoolRuneMapIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -2018,6 +2137,13 @@ pub fn (mut i BoolF64MapIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i BoolF64MapIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolF64MapIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2099,6 +2225,13 @@ pub fn (mut i StringBoolMapIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i StringBoolMapIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -2172,6 +2305,13 @@ pub fn (mut i StringStringMapIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i StringStringMapIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringStringMapIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2253,6 +2393,13 @@ pub fn (mut i StringIntMapIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i StringIntMapIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -2326,6 +2473,13 @@ pub fn (mut i StringByteMapIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i StringByteMapIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringByteMapIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2407,6 +2561,13 @@ pub fn (mut i StringRuneMapIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i StringRuneMapIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -2480,6 +2641,13 @@ pub fn (mut i StringF64MapIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i StringF64MapIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringF64MapIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2561,6 +2729,13 @@ pub fn (mut i IntBoolMapIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i IntBoolMapIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -2634,6 +2809,13 @@ pub fn (mut i IntStringMapIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i IntStringMapIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i IntStringMapIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2715,6 +2897,13 @@ pub fn (mut i IntIntMapIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i IntIntMapIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -2788,6 +2977,13 @@ pub fn (mut i IntByteMapIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i IntByteMapIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i IntByteMapIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2869,6 +3065,13 @@ pub fn (mut i IntRuneMapIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i IntRuneMapIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -2942,6 +3145,13 @@ pub fn (mut i IntF64MapIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i IntF64MapIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i IntF64MapIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3023,6 +3233,13 @@ pub fn (mut i ByteBoolMapIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i ByteBoolMapIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -3096,6 +3313,13 @@ pub fn (mut i ByteStringMapIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i ByteStringMapIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteStringMapIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3177,6 +3401,13 @@ pub fn (mut i ByteIntMapIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i ByteIntMapIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -3250,6 +3481,13 @@ pub fn (mut i ByteByteMapIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i ByteByteMapIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteByteMapIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3331,6 +3569,13 @@ pub fn (mut i ByteRuneMapIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i ByteRuneMapIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -3404,6 +3649,13 @@ pub fn (mut i ByteF64MapIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i ByteF64MapIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteF64MapIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3485,6 +3737,13 @@ pub fn (mut i RuneBoolMapIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i RuneBoolMapIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneStringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -3558,6 +3817,13 @@ pub fn (mut i RuneStringMapIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i RuneStringMapIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneStringMapIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3639,6 +3905,13 @@ pub fn (mut i RuneIntMapIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i RuneIntMapIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -3712,6 +3985,13 @@ pub fn (mut i RuneByteMapIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i RuneByteMapIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneByteMapIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3793,6 +4073,13 @@ pub fn (mut i RuneRuneMapIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i RuneRuneMapIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneF64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -3866,6 +4153,13 @@ pub fn (mut i RuneF64MapIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i RuneF64MapIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneF64MapIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3947,6 +4241,13 @@ pub fn (mut i F64BoolMapIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i F64BoolMapIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64StringMapIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -4020,6 +4321,13 @@ pub fn (mut i F64StringMapIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i F64StringMapIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64StringMapIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -4101,6 +4409,13 @@ pub fn (mut i F64IntMapIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i F64IntMapIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64ByteMapIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -4174,6 +4489,13 @@ pub fn (mut i F64ByteMapIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i F64ByteMapIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64ByteMapIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -4255,6 +4577,13 @@ pub fn (mut i F64RuneMapIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i F64RuneMapIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64F64MapIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -4328,6 +4657,13 @@ pub fn (mut i F64F64MapIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i F64F64MapIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64F64MapIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -4499,6 +4835,13 @@ pub fn (mut i BoolSkipIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i BoolSkipIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringSkipIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -4572,6 +4915,13 @@ pub fn (mut i StringSkipIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i StringSkipIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringSkipIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -4653,6 +5003,13 @@ pub fn (mut i IntSkipIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i IntSkipIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteSkipIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -4726,6 +5083,13 @@ pub fn (mut i ByteSkipIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i ByteSkipIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteSkipIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -4807,6 +5171,13 @@ pub fn (mut i RuneSkipIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i RuneSkipIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64SkipIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -4880,6 +5251,13 @@ pub fn (mut i F64SkipIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i F64SkipIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64SkipIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5045,6 +5423,13 @@ pub fn (mut i BoolEveryIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i BoolEveryIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringEveryIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -5118,6 +5503,13 @@ pub fn (mut i StringEveryIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i StringEveryIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5199,6 +5591,13 @@ pub fn (mut i IntEveryIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i IntEveryIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteEveryIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -5272,6 +5671,13 @@ pub fn (mut i ByteEveryIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i ByteEveryIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteEveryIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5353,6 +5759,13 @@ pub fn (mut i RuneEveryIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i RuneEveryIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64EveryIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -5426,6 +5839,13 @@ pub fn (mut i F64EveryIterator) every(n int) &F64EveryIterator {
 
 pub fn (mut i F64EveryIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64EveryIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5627,6 +6047,13 @@ pub fn (mut i BoolRevIterator) rev() &BoolRevIterator {
 	}
 }
 
+pub fn (mut i BoolRevIterator) windows(n int) &BoolSingleArrayBoolWindowsIterator {
+	return &BoolSingleArrayBoolWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringRevIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -5700,6 +6127,13 @@ pub fn (mut i StringRevIterator) every(n int) &StringEveryIterator {
 
 pub fn (mut i StringRevIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) windows(n int) &StringSingleArrayStringWindowsIterator {
+	return &StringSingleArrayStringWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5781,6 +6215,13 @@ pub fn (mut i IntRevIterator) rev() &IntRevIterator {
 	}
 }
 
+pub fn (mut i IntRevIterator) windows(n int) &IntSingleArrayIntWindowsIterator {
+	return &IntSingleArrayIntWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteRevIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -5854,6 +6295,13 @@ pub fn (mut i ByteRevIterator) every(n int) &ByteEveryIterator {
 
 pub fn (mut i ByteRevIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) windows(n int) &ByteSingleArrayByteWindowsIterator {
+	return &ByteSingleArrayByteWindowsIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5935,6 +6383,13 @@ pub fn (mut i RuneRevIterator) rev() &RuneRevIterator {
 	}
 }
 
+pub fn (mut i RuneRevIterator) windows(n int) &RuneSingleArrayRuneWindowsIterator {
+	return &RuneSingleArrayRuneWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64RevIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -6010,4 +6465,113 @@ pub fn (mut i F64RevIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
 		iterator: i
 	}
+}
+
+pub fn (mut i F64RevIterator) windows(n int) &F64SingleArrayF64WindowsIterator {
+	return &F64SingleArrayF64WindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub struct BoolSingleArrayBoolWindowsIterator {
+	n int
+mut:
+	iterator BoolIterator
+	windows  []bool
+}
+
+pub fn (mut i BoolSingleArrayBoolWindowsIterator) next() ?[]bool {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
+}
+
+pub struct StringSingleArrayStringWindowsIterator {
+	n int
+mut:
+	iterator StringIterator
+	windows  []string
+}
+
+pub fn (mut i StringSingleArrayStringWindowsIterator) next() ?[]string {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
+}
+
+pub struct IntSingleArrayIntWindowsIterator {
+	n int
+mut:
+	iterator IntIterator
+	windows  []int
+}
+
+pub fn (mut i IntSingleArrayIntWindowsIterator) next() ?[]int {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
+}
+
+pub struct ByteSingleArrayByteWindowsIterator {
+	n int
+mut:
+	iterator ByteIterator
+	windows  []byte
+}
+
+pub fn (mut i ByteSingleArrayByteWindowsIterator) next() ?[]byte {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
+}
+
+pub struct RuneSingleArrayRuneWindowsIterator {
+	n int
+mut:
+	iterator RuneIterator
+	windows  []rune
+}
+
+pub fn (mut i RuneSingleArrayRuneWindowsIterator) next() ?[]rune {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
+}
+
+pub struct F64SingleArrayF64WindowsIterator {
+	n int
+mut:
+	iterator F64Iterator
+	windows  []f64
+}
+
+pub fn (mut i F64SingleArrayF64WindowsIterator) next() ?[]f64 {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
 }

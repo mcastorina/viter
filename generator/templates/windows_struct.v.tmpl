@@ -1,0 +1,16 @@
+pub struct IterOut {
+	n int
+mut:
+	iterator IterIn
+	windows TypeOut
+}
+
+pub fn (mut i IterOut) next() ?TypeOut {
+	for true {
+		i.windows << i.iterator.next() ?
+		if i.windows.len >= i.n {
+			break
+		}
+	}
+	return i.windows[i.windows.len - i.n..].clone()
+}
