@@ -75,6 +75,13 @@ pub fn (mut i StringArrayIterator) collect() []string {
 	return arr
 }
 
+pub fn (mut i StringArrayIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct IntArrayIterator {
 	data []int
 mut:
@@ -136,6 +143,13 @@ pub fn (mut i IntArrayIterator) collect() []int {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i IntArrayIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct BoolArrayIterator {
@@ -201,6 +215,13 @@ pub fn (mut i BoolArrayIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolArrayIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct StringFilterIterator {
 	filter_fn fn (string) bool
 mut:
@@ -258,6 +279,13 @@ pub fn (mut i StringFilterIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringFilterIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct IntFilterIterator {
@@ -319,6 +347,13 @@ pub fn (mut i IntFilterIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntFilterIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct BoolFilterIterator {
 	filter_fn fn (bool) bool
 mut:
@@ -378,6 +413,13 @@ pub fn (mut i BoolFilterIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolFilterIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct StringStringMapIterator {
 	map_fn fn (string) string
 mut:
@@ -430,6 +472,13 @@ pub fn (mut i StringStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringStringMapIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct StringIntMapIterator {
@@ -486,6 +535,13 @@ pub fn (mut i StringIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i StringIntMapIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct StringBoolMapIterator {
 	map_fn fn (string) bool
 mut:
@@ -538,6 +594,13 @@ pub fn (mut i StringBoolMapIterator) collect() []bool {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringBoolMapIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct IntStringMapIterator {
@@ -594,6 +657,13 @@ pub fn (mut i IntStringMapIterator) collect() []string {
 	return arr
 }
 
+pub fn (mut i IntStringMapIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct IntIntMapIterator {
 	map_fn fn (int) int
 mut:
@@ -646,6 +716,13 @@ pub fn (mut i IntIntMapIterator) collect() []int {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i IntIntMapIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct IntBoolMapIterator {
@@ -702,6 +779,13 @@ pub fn (mut i IntBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i IntBoolMapIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct BoolStringMapIterator {
 	map_fn fn (bool) string
 mut:
@@ -754,6 +838,13 @@ pub fn (mut i BoolStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i BoolStringMapIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct BoolIntMapIterator {
@@ -810,6 +901,13 @@ pub fn (mut i BoolIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i BoolIntMapIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct BoolBoolMapIterator {
 	map_fn fn (bool) bool
 mut:
@@ -862,6 +960,13 @@ pub fn (mut i BoolBoolMapIterator) collect() []bool {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i BoolBoolMapIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
 }
 
 pub struct StringSkipIterator {
@@ -922,6 +1027,13 @@ pub fn (mut i StringSkipIterator) collect() []string {
 	return arr
 }
 
+pub fn (mut i StringSkipIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct IntSkipIterator {
 	n int
 mut:
@@ -980,6 +1092,13 @@ pub fn (mut i IntSkipIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntSkipIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub struct BoolSkipIterator {
 	n int
 mut:
@@ -1036,4 +1155,203 @@ pub fn (mut i BoolSkipIterator) collect() []bool {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i BoolSkipIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub struct StringEveryIterator {
+	n int
+mut:
+	iterator StringIterator
+}
+
+pub fn (mut i StringEveryIterator) next() ?string {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub fn (mut i StringEveryIterator) filter(filter_fn fn (string) bool) StringFilterIterator {
+	return StringFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) map_string(map_fn fn (string) string) StringStringMapIterator {
+	return StringStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) map_int(map_fn fn (string) int) StringIntMapIterator {
+	return StringIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) map_bool(map_fn fn (string) bool) StringBoolMapIterator {
+	return StringBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) skip(n int) StringSkipIterator {
+	return StringSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) collect() []string {
+	mut arr := []string{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i StringEveryIterator) every(n int) StringEveryIterator {
+	return StringEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub struct IntEveryIterator {
+	n int
+mut:
+	iterator IntIterator
+}
+
+pub fn (mut i IntEveryIterator) next() ?int {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub fn (mut i IntEveryIterator) filter(filter_fn fn (int) bool) IntFilterIterator {
+	return IntFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntEveryIterator) map_string(map_fn fn (int) string) IntStringMapIterator {
+	return IntStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntEveryIterator) map_int(map_fn fn (int) int) IntIntMapIterator {
+	return IntIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntEveryIterator) map_bool(map_fn fn (int) bool) IntBoolMapIterator {
+	return IntBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntEveryIterator) skip(n int) IntSkipIterator {
+	return IntSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntEveryIterator) collect() []int {
+	mut arr := []int{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i IntEveryIterator) every(n int) IntEveryIterator {
+	return IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub struct BoolEveryIterator {
+	n int
+mut:
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolEveryIterator) next() ?bool {
+	ret := i.iterator.next() ?
+	for _ in 1 .. i.n {
+		i.iterator.next() or { break }
+	}
+	return ret
+}
+
+pub fn (mut i BoolEveryIterator) filter(filter_fn fn (bool) bool) BoolFilterIterator {
+	return BoolFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolEveryIterator) map_string(map_fn fn (bool) string) BoolStringMapIterator {
+	return BoolStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolEveryIterator) map_int(map_fn fn (bool) int) BoolIntMapIterator {
+	return BoolIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolEveryIterator) map_bool(map_fn fn (bool) bool) BoolBoolMapIterator {
+	return BoolBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolEveryIterator) skip(n int) BoolSkipIterator {
+	return BoolSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolEveryIterator) collect() []bool {
+	mut arr := []bool{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i BoolEveryIterator) every(n int) BoolEveryIterator {
+	return BoolEveryIterator{
+		n: n
+		iterator: i
+	}
 }

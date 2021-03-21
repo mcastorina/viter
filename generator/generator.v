@@ -56,7 +56,7 @@ fn gen_structs(iters []string, types []string) []StructInfo {
 }
 
 fn main() {
-	iters := ['array', 'filter', 'map', 'skip', 'collect']
+	iters := ['array', 'filter', 'map', 'skip', 'collect', 'every']
 	types := ['string', 'int', 'bool']
 
 	println('module viter\n')
