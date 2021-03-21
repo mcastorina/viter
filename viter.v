@@ -115,6 +115,12 @@ pub fn (mut i BoolArrayIterator) every(n int) &BoolEveryIterator {
 	}
 }
 
+pub fn (mut i BoolArrayIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
+		iterator: i
+	}
+}
+
 pub struct StringArrayIterator {
 	data []string
 mut:
@@ -202,6 +208,12 @@ pub fn (mut i StringArrayIterator) collect() []string {
 pub fn (mut i StringArrayIterator) every(n int) &StringEveryIterator {
 	return &StringEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringArrayIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
 		iterator: i
 	}
 }
@@ -297,6 +309,12 @@ pub fn (mut i IntArrayIterator) every(n int) &IntEveryIterator {
 	}
 }
 
+pub fn (mut i IntArrayIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
+		iterator: i
+	}
+}
+
 pub struct ByteArrayIterator {
 	data []byte
 mut:
@@ -384,6 +402,12 @@ pub fn (mut i ByteArrayIterator) collect() []byte {
 pub fn (mut i ByteArrayIterator) every(n int) &ByteEveryIterator {
 	return &ByteEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteArrayIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
 		iterator: i
 	}
 }
@@ -479,6 +503,12 @@ pub fn (mut i RuneArrayIterator) every(n int) &RuneEveryIterator {
 	}
 }
 
+pub fn (mut i RuneArrayIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64ArrayIterator {
 	data []f64
 mut:
@@ -570,6 +600,12 @@ pub fn (mut i F64ArrayIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i F64ArrayIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct BoolFilterIterator {
 	filter_fn fn (bool) bool
 mut:
@@ -653,6 +689,12 @@ pub fn (mut i BoolFilterIterator) collect() []bool {
 pub fn (mut i BoolFilterIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolFilterIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -744,6 +786,12 @@ pub fn (mut i StringFilterIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i StringFilterIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct IntFilterIterator {
 	filter_fn fn (int) bool
 mut:
@@ -827,6 +875,12 @@ pub fn (mut i IntFilterIterator) collect() []int {
 pub fn (mut i IntFilterIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntFilterIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -918,6 +972,12 @@ pub fn (mut i ByteFilterIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i ByteFilterIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct RuneFilterIterator {
 	filter_fn fn (rune) bool
 mut:
@@ -1001,6 +1061,12 @@ pub fn (mut i RuneFilterIterator) collect() []rune {
 pub fn (mut i RuneFilterIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneFilterIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
 		iterator: i
 	}
 }
@@ -1092,6 +1158,12 @@ pub fn (mut i F64FilterIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i F64FilterIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct BoolBoolMapIterator {
 	map_fn fn (bool) bool
 mut:
@@ -1170,6 +1242,12 @@ pub fn (mut i BoolBoolMapIterator) collect() []bool {
 pub fn (mut i BoolBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolBoolMapIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -1256,6 +1334,12 @@ pub fn (mut i BoolStringMapIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i BoolStringMapIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct BoolIntMapIterator {
 	map_fn fn (bool) int
 mut:
@@ -1334,6 +1418,12 @@ pub fn (mut i BoolIntMapIterator) collect() []int {
 pub fn (mut i BoolIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolIntMapIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -1420,6 +1510,12 @@ pub fn (mut i BoolByteMapIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i BoolByteMapIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct BoolRuneMapIterator {
 	map_fn fn (bool) rune
 mut:
@@ -1498,6 +1594,12 @@ pub fn (mut i BoolRuneMapIterator) collect() []rune {
 pub fn (mut i BoolRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRuneMapIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
 		iterator: i
 	}
 }
@@ -1584,6 +1686,12 @@ pub fn (mut i BoolF64MapIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i BoolF64MapIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct StringBoolMapIterator {
 	map_fn fn (string) bool
 mut:
@@ -1662,6 +1770,12 @@ pub fn (mut i StringBoolMapIterator) collect() []bool {
 pub fn (mut i StringBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringBoolMapIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -1748,6 +1862,12 @@ pub fn (mut i StringStringMapIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i StringStringMapIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct StringIntMapIterator {
 	map_fn fn (string) int
 mut:
@@ -1826,6 +1946,12 @@ pub fn (mut i StringIntMapIterator) collect() []int {
 pub fn (mut i StringIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringIntMapIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -1912,6 +2038,12 @@ pub fn (mut i StringByteMapIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i StringByteMapIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct StringRuneMapIterator {
 	map_fn fn (string) rune
 mut:
@@ -1990,6 +2122,12 @@ pub fn (mut i StringRuneMapIterator) collect() []rune {
 pub fn (mut i StringRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRuneMapIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
 		iterator: i
 	}
 }
@@ -2076,6 +2214,12 @@ pub fn (mut i StringF64MapIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i StringF64MapIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct IntBoolMapIterator {
 	map_fn fn (int) bool
 mut:
@@ -2154,6 +2298,12 @@ pub fn (mut i IntBoolMapIterator) collect() []bool {
 pub fn (mut i IntBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntBoolMapIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -2240,6 +2390,12 @@ pub fn (mut i IntStringMapIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i IntStringMapIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct IntIntMapIterator {
 	map_fn fn (int) int
 mut:
@@ -2318,6 +2474,12 @@ pub fn (mut i IntIntMapIterator) collect() []int {
 pub fn (mut i IntIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntIntMapIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -2404,6 +2566,12 @@ pub fn (mut i IntByteMapIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i IntByteMapIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct IntRuneMapIterator {
 	map_fn fn (int) rune
 mut:
@@ -2482,6 +2650,12 @@ pub fn (mut i IntRuneMapIterator) collect() []rune {
 pub fn (mut i IntRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRuneMapIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
 		iterator: i
 	}
 }
@@ -2568,6 +2742,12 @@ pub fn (mut i IntF64MapIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i IntF64MapIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct ByteBoolMapIterator {
 	map_fn fn (byte) bool
 mut:
@@ -2646,6 +2826,12 @@ pub fn (mut i ByteBoolMapIterator) collect() []bool {
 pub fn (mut i ByteBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteBoolMapIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -2732,6 +2918,12 @@ pub fn (mut i ByteStringMapIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i ByteStringMapIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct ByteIntMapIterator {
 	map_fn fn (byte) int
 mut:
@@ -2810,6 +3002,12 @@ pub fn (mut i ByteIntMapIterator) collect() []int {
 pub fn (mut i ByteIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteIntMapIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -2896,6 +3094,12 @@ pub fn (mut i ByteByteMapIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i ByteByteMapIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct ByteRuneMapIterator {
 	map_fn fn (byte) rune
 mut:
@@ -2974,6 +3178,12 @@ pub fn (mut i ByteRuneMapIterator) collect() []rune {
 pub fn (mut i ByteRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRuneMapIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
 		iterator: i
 	}
 }
@@ -3060,6 +3270,12 @@ pub fn (mut i ByteF64MapIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i ByteF64MapIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct RuneBoolMapIterator {
 	map_fn fn (rune) bool
 mut:
@@ -3138,6 +3354,12 @@ pub fn (mut i RuneBoolMapIterator) collect() []bool {
 pub fn (mut i RuneBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneBoolMapIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -3224,6 +3446,12 @@ pub fn (mut i RuneStringMapIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i RuneStringMapIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct RuneIntMapIterator {
 	map_fn fn (rune) int
 mut:
@@ -3302,6 +3530,12 @@ pub fn (mut i RuneIntMapIterator) collect() []int {
 pub fn (mut i RuneIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneIntMapIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -3388,6 +3622,12 @@ pub fn (mut i RuneByteMapIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i RuneByteMapIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct RuneRuneMapIterator {
 	map_fn fn (rune) rune
 mut:
@@ -3466,6 +3706,12 @@ pub fn (mut i RuneRuneMapIterator) collect() []rune {
 pub fn (mut i RuneRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRuneMapIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
 		iterator: i
 	}
 }
@@ -3552,6 +3798,12 @@ pub fn (mut i RuneF64MapIterator) every(n int) &F64EveryIterator {
 	}
 }
 
+pub fn (mut i RuneF64MapIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64BoolMapIterator {
 	map_fn fn (f64) bool
 mut:
@@ -3630,6 +3882,12 @@ pub fn (mut i F64BoolMapIterator) collect() []bool {
 pub fn (mut i F64BoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64BoolMapIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
 		iterator: i
 	}
 }
@@ -3716,6 +3974,12 @@ pub fn (mut i F64StringMapIterator) every(n int) &StringEveryIterator {
 	}
 }
 
+pub fn (mut i F64StringMapIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64IntMapIterator {
 	map_fn fn (f64) int
 mut:
@@ -3794,6 +4058,12 @@ pub fn (mut i F64IntMapIterator) collect() []int {
 pub fn (mut i F64IntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64IntMapIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
 		iterator: i
 	}
 }
@@ -3880,6 +4150,12 @@ pub fn (mut i F64ByteMapIterator) every(n int) &ByteEveryIterator {
 	}
 }
 
+pub fn (mut i F64ByteMapIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64RuneMapIterator {
 	map_fn fn (f64) rune
 mut:
@@ -3962,6 +4238,12 @@ pub fn (mut i F64RuneMapIterator) every(n int) &RuneEveryIterator {
 	}
 }
 
+pub fn (mut i F64RuneMapIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64F64MapIterator {
 	map_fn fn (f64) f64
 mut:
@@ -4040,6 +4322,12 @@ pub fn (mut i F64F64MapIterator) collect() []f64 {
 pub fn (mut i F64F64MapIterator) every(n int) &F64EveryIterator {
 	return &F64EveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64F64MapIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
 		iterator: i
 	}
 }
@@ -4130,6 +4418,12 @@ pub fn (mut i BoolSkipIterator) every(n int) &BoolEveryIterator {
 	}
 }
 
+pub fn (mut i BoolSkipIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
+		iterator: i
+	}
+}
+
 pub struct StringSkipIterator {
 	n int
 mut:
@@ -4212,6 +4506,12 @@ pub fn (mut i StringSkipIterator) collect() []string {
 pub fn (mut i StringSkipIterator) every(n int) &StringEveryIterator {
 	return &StringEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringSkipIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
 		iterator: i
 	}
 }
@@ -4302,6 +4602,12 @@ pub fn (mut i IntSkipIterator) every(n int) &IntEveryIterator {
 	}
 }
 
+pub fn (mut i IntSkipIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
+		iterator: i
+	}
+}
+
 pub struct ByteSkipIterator {
 	n int
 mut:
@@ -4384,6 +4690,12 @@ pub fn (mut i ByteSkipIterator) collect() []byte {
 pub fn (mut i ByteSkipIterator) every(n int) &ByteEveryIterator {
 	return &ByteEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteSkipIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
 		iterator: i
 	}
 }
@@ -4474,6 +4786,12 @@ pub fn (mut i RuneSkipIterator) every(n int) &RuneEveryIterator {
 	}
 }
 
+pub fn (mut i RuneSkipIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64SkipIterator {
 	n int
 mut:
@@ -4556,6 +4874,12 @@ pub fn (mut i F64SkipIterator) collect() []f64 {
 pub fn (mut i F64SkipIterator) every(n int) &F64EveryIterator {
 	return &F64EveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64SkipIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
 		iterator: i
 	}
 }
@@ -4645,6 +4969,12 @@ pub fn (mut i BoolEveryIterator) every(n int) &BoolEveryIterator {
 	}
 }
 
+pub fn (mut i BoolEveryIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
+		iterator: i
+	}
+}
+
 pub struct StringEveryIterator {
 	n int
 mut:
@@ -4726,6 +5056,12 @@ pub fn (mut i StringEveryIterator) collect() []string {
 pub fn (mut i StringEveryIterator) every(n int) &StringEveryIterator {
 	return &StringEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
 		iterator: i
 	}
 }
@@ -4815,6 +5151,12 @@ pub fn (mut i IntEveryIterator) every(n int) &IntEveryIterator {
 	}
 }
 
+pub fn (mut i IntEveryIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
+		iterator: i
+	}
+}
+
 pub struct ByteEveryIterator {
 	n int
 mut:
@@ -4896,6 +5238,12 @@ pub fn (mut i ByteEveryIterator) collect() []byte {
 pub fn (mut i ByteEveryIterator) every(n int) &ByteEveryIterator {
 	return &ByteEveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteEveryIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
 		iterator: i
 	}
 }
@@ -4985,6 +5333,12 @@ pub fn (mut i RuneEveryIterator) every(n int) &RuneEveryIterator {
 	}
 }
 
+pub fn (mut i RuneEveryIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
+		iterator: i
+	}
+}
+
 pub struct F64EveryIterator {
 	n int
 mut:
@@ -5066,6 +5420,594 @@ pub fn (mut i F64EveryIterator) collect() []f64 {
 pub fn (mut i F64EveryIterator) every(n int) &F64EveryIterator {
 	return &F64EveryIterator{
 		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64EveryIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub struct BoolRevIterator {
+mut:
+	buffer   []bool
+	index    int
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolRevIterator) next() ?bool {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub fn (mut i BoolRevIterator) filter(filter_fn fn (bool) bool) &BoolFilterIterator {
+	return &BoolFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) map_bool(map_fn fn (bool) bool) &BoolBoolMapIterator {
+	return &BoolBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) map_string(map_fn fn (bool) string) &BoolStringMapIterator {
+	return &BoolStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) map_int(map_fn fn (bool) int) &BoolIntMapIterator {
+	return &BoolIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) map_byte(map_fn fn (bool) byte) &BoolByteMapIterator {
+	return &BoolByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) map_rune(map_fn fn (bool) rune) &BoolRuneMapIterator {
+	return &BoolRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) map_f64(map_fn fn (bool) f64) &BoolF64MapIterator {
+	return &BoolF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) skip(n int) &BoolSkipIterator {
+	return &BoolSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) collect() []bool {
+	mut arr := []bool{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i BoolRevIterator) every(n int) &BoolEveryIterator {
+	return &BoolEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolRevIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
+		iterator: i
+	}
+}
+
+pub struct StringRevIterator {
+mut:
+	buffer   []string
+	index    int
+	iterator StringIterator
+}
+
+pub fn (mut i StringRevIterator) next() ?string {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub fn (mut i StringRevIterator) filter(filter_fn fn (string) bool) &StringFilterIterator {
+	return &StringFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) map_bool(map_fn fn (string) bool) &StringBoolMapIterator {
+	return &StringBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) map_string(map_fn fn (string) string) &StringStringMapIterator {
+	return &StringStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) map_int(map_fn fn (string) int) &StringIntMapIterator {
+	return &StringIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) map_byte(map_fn fn (string) byte) &StringByteMapIterator {
+	return &StringByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) map_rune(map_fn fn (string) rune) &StringRuneMapIterator {
+	return &StringRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) map_f64(map_fn fn (string) f64) &StringF64MapIterator {
+	return &StringF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) skip(n int) &StringSkipIterator {
+	return &StringSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) collect() []string {
+	mut arr := []string{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i StringRevIterator) every(n int) &StringEveryIterator {
+	return &StringEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub struct IntRevIterator {
+mut:
+	buffer   []int
+	index    int
+	iterator IntIterator
+}
+
+pub fn (mut i IntRevIterator) next() ?int {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub fn (mut i IntRevIterator) filter(filter_fn fn (int) bool) &IntFilterIterator {
+	return &IntFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) map_bool(map_fn fn (int) bool) &IntBoolMapIterator {
+	return &IntBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) map_string(map_fn fn (int) string) &IntStringMapIterator {
+	return &IntStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) map_int(map_fn fn (int) int) &IntIntMapIterator {
+	return &IntIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) map_byte(map_fn fn (int) byte) &IntByteMapIterator {
+	return &IntByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) map_rune(map_fn fn (int) rune) &IntRuneMapIterator {
+	return &IntRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) map_f64(map_fn fn (int) f64) &IntF64MapIterator {
+	return &IntF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) skip(n int) &IntSkipIterator {
+	return &IntSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) collect() []int {
+	mut arr := []int{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i IntRevIterator) every(n int) &IntEveryIterator {
+	return &IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntRevIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
+		iterator: i
+	}
+}
+
+pub struct ByteRevIterator {
+mut:
+	buffer   []byte
+	index    int
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteRevIterator) next() ?byte {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub fn (mut i ByteRevIterator) filter(filter_fn fn (byte) bool) &ByteFilterIterator {
+	return &ByteFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) map_bool(map_fn fn (byte) bool) &ByteBoolMapIterator {
+	return &ByteBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) map_string(map_fn fn (byte) string) &ByteStringMapIterator {
+	return &ByteStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) map_int(map_fn fn (byte) int) &ByteIntMapIterator {
+	return &ByteIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) map_byte(map_fn fn (byte) byte) &ByteByteMapIterator {
+	return &ByteByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) map_rune(map_fn fn (byte) rune) &ByteRuneMapIterator {
+	return &ByteRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) map_f64(map_fn fn (byte) f64) &ByteF64MapIterator {
+	return &ByteF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) skip(n int) &ByteSkipIterator {
+	return &ByteSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) collect() []byte {
+	mut arr := []byte{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i ByteRevIterator) every(n int) &ByteEveryIterator {
+	return &ByteEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub struct RuneRevIterator {
+mut:
+	buffer   []rune
+	index    int
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneRevIterator) next() ?rune {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub fn (mut i RuneRevIterator) filter(filter_fn fn (rune) bool) &RuneFilterIterator {
+	return &RuneFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) map_bool(map_fn fn (rune) bool) &RuneBoolMapIterator {
+	return &RuneBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) map_string(map_fn fn (rune) string) &RuneStringMapIterator {
+	return &RuneStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) map_int(map_fn fn (rune) int) &RuneIntMapIterator {
+	return &RuneIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) map_byte(map_fn fn (rune) byte) &RuneByteMapIterator {
+	return &RuneByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) map_rune(map_fn fn (rune) rune) &RuneRuneMapIterator {
+	return &RuneRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) map_f64(map_fn fn (rune) f64) &RuneF64MapIterator {
+	return &RuneF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) skip(n int) &RuneSkipIterator {
+	return &RuneSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) collect() []rune {
+	mut arr := []rune{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i RuneRevIterator) every(n int) &RuneEveryIterator {
+	return &RuneEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneRevIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
+		iterator: i
+	}
+}
+
+pub struct F64RevIterator {
+mut:
+	buffer   []f64
+	index    int
+	iterator F64Iterator
+}
+
+pub fn (mut i F64RevIterator) next() ?f64 {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
+
+pub fn (mut i F64RevIterator) filter(filter_fn fn (f64) bool) &F64FilterIterator {
+	return &F64FilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) map_bool(map_fn fn (f64) bool) &F64BoolMapIterator {
+	return &F64BoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) map_string(map_fn fn (f64) string) &F64StringMapIterator {
+	return &F64StringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) map_int(map_fn fn (f64) int) &F64IntMapIterator {
+	return &F64IntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) map_byte(map_fn fn (f64) byte) &F64ByteMapIterator {
+	return &F64ByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) map_rune(map_fn fn (f64) rune) &F64RuneMapIterator {
+	return &F64RuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) map_f64(map_fn fn (f64) f64) &F64F64MapIterator {
+	return &F64F64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) skip(n int) &F64SkipIterator {
+	return &F64SkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) collect() []f64 {
+	mut arr := []f64{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i F64RevIterator) every(n int) &F64EveryIterator {
+	return &F64EveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
 		iterator: i
 	}
 }

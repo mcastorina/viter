@@ -44,10 +44,11 @@ The currently implemented methods are:
 * `map`
 * `skip`
 * `every`
+* `rev`
 * `collect`
 
 ## Speed
-This module has ~5k generated lines of code, which means compilation
+This module has ~6k generated lines of code, which means compilation
 may be noticeably slower but still less than 1s in debug mode.
 
 This module uses lazy iterator evaluation, meaning there are no

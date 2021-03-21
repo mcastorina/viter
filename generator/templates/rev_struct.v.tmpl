@@ -1,0 +1,19 @@
+pub struct IterOut {
+mut:
+	buffer []TypeIn
+	index int
+	iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	for true {
+		item := i.iterator.next() or { break }
+		i.buffer << item
+		i.index++
+	}
+	if i.index == 0 {
+		return none
+	}
+	i.index--
+	return i.buffer[i.index]
+}
