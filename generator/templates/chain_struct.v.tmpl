@@ -1,0 +1,11 @@
+pub struct IterOut {
+mut:
+	iterator IterIn
+	next_iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeOut {
+	return i.iterator.next() or {
+		i.next_iterator.next() or { return none }
+	}
+}

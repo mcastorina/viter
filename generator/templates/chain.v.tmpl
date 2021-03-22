@@ -1,0 +1,12 @@
+pub fn (mut i IterIn) chain(it InterfaceIn) &IterOut {
+	return &IterOut{
+		iterator: i
+		next_iterator: it
+	}
+}
+pub fn (mut i IterIn) chain_arr(arr []TypeIn) &IterOut {
+	return &IterOut{
+		iterator: i
+		next_iterator: iter_MethodTypeIn(arr)
+	}
+}

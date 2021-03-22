@@ -20,6 +20,7 @@ fn config() (map[string]IterConfig, []string) {
 		'tap':        single
 		'take':       single
 		'take_while': single
+		'chain':      single
 	}, types
 }
 

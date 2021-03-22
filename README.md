@@ -42,14 +42,13 @@ The currently implemented methods are:
 
 * `filter`
 * `map`
-* `skip`
-* `skip_while`
+* `skip` `skip_while`
 * `every`
 * `windows`
 * `chunks`
 * `rev`
-* `take`
-* `take_while`
+* `take` `take_while`
+* `chain` `chain_arr`
 * `collect`
 * `tap`
 

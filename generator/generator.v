@@ -35,8 +35,7 @@ fn (c IterConfig) gen_structs(iter string) ?string {
 	mut structs := []string{cap: c.types.len}
 	for info in c.types {
 		s := template.replace_each(['MethodTypeIn', fn_name(info.type_in), 'MethodTypeOut',
-			fn_name(info.type_out),
-		])
+			fn_name(info.type_out), 'InterfaceIn', name(info.type_in) + 'Iterator'])
 		structs << s.replace_each(['TypeIn', info.type_in, 'TypeOut', info.type_out, 'IterOut',
 			c.iter_out(iter, info), 'IterIn', info.iter_in()])
 	}
@@ -53,8 +52,7 @@ fn (c IterConfig) gen_methods(conf map[string]IterConfig, iter string) string {
 					continue
 				}
 				s := template.replace_each(['MethodTypeIn', fn_name(info.type_in), 'MethodTypeOut',
-					fn_name(info.type_out),
-				])
+					fn_name(info.type_out), 'InterfaceIn', name(info.type_in) + 'Iterator'])
 				methods << s.replace_each(['TypeIn', info.type_in, 'TypeOut', info.type_out, 'IterOut',
 					cin.iter_out(it, info), 'IterIn', c.iter_out(iter, iter_info)])
 			}
