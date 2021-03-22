@@ -1,28 +1,31 @@
 module main
 
+import arrays
+
 // Generator configuration
 fn config() (map[string]IterConfig, []string) {
-	types := ['bool', 'string', 'int', 'byte', 'rune', 'f64', '[]bool', '[]string', '[]int', '[]byte',
-		'[]rune', '[]f64']
+	basic_types := ['bool', 'string', 'int', 'byte', 'rune', 'f64']
+	arr_types := basic_types.map('[]$it')
+	all_types := arrays.merge(basic_types, arr_types)
 
-	single := passthrough(types)
+	single := passthrough(all_types)
 	return map{
 		'array':      single
 		'filter':     single
-		'map':        permute(types)
+		'map':        permute(all_types)
 		'skip':       single
 		'skip_while': single
 		'collect':    single
-		'fold':       passthrough(types.filter(!it.starts_with('[]')))
+		'fold':       passthrough(basic_types)
 		'every':      single
 		'rev':        single
-		'windows':    to_array(types)
-		'chunks':     to_array(types)
+		'windows':    to_array(basic_types)
+		'chunks':     to_array(basic_types)
 		'tap':        single
 		'take':       single
 		'take_while': single
 		'chain':      single
-	}, types
+	}, all_types
 }
 
 enum IterKind {
