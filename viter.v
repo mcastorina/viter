@@ -393,6 +393,13 @@ pub fn (mut i BoolArrayIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolArrayIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringArrayIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -529,6 +536,13 @@ pub fn (mut i StringArrayIterator) chunks(n int) &StringString1DArrayChunksItera
 pub fn (mut i StringArrayIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringArrayIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -673,6 +687,13 @@ pub fn (mut i IntArrayIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntArrayIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteArrayIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -809,6 +830,13 @@ pub fn (mut i ByteArrayIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i ByteArrayIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteArrayIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -953,6 +981,13 @@ pub fn (mut i RuneArrayIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneArrayIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64ArrayIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -1089,6 +1124,13 @@ pub fn (mut i F64ArrayIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64ArrayIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64ArrayIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1233,6 +1275,13 @@ pub fn (mut i Bool1DArrayArrayIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTap
 	}
 }
 
+pub fn (mut i Bool1DArrayArrayIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayArrayIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -1369,6 +1418,13 @@ pub fn (mut i String1DArrayArrayIterator) chunks(n int) &String1DArrayString2DAr
 pub fn (mut i String1DArrayArrayIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayArrayIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1513,6 +1569,13 @@ pub fn (mut i Int1DArrayArrayIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIte
 	}
 }
 
+pub fn (mut i Int1DArrayArrayIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayArrayIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -1649,6 +1712,13 @@ pub fn (mut i Byte1DArrayArrayIterator) chunks(n int) &Byte1DArrayByte2DArrayChu
 pub fn (mut i Byte1DArrayArrayIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayArrayIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -1793,6 +1863,13 @@ pub fn (mut i Rune1DArrayArrayIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTap
 	}
 }
 
+pub fn (mut i Rune1DArrayArrayIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayArrayIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -1929,6 +2006,13 @@ pub fn (mut i F641DArrayArrayIterator) chunks(n int) &F641DArrayF642DArrayChunks
 pub fn (mut i F641DArrayArrayIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayArrayIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2265,6 +2349,13 @@ pub fn (mut i BoolFilterIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolFilterIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringFilterIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -2401,6 +2492,13 @@ pub fn (mut i StringFilterIterator) chunks(n int) &StringString1DArrayChunksIter
 pub fn (mut i StringFilterIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringFilterIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2545,6 +2643,13 @@ pub fn (mut i IntFilterIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntFilterIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteFilterIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -2681,6 +2786,13 @@ pub fn (mut i ByteFilterIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i ByteFilterIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteFilterIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -2825,6 +2937,13 @@ pub fn (mut i RuneFilterIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneFilterIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64FilterIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -2961,6 +3080,13 @@ pub fn (mut i F64FilterIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64FilterIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64FilterIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3105,6 +3231,13 @@ pub fn (mut i Bool1DArrayFilterIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTa
 	}
 }
 
+pub fn (mut i Bool1DArrayFilterIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayFilterIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -3241,6 +3374,13 @@ pub fn (mut i String1DArrayFilterIterator) chunks(n int) &String1DArrayString2DA
 pub fn (mut i String1DArrayFilterIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayFilterIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3385,6 +3525,13 @@ pub fn (mut i Int1DArrayFilterIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIt
 	}
 }
 
+pub fn (mut i Int1DArrayFilterIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayFilterIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -3521,6 +3668,13 @@ pub fn (mut i Byte1DArrayFilterIterator) chunks(n int) &Byte1DArrayByte2DArrayCh
 pub fn (mut i Byte1DArrayFilterIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayFilterIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -3665,6 +3819,13 @@ pub fn (mut i Rune1DArrayFilterIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTa
 	}
 }
 
+pub fn (mut i Rune1DArrayFilterIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayFilterIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -3801,6 +3962,13 @@ pub fn (mut i F641DArrayFilterIterator) chunks(n int) &F641DArrayF642DArrayChunk
 pub fn (mut i F641DArrayFilterIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayFilterIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5529,6 +5697,13 @@ pub fn (mut i BoolBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -5665,6 +5840,13 @@ pub fn (mut i BoolStringMapIterator) chunks(n int) &StringString1DArrayChunksIte
 pub fn (mut i BoolStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -5809,6 +5991,13 @@ pub fn (mut i BoolIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i BoolIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -5945,6 +6134,13 @@ pub fn (mut i BoolByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIterator 
 pub fn (mut i BoolByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -6089,6 +6285,13 @@ pub fn (mut i BoolRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i BoolRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -6225,6 +6428,13 @@ pub fn (mut i BoolF64MapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i BoolF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -6369,6 +6579,13 @@ pub fn (mut i BoolBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayT
 	}
 }
 
+pub fn (mut i BoolBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -6505,6 +6722,13 @@ pub fn (mut i BoolString1DArrayMapIterator) chunks(n int) &String1DArrayString2D
 pub fn (mut i BoolString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -6649,6 +6873,13 @@ pub fn (mut i BoolInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapI
 	}
 }
 
+pub fn (mut i BoolInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -6785,6 +7016,13 @@ pub fn (mut i BoolByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2DArrayC
 pub fn (mut i BoolByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -6929,6 +7167,13 @@ pub fn (mut i BoolRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayT
 	}
 }
 
+pub fn (mut i BoolRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i BoolF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -7065,6 +7310,13 @@ pub fn (mut i BoolF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArrayChun
 pub fn (mut i BoolF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -7209,6 +7461,13 @@ pub fn (mut i StringBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i StringBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -7345,6 +7604,13 @@ pub fn (mut i StringStringMapIterator) chunks(n int) &StringString1DArrayChunksI
 pub fn (mut i StringStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -7489,6 +7755,13 @@ pub fn (mut i StringIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i StringIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -7625,6 +7898,13 @@ pub fn (mut i StringByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIterato
 pub fn (mut i StringByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -7769,6 +8049,13 @@ pub fn (mut i StringRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i StringRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -7905,6 +8192,13 @@ pub fn (mut i StringF64MapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i StringF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -8049,6 +8343,13 @@ pub fn (mut i StringBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArra
 	}
 }
 
+pub fn (mut i StringBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -8185,6 +8486,13 @@ pub fn (mut i StringString1DArrayMapIterator) chunks(n int) &String1DArrayString
 pub fn (mut i StringString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -8329,6 +8637,13 @@ pub fn (mut i StringInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTa
 	}
 }
 
+pub fn (mut i StringInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -8465,6 +8780,13 @@ pub fn (mut i StringByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2DArra
 pub fn (mut i StringByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -8609,6 +8931,13 @@ pub fn (mut i StringRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArra
 	}
 }
 
+pub fn (mut i StringRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -8745,6 +9074,13 @@ pub fn (mut i StringF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArrayCh
 pub fn (mut i StringF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -8889,6 +9225,13 @@ pub fn (mut i IntBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i IntBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -9025,6 +9368,13 @@ pub fn (mut i IntStringMapIterator) chunks(n int) &StringString1DArrayChunksIter
 pub fn (mut i IntStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -9169,6 +9519,13 @@ pub fn (mut i IntIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -9305,6 +9662,13 @@ pub fn (mut i IntByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i IntByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -9449,6 +9813,13 @@ pub fn (mut i IntRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i IntRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -9585,6 +9956,13 @@ pub fn (mut i IntF64MapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i IntF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -9729,6 +10107,13 @@ pub fn (mut i IntBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTa
 	}
 }
 
+pub fn (mut i IntBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -9865,6 +10250,13 @@ pub fn (mut i IntString1DArrayMapIterator) chunks(n int) &String1DArrayString2DA
 pub fn (mut i IntString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -10009,6 +10401,13 @@ pub fn (mut i IntInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIt
 	}
 }
 
+pub fn (mut i IntInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -10145,6 +10544,13 @@ pub fn (mut i IntByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2DArrayCh
 pub fn (mut i IntByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -10289,6 +10695,13 @@ pub fn (mut i IntRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTa
 	}
 }
 
+pub fn (mut i IntRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i IntF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -10425,6 +10838,13 @@ pub fn (mut i IntF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArrayChunk
 pub fn (mut i IntF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -10569,6 +10989,13 @@ pub fn (mut i ByteBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i ByteBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -10705,6 +11132,13 @@ pub fn (mut i ByteStringMapIterator) chunks(n int) &StringString1DArrayChunksIte
 pub fn (mut i ByteStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -10849,6 +11283,13 @@ pub fn (mut i ByteIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i ByteIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -10985,6 +11426,13 @@ pub fn (mut i ByteByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIterator 
 pub fn (mut i ByteByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -11129,6 +11577,13 @@ pub fn (mut i ByteRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i ByteRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -11265,6 +11720,13 @@ pub fn (mut i ByteF64MapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i ByteF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -11409,6 +11871,13 @@ pub fn (mut i ByteBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayT
 	}
 }
 
+pub fn (mut i ByteBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -11545,6 +12014,13 @@ pub fn (mut i ByteString1DArrayMapIterator) chunks(n int) &String1DArrayString2D
 pub fn (mut i ByteString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -11689,6 +12165,13 @@ pub fn (mut i ByteInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapI
 	}
 }
 
+pub fn (mut i ByteInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -11825,6 +12308,13 @@ pub fn (mut i ByteByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2DArrayC
 pub fn (mut i ByteByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -11969,6 +12459,13 @@ pub fn (mut i ByteRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayT
 	}
 }
 
+pub fn (mut i ByteRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -12105,6 +12602,13 @@ pub fn (mut i ByteF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArrayChun
 pub fn (mut i ByteF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -12249,6 +12753,13 @@ pub fn (mut i RuneBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i RuneBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -12385,6 +12896,13 @@ pub fn (mut i RuneStringMapIterator) chunks(n int) &StringString1DArrayChunksIte
 pub fn (mut i RuneStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -12529,6 +13047,13 @@ pub fn (mut i RuneIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i RuneIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -12665,6 +13190,13 @@ pub fn (mut i RuneByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIterator 
 pub fn (mut i RuneByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -12809,6 +13341,13 @@ pub fn (mut i RuneRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -12945,6 +13484,13 @@ pub fn (mut i RuneF64MapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i RuneF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -13089,6 +13635,13 @@ pub fn (mut i RuneBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayT
 	}
 }
 
+pub fn (mut i RuneBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -13225,6 +13778,13 @@ pub fn (mut i RuneString1DArrayMapIterator) chunks(n int) &String1DArrayString2D
 pub fn (mut i RuneString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -13369,6 +13929,13 @@ pub fn (mut i RuneInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapI
 	}
 }
 
+pub fn (mut i RuneInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -13505,6 +14072,13 @@ pub fn (mut i RuneByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2DArrayC
 pub fn (mut i RuneByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -13649,6 +14223,13 @@ pub fn (mut i RuneRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayT
 	}
 }
 
+pub fn (mut i RuneRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i RuneF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -13785,6 +14366,13 @@ pub fn (mut i RuneF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArrayChun
 pub fn (mut i RuneF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -13929,6 +14517,13 @@ pub fn (mut i F64BoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i F64BoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64StringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -14065,6 +14660,13 @@ pub fn (mut i F64StringMapIterator) chunks(n int) &StringString1DArrayChunksIter
 pub fn (mut i F64StringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64StringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -14209,6 +14811,13 @@ pub fn (mut i F64IntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i F64IntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64ByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -14345,6 +14954,13 @@ pub fn (mut i F64ByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i F64ByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64ByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -14489,6 +15105,13 @@ pub fn (mut i F64RuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i F64RuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64F64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -14625,6 +15248,13 @@ pub fn (mut i F64F64MapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64F64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64F64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -14769,6 +15399,13 @@ pub fn (mut i F64Bool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTa
 	}
 }
 
+pub fn (mut i F64Bool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64String1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -14905,6 +15542,13 @@ pub fn (mut i F64String1DArrayMapIterator) chunks(n int) &String1DArrayString2DA
 pub fn (mut i F64String1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64String1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -15049,6 +15693,13 @@ pub fn (mut i F64Int1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIt
 	}
 }
 
+pub fn (mut i F64Int1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64Byte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -15185,6 +15836,13 @@ pub fn (mut i F64Byte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2DArrayCh
 pub fn (mut i F64Byte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64Byte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -15329,6 +15987,13 @@ pub fn (mut i F64Rune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTa
 	}
 }
 
+pub fn (mut i F64Rune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64F641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -15465,6 +16130,13 @@ pub fn (mut i F64F641DArrayMapIterator) chunks(n int) &F641DArrayF642DArrayChunk
 pub fn (mut i F64F641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64F641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -15609,6 +16281,13 @@ pub fn (mut i Bool1DArrayBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterato
 	}
 }
 
+pub fn (mut i Bool1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Bool1DArrayStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -15745,6 +16424,13 @@ pub fn (mut i Bool1DArrayStringMapIterator) chunks(n int) &StringString1DArrayCh
 pub fn (mut i Bool1DArrayStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -15889,6 +16575,13 @@ pub fn (mut i Bool1DArrayIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i Bool1DArrayIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Bool1DArrayByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -16025,6 +16718,13 @@ pub fn (mut i Bool1DArrayByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIt
 pub fn (mut i Bool1DArrayByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -16169,6 +16869,13 @@ pub fn (mut i Bool1DArrayRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterato
 	}
 }
 
+pub fn (mut i Bool1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Bool1DArrayF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -16305,6 +17012,13 @@ pub fn (mut i Bool1DArrayF64MapIterator) chunks(n int) &F64F641DArrayChunksItera
 pub fn (mut i Bool1DArrayF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -16449,6 +17163,13 @@ pub fn (mut i Bool1DArrayBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1
 	}
 }
 
+pub fn (mut i Bool1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Bool1DArrayString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -16585,6 +17306,13 @@ pub fn (mut i Bool1DArrayString1DArrayMapIterator) chunks(n int) &String1DArrayS
 pub fn (mut i Bool1DArrayString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -16729,6 +17457,13 @@ pub fn (mut i Bool1DArrayInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DAr
 	}
 }
 
+pub fn (mut i Bool1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Bool1DArrayByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -16865,6 +17600,13 @@ pub fn (mut i Bool1DArrayByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2
 pub fn (mut i Bool1DArrayByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -17009,6 +17751,13 @@ pub fn (mut i Bool1DArrayRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1
 	}
 }
 
+pub fn (mut i Bool1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Bool1DArrayF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -17145,6 +17894,13 @@ pub fn (mut i Bool1DArrayF641DArrayMapIterator) chunks(n int) &F641DArrayF642DAr
 pub fn (mut i Bool1DArrayF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -17289,6 +18045,13 @@ pub fn (mut i String1DArrayBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapItera
 	}
 }
 
+pub fn (mut i String1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -17425,6 +18188,13 @@ pub fn (mut i String1DArrayStringMapIterator) chunks(n int) &StringString1DArray
 pub fn (mut i String1DArrayStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -17569,6 +18339,13 @@ pub fn (mut i String1DArrayIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator
 	}
 }
 
+pub fn (mut i String1DArrayIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -17705,6 +18482,13 @@ pub fn (mut i String1DArrayByteMapIterator) chunks(n int) &ByteByte1DArrayChunks
 pub fn (mut i String1DArrayByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -17849,6 +18633,13 @@ pub fn (mut i String1DArrayRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapItera
 	}
 }
 
+pub fn (mut i String1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -17985,6 +18776,13 @@ pub fn (mut i String1DArrayF64MapIterator) chunks(n int) &F64F641DArrayChunksIte
 pub fn (mut i String1DArrayF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -18129,6 +18927,13 @@ pub fn (mut i String1DArrayBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Boo
 	}
 }
 
+pub fn (mut i String1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -18265,6 +19070,13 @@ pub fn (mut i String1DArrayString1DArrayMapIterator) chunks(n int) &String1DArra
 pub fn (mut i String1DArrayString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -18409,6 +19221,13 @@ pub fn (mut i String1DArrayInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1D
 	}
 }
 
+pub fn (mut i String1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -18545,6 +19364,13 @@ pub fn (mut i String1DArrayByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByt
 pub fn (mut i String1DArrayByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -18689,6 +19515,13 @@ pub fn (mut i String1DArrayRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Run
 	}
 }
 
+pub fn (mut i String1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -18825,6 +19658,13 @@ pub fn (mut i String1DArrayF641DArrayMapIterator) chunks(n int) &F641DArrayF642D
 pub fn (mut i String1DArrayF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -18969,6 +19809,13 @@ pub fn (mut i Int1DArrayBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator
 	}
 }
 
+pub fn (mut i Int1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Int1DArrayStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -19105,6 +19952,13 @@ pub fn (mut i Int1DArrayStringMapIterator) chunks(n int) &StringString1DArrayChu
 pub fn (mut i Int1DArrayStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -19249,6 +20103,13 @@ pub fn (mut i Int1DArrayIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i Int1DArrayIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Int1DArrayByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -19385,6 +20246,13 @@ pub fn (mut i Int1DArrayByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIte
 pub fn (mut i Int1DArrayByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -19529,6 +20397,13 @@ pub fn (mut i Int1DArrayRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator
 	}
 }
 
+pub fn (mut i Int1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Int1DArrayF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -19665,6 +20540,13 @@ pub fn (mut i Int1DArrayF64MapIterator) chunks(n int) &F64F641DArrayChunksIterat
 pub fn (mut i Int1DArrayF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -19809,6 +20691,13 @@ pub fn (mut i Int1DArrayBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1D
 	}
 }
 
+pub fn (mut i Int1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Int1DArrayString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -19945,6 +20834,13 @@ pub fn (mut i Int1DArrayString1DArrayMapIterator) chunks(n int) &String1DArraySt
 pub fn (mut i Int1DArrayString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -20089,6 +20985,13 @@ pub fn (mut i Int1DArrayInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArr
 	}
 }
 
+pub fn (mut i Int1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Int1DArrayByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -20225,6 +21128,13 @@ pub fn (mut i Int1DArrayByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2D
 pub fn (mut i Int1DArrayByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -20369,6 +21279,13 @@ pub fn (mut i Int1DArrayRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1D
 	}
 }
 
+pub fn (mut i Int1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Int1DArrayF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -20505,6 +21422,13 @@ pub fn (mut i Int1DArrayF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArr
 pub fn (mut i Int1DArrayF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -20649,6 +21573,13 @@ pub fn (mut i Byte1DArrayBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterato
 	}
 }
 
+pub fn (mut i Byte1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -20785,6 +21716,13 @@ pub fn (mut i Byte1DArrayStringMapIterator) chunks(n int) &StringString1DArrayCh
 pub fn (mut i Byte1DArrayStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -20929,6 +21867,13 @@ pub fn (mut i Byte1DArrayIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i Byte1DArrayIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -21065,6 +22010,13 @@ pub fn (mut i Byte1DArrayByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIt
 pub fn (mut i Byte1DArrayByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -21209,6 +22161,13 @@ pub fn (mut i Byte1DArrayRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterato
 	}
 }
 
+pub fn (mut i Byte1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -21345,6 +22304,13 @@ pub fn (mut i Byte1DArrayF64MapIterator) chunks(n int) &F64F641DArrayChunksItera
 pub fn (mut i Byte1DArrayF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -21489,6 +22455,13 @@ pub fn (mut i Byte1DArrayBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1
 	}
 }
 
+pub fn (mut i Byte1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -21625,6 +22598,13 @@ pub fn (mut i Byte1DArrayString1DArrayMapIterator) chunks(n int) &String1DArrayS
 pub fn (mut i Byte1DArrayString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -21769,6 +22749,13 @@ pub fn (mut i Byte1DArrayInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DAr
 	}
 }
 
+pub fn (mut i Byte1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -21905,6 +22892,13 @@ pub fn (mut i Byte1DArrayByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2
 pub fn (mut i Byte1DArrayByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -22049,6 +23043,13 @@ pub fn (mut i Byte1DArrayRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1
 	}
 }
 
+pub fn (mut i Byte1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -22185,6 +23186,13 @@ pub fn (mut i Byte1DArrayF641DArrayMapIterator) chunks(n int) &F641DArrayF642DAr
 pub fn (mut i Byte1DArrayF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -22329,6 +23337,13 @@ pub fn (mut i Rune1DArrayBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterato
 	}
 }
 
+pub fn (mut i Rune1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Rune1DArrayStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -22465,6 +23480,13 @@ pub fn (mut i Rune1DArrayStringMapIterator) chunks(n int) &StringString1DArrayCh
 pub fn (mut i Rune1DArrayStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -22609,6 +23631,13 @@ pub fn (mut i Rune1DArrayIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i Rune1DArrayIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Rune1DArrayByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -22745,6 +23774,13 @@ pub fn (mut i Rune1DArrayByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIt
 pub fn (mut i Rune1DArrayByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -22889,6 +23925,13 @@ pub fn (mut i Rune1DArrayRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterato
 	}
 }
 
+pub fn (mut i Rune1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Rune1DArrayF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -23025,6 +24068,13 @@ pub fn (mut i Rune1DArrayF64MapIterator) chunks(n int) &F64F641DArrayChunksItera
 pub fn (mut i Rune1DArrayF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -23169,6 +24219,13 @@ pub fn (mut i Rune1DArrayBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1
 	}
 }
 
+pub fn (mut i Rune1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Rune1DArrayString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -23305,6 +24362,13 @@ pub fn (mut i Rune1DArrayString1DArrayMapIterator) chunks(n int) &String1DArrayS
 pub fn (mut i Rune1DArrayString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -23449,6 +24513,13 @@ pub fn (mut i Rune1DArrayInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DAr
 	}
 }
 
+pub fn (mut i Rune1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Rune1DArrayByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -23585,6 +24656,13 @@ pub fn (mut i Rune1DArrayByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2
 pub fn (mut i Rune1DArrayByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -23729,6 +24807,13 @@ pub fn (mut i Rune1DArrayRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1
 	}
 }
 
+pub fn (mut i Rune1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Rune1DArrayF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -23865,6 +24950,13 @@ pub fn (mut i Rune1DArrayF641DArrayMapIterator) chunks(n int) &F641DArrayF642DAr
 pub fn (mut i Rune1DArrayF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -24009,6 +25101,13 @@ pub fn (mut i F641DArrayBoolMapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator
 	}
 }
 
+pub fn (mut i F641DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayStringMapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -24145,6 +25244,13 @@ pub fn (mut i F641DArrayStringMapIterator) chunks(n int) &StringString1DArrayChu
 pub fn (mut i F641DArrayStringMapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayStringMapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -24289,6 +25395,13 @@ pub fn (mut i F641DArrayIntMapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i F641DArrayIntMapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayByteMapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -24425,6 +25538,13 @@ pub fn (mut i F641DArrayByteMapIterator) chunks(n int) &ByteByte1DArrayChunksIte
 pub fn (mut i F641DArrayByteMapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayByteMapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -24569,6 +25689,13 @@ pub fn (mut i F641DArrayRuneMapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator
 	}
 }
 
+pub fn (mut i F641DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayF64MapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -24705,6 +25832,13 @@ pub fn (mut i F641DArrayF64MapIterator) chunks(n int) &F64F641DArrayChunksIterat
 pub fn (mut i F641DArrayF64MapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayF64MapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -24849,6 +25983,13 @@ pub fn (mut i F641DArrayBool1DArrayMapIterator) tap(tap_fn fn(_ []bool)) &Bool1D
 	}
 }
 
+pub fn (mut i F641DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayString1DArrayMapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -24985,6 +26126,13 @@ pub fn (mut i F641DArrayString1DArrayMapIterator) chunks(n int) &String1DArraySt
 pub fn (mut i F641DArrayString1DArrayMapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayString1DArrayMapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -25129,6 +26277,13 @@ pub fn (mut i F641DArrayInt1DArrayMapIterator) tap(tap_fn fn(_ []int)) &Int1DArr
 	}
 }
 
+pub fn (mut i F641DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayByte1DArrayMapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -25265,6 +26420,13 @@ pub fn (mut i F641DArrayByte1DArrayMapIterator) chunks(n int) &Byte1DArrayByte2D
 pub fn (mut i F641DArrayByte1DArrayMapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -25409,6 +26571,13 @@ pub fn (mut i F641DArrayRune1DArrayMapIterator) tap(tap_fn fn(_ []rune)) &Rune1D
 	}
 }
 
+pub fn (mut i F641DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayF641DArrayMapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -25545,6 +26714,13 @@ pub fn (mut i F641DArrayF641DArrayMapIterator) chunks(n int) &F641DArrayF642DArr
 pub fn (mut i F641DArrayF641DArrayMapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -25869,6 +27045,13 @@ pub fn (mut i BoolSkipIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolSkipIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringSkipIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -26005,6 +27188,13 @@ pub fn (mut i StringSkipIterator) chunks(n int) &StringString1DArrayChunksIterat
 pub fn (mut i StringSkipIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringSkipIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -26149,6 +27339,13 @@ pub fn (mut i IntSkipIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntSkipIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteSkipIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -26285,6 +27482,13 @@ pub fn (mut i ByteSkipIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i ByteSkipIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteSkipIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -26429,6 +27633,13 @@ pub fn (mut i RuneSkipIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneSkipIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64SkipIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -26565,6 +27776,13 @@ pub fn (mut i F64SkipIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64SkipIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64SkipIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -26709,6 +27927,13 @@ pub fn (mut i Bool1DArraySkipIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapI
 	}
 }
 
+pub fn (mut i Bool1DArraySkipIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArraySkipIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -26845,6 +28070,13 @@ pub fn (mut i String1DArraySkipIterator) chunks(n int) &String1DArrayString2DArr
 pub fn (mut i String1DArraySkipIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArraySkipIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -26989,6 +28221,13 @@ pub fn (mut i Int1DArraySkipIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIter
 	}
 }
 
+pub fn (mut i Int1DArraySkipIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArraySkipIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -27125,6 +28364,13 @@ pub fn (mut i Byte1DArraySkipIterator) chunks(n int) &Byte1DArrayByte2DArrayChun
 pub fn (mut i Byte1DArraySkipIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArraySkipIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -27269,6 +28515,13 @@ pub fn (mut i Rune1DArraySkipIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapI
 	}
 }
 
+pub fn (mut i Rune1DArraySkipIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArraySkipIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -27405,6 +28658,13 @@ pub fn (mut i F641DArraySkipIterator) chunks(n int) &F641DArrayF642DArrayChunksI
 pub fn (mut i F641DArraySkipIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArraySkipIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -27717,6 +28977,13 @@ pub fn (mut i BoolEveryIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolEveryIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringEveryIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -27853,6 +29120,13 @@ pub fn (mut i StringEveryIterator) chunks(n int) &StringString1DArrayChunksItera
 pub fn (mut i StringEveryIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringEveryIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -27997,6 +29271,13 @@ pub fn (mut i IntEveryIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntEveryIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteEveryIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -28133,6 +29414,13 @@ pub fn (mut i ByteEveryIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i ByteEveryIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteEveryIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -28277,6 +29565,13 @@ pub fn (mut i RuneEveryIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneEveryIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64EveryIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -28413,6 +29708,13 @@ pub fn (mut i F64EveryIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64EveryIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64EveryIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -28557,6 +29859,13 @@ pub fn (mut i Bool1DArrayEveryIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTap
 	}
 }
 
+pub fn (mut i Bool1DArrayEveryIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayEveryIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -28693,6 +30002,13 @@ pub fn (mut i String1DArrayEveryIterator) chunks(n int) &String1DArrayString2DAr
 pub fn (mut i String1DArrayEveryIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayEveryIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -28837,6 +30153,13 @@ pub fn (mut i Int1DArrayEveryIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIte
 	}
 }
 
+pub fn (mut i Int1DArrayEveryIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayEveryIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -28973,6 +30296,13 @@ pub fn (mut i Byte1DArrayEveryIterator) chunks(n int) &Byte1DArrayByte2DArrayChu
 pub fn (mut i Byte1DArrayEveryIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayEveryIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -29117,6 +30447,13 @@ pub fn (mut i Rune1DArrayEveryIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTap
 	}
 }
 
+pub fn (mut i Rune1DArrayEveryIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayEveryIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -29253,6 +30590,13 @@ pub fn (mut i F641DArrayEveryIterator) chunks(n int) &F641DArrayF642DArrayChunks
 pub fn (mut i F641DArrayEveryIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayEveryIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -29637,6 +30981,13 @@ pub fn (mut i BoolRevIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolRevIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringRevIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -29773,6 +31124,13 @@ pub fn (mut i StringRevIterator) chunks(n int) &StringString1DArrayChunksIterato
 pub fn (mut i StringRevIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringRevIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -29917,6 +31275,13 @@ pub fn (mut i IntRevIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntRevIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteRevIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -30053,6 +31418,13 @@ pub fn (mut i ByteRevIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i ByteRevIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteRevIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -30197,6 +31569,13 @@ pub fn (mut i RuneRevIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneRevIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64RevIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -30333,6 +31712,13 @@ pub fn (mut i F64RevIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64RevIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64RevIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -30477,6 +31863,13 @@ pub fn (mut i Bool1DArrayRevIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIt
 	}
 }
 
+pub fn (mut i Bool1DArrayRevIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayRevIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -30613,6 +32006,13 @@ pub fn (mut i String1DArrayRevIterator) chunks(n int) &String1DArrayString2DArra
 pub fn (mut i String1DArrayRevIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayRevIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -30757,6 +32157,13 @@ pub fn (mut i Int1DArrayRevIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapItera
 	}
 }
 
+pub fn (mut i Int1DArrayRevIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayRevIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -30893,6 +32300,13 @@ pub fn (mut i Byte1DArrayRevIterator) chunks(n int) &Byte1DArrayByte2DArrayChunk
 pub fn (mut i Byte1DArrayRevIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayRevIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -31037,6 +32451,13 @@ pub fn (mut i Rune1DArrayRevIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIt
 	}
 }
 
+pub fn (mut i Rune1DArrayRevIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayRevIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -31173,6 +32594,13 @@ pub fn (mut i F641DArrayRevIterator) chunks(n int) &F641DArrayF642DArrayChunksIt
 pub fn (mut i F641DArrayRevIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayRevIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -31521,6 +32949,13 @@ pub fn (mut i BoolBool1DArrayWindowsIterator) tap(tap_fn fn(_ []bool)) &Bool1DAr
 	}
 }
 
+pub fn (mut i BoolBool1DArrayWindowsIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringString1DArrayWindowsIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -31657,6 +33092,13 @@ pub fn (mut i StringString1DArrayWindowsIterator) chunks(n int) &String1DArraySt
 pub fn (mut i StringString1DArrayWindowsIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringString1DArrayWindowsIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -31801,6 +33243,13 @@ pub fn (mut i IntInt1DArrayWindowsIterator) tap(tap_fn fn(_ []int)) &Int1DArrayT
 	}
 }
 
+pub fn (mut i IntInt1DArrayWindowsIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteByte1DArrayWindowsIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -31937,6 +33386,13 @@ pub fn (mut i ByteByte1DArrayWindowsIterator) chunks(n int) &Byte1DArrayByte2DAr
 pub fn (mut i ByteByte1DArrayWindowsIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteByte1DArrayWindowsIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -32081,6 +33537,13 @@ pub fn (mut i RuneRune1DArrayWindowsIterator) tap(tap_fn fn(_ []rune)) &Rune1DAr
 	}
 }
 
+pub fn (mut i RuneRune1DArrayWindowsIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64F641DArrayWindowsIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -32217,6 +33680,13 @@ pub fn (mut i F64F641DArrayWindowsIterator) chunks(n int) &F641DArrayF642DArrayC
 pub fn (mut i F64F641DArrayWindowsIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64F641DArrayWindowsIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -32565,6 +34035,13 @@ pub fn (mut i BoolBool1DArrayChunksIterator) tap(tap_fn fn(_ []bool)) &Bool1DArr
 	}
 }
 
+pub fn (mut i BoolBool1DArrayChunksIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringString1DArrayChunksIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -32701,6 +34178,13 @@ pub fn (mut i StringString1DArrayChunksIterator) chunks(n int) &String1DArrayStr
 pub fn (mut i StringString1DArrayChunksIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringString1DArrayChunksIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -32845,6 +34329,13 @@ pub fn (mut i IntInt1DArrayChunksIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTa
 	}
 }
 
+pub fn (mut i IntInt1DArrayChunksIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteByte1DArrayChunksIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -32981,6 +34472,13 @@ pub fn (mut i ByteByte1DArrayChunksIterator) chunks(n int) &Byte1DArrayByte2DArr
 pub fn (mut i ByteByte1DArrayChunksIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteByte1DArrayChunksIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -33125,6 +34623,13 @@ pub fn (mut i RuneRune1DArrayChunksIterator) tap(tap_fn fn(_ []rune)) &Rune1DArr
 	}
 }
 
+pub fn (mut i RuneRune1DArrayChunksIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64F641DArrayChunksIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -33261,6 +34766,13 @@ pub fn (mut i F64F641DArrayChunksIterator) chunks(n int) &F641DArrayF642DArrayCh
 pub fn (mut i F64F641DArrayChunksIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64F641DArrayChunksIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -33549,6 +35061,13 @@ pub fn (mut i BoolTapIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	}
 }
 
+pub fn (mut i BoolTapIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i StringTapIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
@@ -33685,6 +35204,13 @@ pub fn (mut i StringTapIterator) chunks(n int) &StringString1DArrayChunksIterato
 pub fn (mut i StringTapIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTapIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -33829,6 +35355,13 @@ pub fn (mut i IntTapIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	}
 }
 
+pub fn (mut i IntTapIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i ByteTapIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
@@ -33965,6 +35498,13 @@ pub fn (mut i ByteTapIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 pub fn (mut i ByteTapIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTapIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -34109,6 +35649,13 @@ pub fn (mut i RuneTapIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	}
 }
 
+pub fn (mut i RuneTapIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F64TapIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
@@ -34245,6 +35792,13 @@ pub fn (mut i F64TapIterator) chunks(n int) &F64F641DArrayChunksIterator {
 pub fn (mut i F64TapIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TapIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -34389,6 +35943,13 @@ pub fn (mut i Bool1DArrayTapIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIt
 	}
 }
 
+pub fn (mut i Bool1DArrayTapIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i String1DArrayTapIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -34525,6 +36086,13 @@ pub fn (mut i String1DArrayTapIterator) chunks(n int) &String1DArrayString2DArra
 pub fn (mut i String1DArrayTapIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTapIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -34669,6 +36237,13 @@ pub fn (mut i Int1DArrayTapIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapItera
 	}
 }
 
+pub fn (mut i Int1DArrayTapIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i Byte1DArrayTapIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -34805,6 +36380,13 @@ pub fn (mut i Byte1DArrayTapIterator) chunks(n int) &Byte1DArrayByte2DArrayChunk
 pub fn (mut i Byte1DArrayTapIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTapIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }
@@ -34949,6 +36531,13 @@ pub fn (mut i Rune1DArrayTapIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIt
 	}
 }
 
+pub fn (mut i Rune1DArrayTapIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
 pub fn (mut i F641DArrayTapIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
@@ -35085,6 +36674,1957 @@ pub fn (mut i F641DArrayTapIterator) chunks(n int) &F641DArrayF642DArrayChunksIt
 pub fn (mut i F641DArrayTapIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTapIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub struct BoolTakeIterator {
+	n int
+mut:
+	index int
+	iterator BoolIterator
+}
+
+pub fn (mut i BoolTakeIterator) next() ?bool {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct StringTakeIterator {
+	n int
+mut:
+	index int
+	iterator StringIterator
+}
+
+pub fn (mut i StringTakeIterator) next() ?string {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct IntTakeIterator {
+	n int
+mut:
+	index int
+	iterator IntIterator
+}
+
+pub fn (mut i IntTakeIterator) next() ?int {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct ByteTakeIterator {
+	n int
+mut:
+	index int
+	iterator ByteIterator
+}
+
+pub fn (mut i ByteTakeIterator) next() ?byte {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct RuneTakeIterator {
+	n int
+mut:
+	index int
+	iterator RuneIterator
+}
+
+pub fn (mut i RuneTakeIterator) next() ?rune {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct F64TakeIterator {
+	n int
+mut:
+	index int
+	iterator F64Iterator
+}
+
+pub fn (mut i F64TakeIterator) next() ?f64 {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct Bool1DArrayTakeIterator {
+	n int
+mut:
+	index int
+	iterator Bool1DArrayIterator
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) next() ?[]bool {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct String1DArrayTakeIterator {
+	n int
+mut:
+	index int
+	iterator String1DArrayIterator
+}
+
+pub fn (mut i String1DArrayTakeIterator) next() ?[]string {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct Int1DArrayTakeIterator {
+	n int
+mut:
+	index int
+	iterator Int1DArrayIterator
+}
+
+pub fn (mut i Int1DArrayTakeIterator) next() ?[]int {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct Byte1DArrayTakeIterator {
+	n int
+mut:
+	index int
+	iterator Byte1DArrayIterator
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) next() ?[]byte {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct Rune1DArrayTakeIterator {
+	n int
+mut:
+	index int
+	iterator Rune1DArrayIterator
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) next() ?[]rune {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub struct F641DArrayTakeIterator {
+	n int
+mut:
+	index int
+	iterator F641DArrayIterator
+}
+
+pub fn (mut i F641DArrayTakeIterator) next() ?[]f64 {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
+
+pub fn (mut i BoolTakeIterator) filter(filter_fn fn(_ bool) bool) &BoolFilterIterator {
+	return &BoolFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_bool(map_fn fn(_ bool) bool) &BoolBoolMapIterator {
+	return &BoolBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_string(map_fn fn(_ bool) string) &BoolStringMapIterator {
+	return &BoolStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_int(map_fn fn(_ bool) int) &BoolIntMapIterator {
+	return &BoolIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_byte(map_fn fn(_ bool) byte) &BoolByteMapIterator {
+	return &BoolByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_rune(map_fn fn(_ bool) rune) &BoolRuneMapIterator {
+	return &BoolRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_f64(map_fn fn(_ bool) f64) &BoolF64MapIterator {
+	return &BoolF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_bool_arr(map_fn fn(_ bool) []bool) &BoolBool1DArrayMapIterator {
+	return &BoolBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_string_arr(map_fn fn(_ bool) []string) &BoolString1DArrayMapIterator {
+	return &BoolString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_int_arr(map_fn fn(_ bool) []int) &BoolInt1DArrayMapIterator {
+	return &BoolInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_byte_arr(map_fn fn(_ bool) []byte) &BoolByte1DArrayMapIterator {
+	return &BoolByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_rune_arr(map_fn fn(_ bool) []rune) &BoolRune1DArrayMapIterator {
+	return &BoolRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) map_f64_arr(map_fn fn(_ bool) []f64) &BoolF641DArrayMapIterator {
+	return &BoolF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) skip(n int) &BoolSkipIterator {
+	return &BoolSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) collect() []bool {
+	mut arr := []bool{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i BoolTakeIterator) every(n int) &BoolEveryIterator {
+	return &BoolEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) rev() &BoolRevIterator {
+	return &BoolRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) windows(n int) &BoolBool1DArrayWindowsIterator {
+	return &BoolBool1DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) chunks(n int) &BoolBool1DArrayChunksIterator {
+	return &BoolBool1DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
+	return &BoolTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i BoolTakeIterator) take(n int) &BoolTakeIterator {
+	return &BoolTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
+	return &StringFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_bool(map_fn fn(_ string) bool) &StringBoolMapIterator {
+	return &StringBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_string(map_fn fn(_ string) string) &StringStringMapIterator {
+	return &StringStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_int(map_fn fn(_ string) int) &StringIntMapIterator {
+	return &StringIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_byte(map_fn fn(_ string) byte) &StringByteMapIterator {
+	return &StringByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_rune(map_fn fn(_ string) rune) &StringRuneMapIterator {
+	return &StringRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_f64(map_fn fn(_ string) f64) &StringF64MapIterator {
+	return &StringF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_bool_arr(map_fn fn(_ string) []bool) &StringBool1DArrayMapIterator {
+	return &StringBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_string_arr(map_fn fn(_ string) []string) &StringString1DArrayMapIterator {
+	return &StringString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_int_arr(map_fn fn(_ string) []int) &StringInt1DArrayMapIterator {
+	return &StringInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_byte_arr(map_fn fn(_ string) []byte) &StringByte1DArrayMapIterator {
+	return &StringByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_rune_arr(map_fn fn(_ string) []rune) &StringRune1DArrayMapIterator {
+	return &StringRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) map_f64_arr(map_fn fn(_ string) []f64) &StringF641DArrayMapIterator {
+	return &StringF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) skip(n int) &StringSkipIterator {
+	return &StringSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) collect() []string {
+	mut arr := []string{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i StringTakeIterator) every(n int) &StringEveryIterator {
+	return &StringEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) rev() &StringRevIterator {
+	return &StringRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) windows(n int) &StringString1DArrayWindowsIterator {
+	return &StringString1DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) chunks(n int) &StringString1DArrayChunksIterator {
+	return &StringString1DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
+	return &StringTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i StringTakeIterator) take(n int) &StringTakeIterator {
+	return &StringTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) filter(filter_fn fn(_ int) bool) &IntFilterIterator {
+	return &IntFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_bool(map_fn fn(_ int) bool) &IntBoolMapIterator {
+	return &IntBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_string(map_fn fn(_ int) string) &IntStringMapIterator {
+	return &IntStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_int(map_fn fn(_ int) int) &IntIntMapIterator {
+	return &IntIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_byte(map_fn fn(_ int) byte) &IntByteMapIterator {
+	return &IntByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_rune(map_fn fn(_ int) rune) &IntRuneMapIterator {
+	return &IntRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_f64(map_fn fn(_ int) f64) &IntF64MapIterator {
+	return &IntF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_bool_arr(map_fn fn(_ int) []bool) &IntBool1DArrayMapIterator {
+	return &IntBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_string_arr(map_fn fn(_ int) []string) &IntString1DArrayMapIterator {
+	return &IntString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_int_arr(map_fn fn(_ int) []int) &IntInt1DArrayMapIterator {
+	return &IntInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_byte_arr(map_fn fn(_ int) []byte) &IntByte1DArrayMapIterator {
+	return &IntByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_rune_arr(map_fn fn(_ int) []rune) &IntRune1DArrayMapIterator {
+	return &IntRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) map_f64_arr(map_fn fn(_ int) []f64) &IntF641DArrayMapIterator {
+	return &IntF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) skip(n int) &IntSkipIterator {
+	return &IntSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) collect() []int {
+	mut arr := []int{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i IntTakeIterator) every(n int) &IntEveryIterator {
+	return &IntEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) rev() &IntRevIterator {
+	return &IntRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) windows(n int) &IntInt1DArrayWindowsIterator {
+	return &IntInt1DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) chunks(n int) &IntInt1DArrayChunksIterator {
+	return &IntInt1DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
+	return &IntTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i IntTakeIterator) take(n int) &IntTakeIterator {
+	return &IntTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
+	return &ByteFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_bool(map_fn fn(_ byte) bool) &ByteBoolMapIterator {
+	return &ByteBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_string(map_fn fn(_ byte) string) &ByteStringMapIterator {
+	return &ByteStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_int(map_fn fn(_ byte) int) &ByteIntMapIterator {
+	return &ByteIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_byte(map_fn fn(_ byte) byte) &ByteByteMapIterator {
+	return &ByteByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_rune(map_fn fn(_ byte) rune) &ByteRuneMapIterator {
+	return &ByteRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_f64(map_fn fn(_ byte) f64) &ByteF64MapIterator {
+	return &ByteF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_bool_arr(map_fn fn(_ byte) []bool) &ByteBool1DArrayMapIterator {
+	return &ByteBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_string_arr(map_fn fn(_ byte) []string) &ByteString1DArrayMapIterator {
+	return &ByteString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_int_arr(map_fn fn(_ byte) []int) &ByteInt1DArrayMapIterator {
+	return &ByteInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_byte_arr(map_fn fn(_ byte) []byte) &ByteByte1DArrayMapIterator {
+	return &ByteByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_rune_arr(map_fn fn(_ byte) []rune) &ByteRune1DArrayMapIterator {
+	return &ByteRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) map_f64_arr(map_fn fn(_ byte) []f64) &ByteF641DArrayMapIterator {
+	return &ByteF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) skip(n int) &ByteSkipIterator {
+	return &ByteSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) collect() []byte {
+	mut arr := []byte{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i ByteTakeIterator) every(n int) &ByteEveryIterator {
+	return &ByteEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) rev() &ByteRevIterator {
+	return &ByteRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) windows(n int) &ByteByte1DArrayWindowsIterator {
+	return &ByteByte1DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
+	return &ByteByte1DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
+	return &ByteTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i ByteTakeIterator) take(n int) &ByteTakeIterator {
+	return &ByteTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) filter(filter_fn fn(_ rune) bool) &RuneFilterIterator {
+	return &RuneFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_bool(map_fn fn(_ rune) bool) &RuneBoolMapIterator {
+	return &RuneBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_string(map_fn fn(_ rune) string) &RuneStringMapIterator {
+	return &RuneStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_int(map_fn fn(_ rune) int) &RuneIntMapIterator {
+	return &RuneIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_byte(map_fn fn(_ rune) byte) &RuneByteMapIterator {
+	return &RuneByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_rune(map_fn fn(_ rune) rune) &RuneRuneMapIterator {
+	return &RuneRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_f64(map_fn fn(_ rune) f64) &RuneF64MapIterator {
+	return &RuneF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_bool_arr(map_fn fn(_ rune) []bool) &RuneBool1DArrayMapIterator {
+	return &RuneBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_string_arr(map_fn fn(_ rune) []string) &RuneString1DArrayMapIterator {
+	return &RuneString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_int_arr(map_fn fn(_ rune) []int) &RuneInt1DArrayMapIterator {
+	return &RuneInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_byte_arr(map_fn fn(_ rune) []byte) &RuneByte1DArrayMapIterator {
+	return &RuneByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_rune_arr(map_fn fn(_ rune) []rune) &RuneRune1DArrayMapIterator {
+	return &RuneRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) map_f64_arr(map_fn fn(_ rune) []f64) &RuneF641DArrayMapIterator {
+	return &RuneF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) skip(n int) &RuneSkipIterator {
+	return &RuneSkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) collect() []rune {
+	mut arr := []rune{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i RuneTakeIterator) every(n int) &RuneEveryIterator {
+	return &RuneEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) rev() &RuneRevIterator {
+	return &RuneRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) windows(n int) &RuneRune1DArrayWindowsIterator {
+	return &RuneRune1DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) chunks(n int) &RuneRune1DArrayChunksIterator {
+	return &RuneRune1DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
+	return &RuneTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i RuneTakeIterator) take(n int) &RuneTakeIterator {
+	return &RuneTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
+	return &F64FilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_bool(map_fn fn(_ f64) bool) &F64BoolMapIterator {
+	return &F64BoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_string(map_fn fn(_ f64) string) &F64StringMapIterator {
+	return &F64StringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_int(map_fn fn(_ f64) int) &F64IntMapIterator {
+	return &F64IntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_byte(map_fn fn(_ f64) byte) &F64ByteMapIterator {
+	return &F64ByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_rune(map_fn fn(_ f64) rune) &F64RuneMapIterator {
+	return &F64RuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_f64(map_fn fn(_ f64) f64) &F64F64MapIterator {
+	return &F64F64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_bool_arr(map_fn fn(_ f64) []bool) &F64Bool1DArrayMapIterator {
+	return &F64Bool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_string_arr(map_fn fn(_ f64) []string) &F64String1DArrayMapIterator {
+	return &F64String1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_int_arr(map_fn fn(_ f64) []int) &F64Int1DArrayMapIterator {
+	return &F64Int1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_byte_arr(map_fn fn(_ f64) []byte) &F64Byte1DArrayMapIterator {
+	return &F64Byte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_rune_arr(map_fn fn(_ f64) []rune) &F64Rune1DArrayMapIterator {
+	return &F64Rune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) map_f64_arr(map_fn fn(_ f64) []f64) &F64F641DArrayMapIterator {
+	return &F64F641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) skip(n int) &F64SkipIterator {
+	return &F64SkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) collect() []f64 {
+	mut arr := []f64{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i F64TakeIterator) every(n int) &F64EveryIterator {
+	return &F64EveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) rev() &F64RevIterator {
+	return &F64RevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) windows(n int) &F64F641DArrayWindowsIterator {
+	return &F64F641DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) chunks(n int) &F64F641DArrayChunksIterator {
+	return &F64F641DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
+	return &F64TapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F64TakeIterator) take(n int) &F64TakeIterator {
+	return &F64TakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) filter(filter_fn fn(_ []bool) bool) &Bool1DArrayFilterIterator {
+	return &Bool1DArrayFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_bool(map_fn fn(_ []bool) bool) &Bool1DArrayBoolMapIterator {
+	return &Bool1DArrayBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_string(map_fn fn(_ []bool) string) &Bool1DArrayStringMapIterator {
+	return &Bool1DArrayStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_int(map_fn fn(_ []bool) int) &Bool1DArrayIntMapIterator {
+	return &Bool1DArrayIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_byte(map_fn fn(_ []bool) byte) &Bool1DArrayByteMapIterator {
+	return &Bool1DArrayByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_rune(map_fn fn(_ []bool) rune) &Bool1DArrayRuneMapIterator {
+	return &Bool1DArrayRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_f64(map_fn fn(_ []bool) f64) &Bool1DArrayF64MapIterator {
+	return &Bool1DArrayF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_bool_arr(map_fn fn(_ []bool) []bool) &Bool1DArrayBool1DArrayMapIterator {
+	return &Bool1DArrayBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_string_arr(map_fn fn(_ []bool) []string) &Bool1DArrayString1DArrayMapIterator {
+	return &Bool1DArrayString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_int_arr(map_fn fn(_ []bool) []int) &Bool1DArrayInt1DArrayMapIterator {
+	return &Bool1DArrayInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_byte_arr(map_fn fn(_ []bool) []byte) &Bool1DArrayByte1DArrayMapIterator {
+	return &Bool1DArrayByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_rune_arr(map_fn fn(_ []bool) []rune) &Bool1DArrayRune1DArrayMapIterator {
+	return &Bool1DArrayRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) map_f64_arr(map_fn fn(_ []bool) []f64) &Bool1DArrayF641DArrayMapIterator {
+	return &Bool1DArrayF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) skip(n int) &Bool1DArraySkipIterator {
+	return &Bool1DArraySkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) collect() [][]bool {
+	mut arr := [][]bool{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) every(n int) &Bool1DArrayEveryIterator {
+	return &Bool1DArrayEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) rev() &Bool1DArrayRevIterator {
+	return &Bool1DArrayRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) windows(n int) &Bool1DArrayBool2DArrayWindowsIterator {
+	return &Bool1DArrayBool2DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) chunks(n int) &Bool1DArrayBool2DArrayChunksIterator {
+	return &Bool1DArrayBool2DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIterator {
+	return &Bool1DArrayTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Bool1DArrayTakeIterator) take(n int) &Bool1DArrayTakeIterator {
+	return &Bool1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
+	return &String1DArrayFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_bool(map_fn fn(_ []string) bool) &String1DArrayBoolMapIterator {
+	return &String1DArrayBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_string(map_fn fn(_ []string) string) &String1DArrayStringMapIterator {
+	return &String1DArrayStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_int(map_fn fn(_ []string) int) &String1DArrayIntMapIterator {
+	return &String1DArrayIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_byte(map_fn fn(_ []string) byte) &String1DArrayByteMapIterator {
+	return &String1DArrayByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_rune(map_fn fn(_ []string) rune) &String1DArrayRuneMapIterator {
+	return &String1DArrayRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_f64(map_fn fn(_ []string) f64) &String1DArrayF64MapIterator {
+	return &String1DArrayF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_bool_arr(map_fn fn(_ []string) []bool) &String1DArrayBool1DArrayMapIterator {
+	return &String1DArrayBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_string_arr(map_fn fn(_ []string) []string) &String1DArrayString1DArrayMapIterator {
+	return &String1DArrayString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_int_arr(map_fn fn(_ []string) []int) &String1DArrayInt1DArrayMapIterator {
+	return &String1DArrayInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_byte_arr(map_fn fn(_ []string) []byte) &String1DArrayByte1DArrayMapIterator {
+	return &String1DArrayByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_rune_arr(map_fn fn(_ []string) []rune) &String1DArrayRune1DArrayMapIterator {
+	return &String1DArrayRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) map_f64_arr(map_fn fn(_ []string) []f64) &String1DArrayF641DArrayMapIterator {
+	return &String1DArrayF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) skip(n int) &String1DArraySkipIterator {
+	return &String1DArraySkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) collect() [][]string {
+	mut arr := [][]string{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i String1DArrayTakeIterator) every(n int) &String1DArrayEveryIterator {
+	return &String1DArrayEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) rev() &String1DArrayRevIterator {
+	return &String1DArrayRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) windows(n int) &String1DArrayString2DArrayWindowsIterator {
+	return &String1DArrayString2DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) chunks(n int) &String1DArrayString2DArrayChunksIterator {
+	return &String1DArrayString2DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
+	return &String1DArrayTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i String1DArrayTakeIterator) take(n int) &String1DArrayTakeIterator {
+	return &String1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) filter(filter_fn fn(_ []int) bool) &Int1DArrayFilterIterator {
+	return &Int1DArrayFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_bool(map_fn fn(_ []int) bool) &Int1DArrayBoolMapIterator {
+	return &Int1DArrayBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_string(map_fn fn(_ []int) string) &Int1DArrayStringMapIterator {
+	return &Int1DArrayStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_int(map_fn fn(_ []int) int) &Int1DArrayIntMapIterator {
+	return &Int1DArrayIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_byte(map_fn fn(_ []int) byte) &Int1DArrayByteMapIterator {
+	return &Int1DArrayByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_rune(map_fn fn(_ []int) rune) &Int1DArrayRuneMapIterator {
+	return &Int1DArrayRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_f64(map_fn fn(_ []int) f64) &Int1DArrayF64MapIterator {
+	return &Int1DArrayF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_bool_arr(map_fn fn(_ []int) []bool) &Int1DArrayBool1DArrayMapIterator {
+	return &Int1DArrayBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_string_arr(map_fn fn(_ []int) []string) &Int1DArrayString1DArrayMapIterator {
+	return &Int1DArrayString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_int_arr(map_fn fn(_ []int) []int) &Int1DArrayInt1DArrayMapIterator {
+	return &Int1DArrayInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_byte_arr(map_fn fn(_ []int) []byte) &Int1DArrayByte1DArrayMapIterator {
+	return &Int1DArrayByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_rune_arr(map_fn fn(_ []int) []rune) &Int1DArrayRune1DArrayMapIterator {
+	return &Int1DArrayRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) map_f64_arr(map_fn fn(_ []int) []f64) &Int1DArrayF641DArrayMapIterator {
+	return &Int1DArrayF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) skip(n int) &Int1DArraySkipIterator {
+	return &Int1DArraySkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) collect() [][]int {
+	mut arr := [][]int{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i Int1DArrayTakeIterator) every(n int) &Int1DArrayEveryIterator {
+	return &Int1DArrayEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) rev() &Int1DArrayRevIterator {
+	return &Int1DArrayRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) windows(n int) &Int1DArrayInt2DArrayWindowsIterator {
+	return &Int1DArrayInt2DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) chunks(n int) &Int1DArrayInt2DArrayChunksIterator {
+	return &Int1DArrayInt2DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIterator {
+	return &Int1DArrayTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Int1DArrayTakeIterator) take(n int) &Int1DArrayTakeIterator {
+	return &Int1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
+	return &Byte1DArrayFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_bool(map_fn fn(_ []byte) bool) &Byte1DArrayBoolMapIterator {
+	return &Byte1DArrayBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_string(map_fn fn(_ []byte) string) &Byte1DArrayStringMapIterator {
+	return &Byte1DArrayStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_int(map_fn fn(_ []byte) int) &Byte1DArrayIntMapIterator {
+	return &Byte1DArrayIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_byte(map_fn fn(_ []byte) byte) &Byte1DArrayByteMapIterator {
+	return &Byte1DArrayByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_rune(map_fn fn(_ []byte) rune) &Byte1DArrayRuneMapIterator {
+	return &Byte1DArrayRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_f64(map_fn fn(_ []byte) f64) &Byte1DArrayF64MapIterator {
+	return &Byte1DArrayF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_bool_arr(map_fn fn(_ []byte) []bool) &Byte1DArrayBool1DArrayMapIterator {
+	return &Byte1DArrayBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_string_arr(map_fn fn(_ []byte) []string) &Byte1DArrayString1DArrayMapIterator {
+	return &Byte1DArrayString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_int_arr(map_fn fn(_ []byte) []int) &Byte1DArrayInt1DArrayMapIterator {
+	return &Byte1DArrayInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_byte_arr(map_fn fn(_ []byte) []byte) &Byte1DArrayByte1DArrayMapIterator {
+	return &Byte1DArrayByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_rune_arr(map_fn fn(_ []byte) []rune) &Byte1DArrayRune1DArrayMapIterator {
+	return &Byte1DArrayRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) map_f64_arr(map_fn fn(_ []byte) []f64) &Byte1DArrayF641DArrayMapIterator {
+	return &Byte1DArrayF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) skip(n int) &Byte1DArraySkipIterator {
+	return &Byte1DArraySkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) collect() [][]byte {
+	mut arr := [][]byte{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) every(n int) &Byte1DArrayEveryIterator {
+	return &Byte1DArrayEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) rev() &Byte1DArrayRevIterator {
+	return &Byte1DArrayRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) windows(n int) &Byte1DArrayByte2DArrayWindowsIterator {
+	return &Byte1DArrayByte2DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) chunks(n int) &Byte1DArrayByte2DArrayChunksIterator {
+	return &Byte1DArrayByte2DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
+	return &Byte1DArrayTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Byte1DArrayTakeIterator) take(n int) &Byte1DArrayTakeIterator {
+	return &Byte1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) filter(filter_fn fn(_ []rune) bool) &Rune1DArrayFilterIterator {
+	return &Rune1DArrayFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_bool(map_fn fn(_ []rune) bool) &Rune1DArrayBoolMapIterator {
+	return &Rune1DArrayBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_string(map_fn fn(_ []rune) string) &Rune1DArrayStringMapIterator {
+	return &Rune1DArrayStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_int(map_fn fn(_ []rune) int) &Rune1DArrayIntMapIterator {
+	return &Rune1DArrayIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_byte(map_fn fn(_ []rune) byte) &Rune1DArrayByteMapIterator {
+	return &Rune1DArrayByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_rune(map_fn fn(_ []rune) rune) &Rune1DArrayRuneMapIterator {
+	return &Rune1DArrayRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_f64(map_fn fn(_ []rune) f64) &Rune1DArrayF64MapIterator {
+	return &Rune1DArrayF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_bool_arr(map_fn fn(_ []rune) []bool) &Rune1DArrayBool1DArrayMapIterator {
+	return &Rune1DArrayBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_string_arr(map_fn fn(_ []rune) []string) &Rune1DArrayString1DArrayMapIterator {
+	return &Rune1DArrayString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_int_arr(map_fn fn(_ []rune) []int) &Rune1DArrayInt1DArrayMapIterator {
+	return &Rune1DArrayInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_byte_arr(map_fn fn(_ []rune) []byte) &Rune1DArrayByte1DArrayMapIterator {
+	return &Rune1DArrayByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_rune_arr(map_fn fn(_ []rune) []rune) &Rune1DArrayRune1DArrayMapIterator {
+	return &Rune1DArrayRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) map_f64_arr(map_fn fn(_ []rune) []f64) &Rune1DArrayF641DArrayMapIterator {
+	return &Rune1DArrayF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) skip(n int) &Rune1DArraySkipIterator {
+	return &Rune1DArraySkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) collect() [][]rune {
+	mut arr := [][]rune{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) every(n int) &Rune1DArrayEveryIterator {
+	return &Rune1DArrayEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) rev() &Rune1DArrayRevIterator {
+	return &Rune1DArrayRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) windows(n int) &Rune1DArrayRune2DArrayWindowsIterator {
+	return &Rune1DArrayRune2DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) chunks(n int) &Rune1DArrayRune2DArrayChunksIterator {
+	return &Rune1DArrayRune2DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIterator {
+	return &Rune1DArrayTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i Rune1DArrayTakeIterator) take(n int) &Rune1DArrayTakeIterator {
+	return &Rune1DArrayTakeIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
+	return &F641DArrayFilterIterator{
+		filter_fn: filter_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_bool(map_fn fn(_ []f64) bool) &F641DArrayBoolMapIterator {
+	return &F641DArrayBoolMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_string(map_fn fn(_ []f64) string) &F641DArrayStringMapIterator {
+	return &F641DArrayStringMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_int(map_fn fn(_ []f64) int) &F641DArrayIntMapIterator {
+	return &F641DArrayIntMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_byte(map_fn fn(_ []f64) byte) &F641DArrayByteMapIterator {
+	return &F641DArrayByteMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_rune(map_fn fn(_ []f64) rune) &F641DArrayRuneMapIterator {
+	return &F641DArrayRuneMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_f64(map_fn fn(_ []f64) f64) &F641DArrayF64MapIterator {
+	return &F641DArrayF64MapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_bool_arr(map_fn fn(_ []f64) []bool) &F641DArrayBool1DArrayMapIterator {
+	return &F641DArrayBool1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_string_arr(map_fn fn(_ []f64) []string) &F641DArrayString1DArrayMapIterator {
+	return &F641DArrayString1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_int_arr(map_fn fn(_ []f64) []int) &F641DArrayInt1DArrayMapIterator {
+	return &F641DArrayInt1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_byte_arr(map_fn fn(_ []f64) []byte) &F641DArrayByte1DArrayMapIterator {
+	return &F641DArrayByte1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_rune_arr(map_fn fn(_ []f64) []rune) &F641DArrayRune1DArrayMapIterator {
+	return &F641DArrayRune1DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) map_f64_arr(map_fn fn(_ []f64) []f64) &F641DArrayF641DArrayMapIterator {
+	return &F641DArrayF641DArrayMapIterator{
+		map_fn: map_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) skip(n int) &F641DArraySkipIterator {
+	return &F641DArraySkipIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) collect() [][]f64 {
+	mut arr := [][]f64{}
+	for item in i {
+		arr << item
+	}
+	return arr
+}
+
+pub fn (mut i F641DArrayTakeIterator) every(n int) &F641DArrayEveryIterator {
+	return &F641DArrayEveryIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) rev() &F641DArrayRevIterator {
+	return &F641DArrayRevIterator{
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) windows(n int) &F641DArrayF642DArrayWindowsIterator {
+	return &F641DArrayF642DArrayWindowsIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) chunks(n int) &F641DArrayF642DArrayChunksIterator {
+	return &F641DArrayF642DArrayChunksIterator{
+		n: n
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
+	return &F641DArrayTapIterator{
+		tap_fn: tap_fn
+		iterator: i
+	}
+}
+
+pub fn (mut i F641DArrayTakeIterator) take(n int) &F641DArrayTakeIterator {
+	return &F641DArrayTakeIterator{
+		n: n
 		iterator: i
 	}
 }

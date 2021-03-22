@@ -47,11 +47,12 @@ The currently implemented methods are:
 * `windows`
 * `chunks`
 * `rev`
+* `take`
 * `collect`
 * `tap`
 
 ## Speed
-This module has ~30k generated lines of code, which means compilation
+This module has ~40k generated lines of code, which means compilation
 may be noticeably slower but still less than 1s in debug mode.
 
 This module uses lazy iterator evaluation, meaning there are no

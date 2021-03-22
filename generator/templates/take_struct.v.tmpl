@@ -1,0 +1,14 @@
+pub struct IterOut {
+	n int
+mut:
+	index int
+	iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	if i.index >= i.n {
+		return none
+	}
+	i.index++
+	return i.iterator.next()
+}
