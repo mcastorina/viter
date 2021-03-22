@@ -351,8 +351,8 @@ pub fn (mut i BoolArrayIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolArrayIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolArrayIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -407,8 +407,8 @@ pub fn (mut i BoolArrayIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolArrayIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolArrayIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -512,8 +512,8 @@ pub fn (mut i StringArrayIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringArrayIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringArrayIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -568,8 +568,8 @@ pub fn (mut i StringArrayIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringArrayIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringArrayIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -673,8 +673,8 @@ pub fn (mut i IntArrayIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntArrayIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntArrayIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -729,8 +729,8 @@ pub fn (mut i IntArrayIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntArrayIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntArrayIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -834,8 +834,8 @@ pub fn (mut i ByteArrayIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteArrayIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteArrayIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -890,8 +890,8 @@ pub fn (mut i ByteArrayIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteArrayIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteArrayIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -995,8 +995,8 @@ pub fn (mut i RuneArrayIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneArrayIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneArrayIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1051,8 +1051,8 @@ pub fn (mut i RuneArrayIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneArrayIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneArrayIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1156,8 +1156,8 @@ pub fn (mut i F64ArrayIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64ArrayIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64ArrayIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1212,8 +1212,8 @@ pub fn (mut i F64ArrayIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64ArrayIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64ArrayIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1317,8 +1317,8 @@ pub fn (mut i Bool1DArrayArrayIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayArrayIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayArrayIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1373,8 +1373,8 @@ pub fn (mut i Bool1DArrayArrayIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayArrayIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayArrayIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1478,8 +1478,8 @@ pub fn (mut i String1DArrayArrayIterator) skip(n int) &String1DArraySkipIterator
 	}
 }
 
-pub fn (mut i String1DArrayArrayIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayArrayIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1534,8 +1534,8 @@ pub fn (mut i String1DArrayArrayIterator) take(n int) &String1DArrayTakeIterator
 	}
 }
 
-pub fn (mut i String1DArrayArrayIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayArrayIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1639,8 +1639,8 @@ pub fn (mut i Int1DArrayArrayIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayArrayIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayArrayIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1695,8 +1695,8 @@ pub fn (mut i Int1DArrayArrayIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayArrayIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayArrayIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1800,8 +1800,8 @@ pub fn (mut i Byte1DArrayArrayIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayArrayIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayArrayIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1856,8 +1856,8 @@ pub fn (mut i Byte1DArrayArrayIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayArrayIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayArrayIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -1961,8 +1961,8 @@ pub fn (mut i Rune1DArrayArrayIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayArrayIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayArrayIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2017,8 +2017,8 @@ pub fn (mut i Rune1DArrayArrayIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayArrayIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayArrayIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2122,8 +2122,8 @@ pub fn (mut i F641DArrayArrayIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayArrayIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayArrayIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2178,8 +2178,8 @@ pub fn (mut i F641DArrayArrayIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayArrayIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayArrayIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2475,8 +2475,8 @@ pub fn (mut i BoolFilterIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolFilterIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolFilterIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2531,8 +2531,8 @@ pub fn (mut i BoolFilterIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolFilterIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolFilterIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2636,8 +2636,8 @@ pub fn (mut i StringFilterIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringFilterIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringFilterIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2692,8 +2692,8 @@ pub fn (mut i StringFilterIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringFilterIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringFilterIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2797,8 +2797,8 @@ pub fn (mut i IntFilterIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntFilterIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntFilterIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2853,8 +2853,8 @@ pub fn (mut i IntFilterIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntFilterIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntFilterIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -2958,8 +2958,8 @@ pub fn (mut i ByteFilterIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteFilterIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteFilterIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3014,8 +3014,8 @@ pub fn (mut i ByteFilterIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteFilterIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteFilterIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3119,8 +3119,8 @@ pub fn (mut i RuneFilterIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneFilterIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneFilterIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3175,8 +3175,8 @@ pub fn (mut i RuneFilterIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneFilterIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneFilterIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3280,8 +3280,8 @@ pub fn (mut i F64FilterIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64FilterIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64FilterIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3336,8 +3336,8 @@ pub fn (mut i F64FilterIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64FilterIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64FilterIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3441,8 +3441,8 @@ pub fn (mut i Bool1DArrayFilterIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayFilterIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayFilterIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3497,8 +3497,8 @@ pub fn (mut i Bool1DArrayFilterIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayFilterIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayFilterIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3602,8 +3602,8 @@ pub fn (mut i String1DArrayFilterIterator) skip(n int) &String1DArraySkipIterato
 	}
 }
 
-pub fn (mut i String1DArrayFilterIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayFilterIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3658,8 +3658,8 @@ pub fn (mut i String1DArrayFilterIterator) take(n int) &String1DArrayTakeIterato
 	}
 }
 
-pub fn (mut i String1DArrayFilterIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayFilterIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3763,8 +3763,8 @@ pub fn (mut i Int1DArrayFilterIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayFilterIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayFilterIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3819,8 +3819,8 @@ pub fn (mut i Int1DArrayFilterIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayFilterIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayFilterIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3924,8 +3924,8 @@ pub fn (mut i Byte1DArrayFilterIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayFilterIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayFilterIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -3980,8 +3980,8 @@ pub fn (mut i Byte1DArrayFilterIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayFilterIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayFilterIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -4085,8 +4085,8 @@ pub fn (mut i Rune1DArrayFilterIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayFilterIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayFilterIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -4141,8 +4141,8 @@ pub fn (mut i Rune1DArrayFilterIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayFilterIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayFilterIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -4246,8 +4246,8 @@ pub fn (mut i F641DArrayFilterIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayFilterIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayFilterIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -4302,8 +4302,8 @@ pub fn (mut i F641DArrayFilterIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayFilterIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayFilterIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -5991,8 +5991,8 @@ pub fn (mut i BoolBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6047,8 +6047,8 @@ pub fn (mut i BoolBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6152,8 +6152,8 @@ pub fn (mut i BoolStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i BoolStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i BoolStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6208,8 +6208,8 @@ pub fn (mut i BoolStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i BoolStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i BoolStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6313,8 +6313,8 @@ pub fn (mut i BoolIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i BoolIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i BoolIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6369,8 +6369,8 @@ pub fn (mut i BoolIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i BoolIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i BoolIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6474,8 +6474,8 @@ pub fn (mut i BoolByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i BoolByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i BoolByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6530,8 +6530,8 @@ pub fn (mut i BoolByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i BoolByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i BoolByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6635,8 +6635,8 @@ pub fn (mut i BoolRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i BoolRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i BoolRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6691,8 +6691,8 @@ pub fn (mut i BoolRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i BoolRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i BoolRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6796,8 +6796,8 @@ pub fn (mut i BoolF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i BoolF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i BoolF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6852,8 +6852,8 @@ pub fn (mut i BoolF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i BoolF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i BoolF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -6957,8 +6957,8 @@ pub fn (mut i BoolBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i BoolBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i BoolBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7013,8 +7013,8 @@ pub fn (mut i BoolBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i BoolBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i BoolBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7118,8 +7118,8 @@ pub fn (mut i BoolString1DArrayMapIterator) skip(n int) &String1DArraySkipIterat
 	}
 }
 
-pub fn (mut i BoolString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i BoolString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7174,8 +7174,8 @@ pub fn (mut i BoolString1DArrayMapIterator) take(n int) &String1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i BoolString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i BoolString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7279,8 +7279,8 @@ pub fn (mut i BoolInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i BoolInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i BoolInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7335,8 +7335,8 @@ pub fn (mut i BoolInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i BoolInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i BoolInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7440,8 +7440,8 @@ pub fn (mut i BoolByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i BoolByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i BoolByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7496,8 +7496,8 @@ pub fn (mut i BoolByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i BoolByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i BoolByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7601,8 +7601,8 @@ pub fn (mut i BoolRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i BoolRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i BoolRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7657,8 +7657,8 @@ pub fn (mut i BoolRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i BoolRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i BoolRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7762,8 +7762,8 @@ pub fn (mut i BoolF641DArrayMapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i BoolF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i BoolF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7818,8 +7818,8 @@ pub fn (mut i BoolF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i BoolF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i BoolF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7923,8 +7923,8 @@ pub fn (mut i StringBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i StringBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i StringBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -7979,8 +7979,8 @@ pub fn (mut i StringBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i StringBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i StringBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8084,8 +8084,8 @@ pub fn (mut i StringStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8140,8 +8140,8 @@ pub fn (mut i StringStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8245,8 +8245,8 @@ pub fn (mut i StringIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i StringIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i StringIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8301,8 +8301,8 @@ pub fn (mut i StringIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i StringIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i StringIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8406,8 +8406,8 @@ pub fn (mut i StringByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i StringByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i StringByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8462,8 +8462,8 @@ pub fn (mut i StringByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i StringByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i StringByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8567,8 +8567,8 @@ pub fn (mut i StringRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i StringRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i StringRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8623,8 +8623,8 @@ pub fn (mut i StringRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i StringRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i StringRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8728,8 +8728,8 @@ pub fn (mut i StringF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i StringF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i StringF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8784,8 +8784,8 @@ pub fn (mut i StringF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i StringF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i StringF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8889,8 +8889,8 @@ pub fn (mut i StringBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIterator
 	}
 }
 
-pub fn (mut i StringBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i StringBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -8945,8 +8945,8 @@ pub fn (mut i StringBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator
 	}
 }
 
-pub fn (mut i StringBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i StringBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9050,8 +9050,8 @@ pub fn (mut i StringString1DArrayMapIterator) skip(n int) &String1DArraySkipIter
 	}
 }
 
-pub fn (mut i StringString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i StringString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9106,8 +9106,8 @@ pub fn (mut i StringString1DArrayMapIterator) take(n int) &String1DArrayTakeIter
 	}
 }
 
-pub fn (mut i StringString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i StringString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9211,8 +9211,8 @@ pub fn (mut i StringInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i StringInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i StringInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9267,8 +9267,8 @@ pub fn (mut i StringInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i StringInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i StringInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9372,8 +9372,8 @@ pub fn (mut i StringByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIterator
 	}
 }
 
-pub fn (mut i StringByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i StringByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9428,8 +9428,8 @@ pub fn (mut i StringByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator
 	}
 }
 
-pub fn (mut i StringByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i StringByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9533,8 +9533,8 @@ pub fn (mut i StringRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIterator
 	}
 }
 
-pub fn (mut i StringRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i StringRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9589,8 +9589,8 @@ pub fn (mut i StringRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator
 	}
 }
 
-pub fn (mut i StringRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i StringRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9694,8 +9694,8 @@ pub fn (mut i StringF641DArrayMapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i StringF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i StringF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9750,8 +9750,8 @@ pub fn (mut i StringF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i StringF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i StringF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9855,8 +9855,8 @@ pub fn (mut i IntBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i IntBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i IntBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -9911,8 +9911,8 @@ pub fn (mut i IntBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i IntBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i IntBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10016,8 +10016,8 @@ pub fn (mut i IntStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i IntStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i IntStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10072,8 +10072,8 @@ pub fn (mut i IntStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i IntStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i IntStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10177,8 +10177,8 @@ pub fn (mut i IntIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10233,8 +10233,8 @@ pub fn (mut i IntIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10338,8 +10338,8 @@ pub fn (mut i IntByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i IntByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i IntByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10394,8 +10394,8 @@ pub fn (mut i IntByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i IntByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i IntByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10499,8 +10499,8 @@ pub fn (mut i IntRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i IntRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i IntRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10555,8 +10555,8 @@ pub fn (mut i IntRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i IntRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i IntRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10660,8 +10660,8 @@ pub fn (mut i IntF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i IntF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i IntF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10716,8 +10716,8 @@ pub fn (mut i IntF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i IntF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i IntF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10821,8 +10821,8 @@ pub fn (mut i IntBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i IntBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i IntBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10877,8 +10877,8 @@ pub fn (mut i IntBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i IntBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i IntBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -10982,8 +10982,8 @@ pub fn (mut i IntString1DArrayMapIterator) skip(n int) &String1DArraySkipIterato
 	}
 }
 
-pub fn (mut i IntString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i IntString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11038,8 +11038,8 @@ pub fn (mut i IntString1DArrayMapIterator) take(n int) &String1DArrayTakeIterato
 	}
 }
 
-pub fn (mut i IntString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i IntString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11143,8 +11143,8 @@ pub fn (mut i IntInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i IntInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i IntInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11199,8 +11199,8 @@ pub fn (mut i IntInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i IntInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i IntInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11304,8 +11304,8 @@ pub fn (mut i IntByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i IntByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i IntByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11360,8 +11360,8 @@ pub fn (mut i IntByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i IntByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i IntByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11465,8 +11465,8 @@ pub fn (mut i IntRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i IntRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i IntRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11521,8 +11521,8 @@ pub fn (mut i IntRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i IntRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i IntRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11626,8 +11626,8 @@ pub fn (mut i IntF641DArrayMapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i IntF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i IntF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11682,8 +11682,8 @@ pub fn (mut i IntF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i IntF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i IntF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11787,8 +11787,8 @@ pub fn (mut i ByteBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i ByteBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i ByteBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11843,8 +11843,8 @@ pub fn (mut i ByteBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i ByteBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i ByteBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -11948,8 +11948,8 @@ pub fn (mut i ByteStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i ByteStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i ByteStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12004,8 +12004,8 @@ pub fn (mut i ByteStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i ByteStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i ByteStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12109,8 +12109,8 @@ pub fn (mut i ByteIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i ByteIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i ByteIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12165,8 +12165,8 @@ pub fn (mut i ByteIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i ByteIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i ByteIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12270,8 +12270,8 @@ pub fn (mut i ByteByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12326,8 +12326,8 @@ pub fn (mut i ByteByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12431,8 +12431,8 @@ pub fn (mut i ByteRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i ByteRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i ByteRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12487,8 +12487,8 @@ pub fn (mut i ByteRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i ByteRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i ByteRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12592,8 +12592,8 @@ pub fn (mut i ByteF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i ByteF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i ByteF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12648,8 +12648,8 @@ pub fn (mut i ByteF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i ByteF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i ByteF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12753,8 +12753,8 @@ pub fn (mut i ByteBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i ByteBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i ByteBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12809,8 +12809,8 @@ pub fn (mut i ByteBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i ByteBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i ByteBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12914,8 +12914,8 @@ pub fn (mut i ByteString1DArrayMapIterator) skip(n int) &String1DArraySkipIterat
 	}
 }
 
-pub fn (mut i ByteString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i ByteString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -12970,8 +12970,8 @@ pub fn (mut i ByteString1DArrayMapIterator) take(n int) &String1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i ByteString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i ByteString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13075,8 +13075,8 @@ pub fn (mut i ByteInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i ByteInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i ByteInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13131,8 +13131,8 @@ pub fn (mut i ByteInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i ByteInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i ByteInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13236,8 +13236,8 @@ pub fn (mut i ByteByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i ByteByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i ByteByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13292,8 +13292,8 @@ pub fn (mut i ByteByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i ByteByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i ByteByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13397,8 +13397,8 @@ pub fn (mut i ByteRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i ByteRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i ByteRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13453,8 +13453,8 @@ pub fn (mut i ByteRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i ByteRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i ByteRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13558,8 +13558,8 @@ pub fn (mut i ByteF641DArrayMapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i ByteF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i ByteF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13614,8 +13614,8 @@ pub fn (mut i ByteF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i ByteF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i ByteF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13719,8 +13719,8 @@ pub fn (mut i RuneBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i RuneBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i RuneBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13775,8 +13775,8 @@ pub fn (mut i RuneBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i RuneBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i RuneBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13880,8 +13880,8 @@ pub fn (mut i RuneStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i RuneStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i RuneStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -13936,8 +13936,8 @@ pub fn (mut i RuneStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i RuneStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i RuneStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14041,8 +14041,8 @@ pub fn (mut i RuneIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i RuneIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i RuneIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14097,8 +14097,8 @@ pub fn (mut i RuneIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i RuneIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i RuneIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14202,8 +14202,8 @@ pub fn (mut i RuneByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i RuneByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i RuneByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14258,8 +14258,8 @@ pub fn (mut i RuneByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i RuneByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i RuneByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14363,8 +14363,8 @@ pub fn (mut i RuneRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14419,8 +14419,8 @@ pub fn (mut i RuneRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14524,8 +14524,8 @@ pub fn (mut i RuneF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i RuneF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i RuneF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14580,8 +14580,8 @@ pub fn (mut i RuneF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i RuneF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i RuneF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14685,8 +14685,8 @@ pub fn (mut i RuneBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i RuneBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i RuneBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14741,8 +14741,8 @@ pub fn (mut i RuneBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i RuneBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i RuneBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14846,8 +14846,8 @@ pub fn (mut i RuneString1DArrayMapIterator) skip(n int) &String1DArraySkipIterat
 	}
 }
 
-pub fn (mut i RuneString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i RuneString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -14902,8 +14902,8 @@ pub fn (mut i RuneString1DArrayMapIterator) take(n int) &String1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i RuneString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i RuneString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15007,8 +15007,8 @@ pub fn (mut i RuneInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i RuneInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i RuneInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15063,8 +15063,8 @@ pub fn (mut i RuneInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i RuneInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i RuneInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15168,8 +15168,8 @@ pub fn (mut i RuneByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i RuneByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i RuneByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15224,8 +15224,8 @@ pub fn (mut i RuneByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i RuneByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i RuneByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15329,8 +15329,8 @@ pub fn (mut i RuneRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i RuneRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i RuneRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15385,8 +15385,8 @@ pub fn (mut i RuneRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i RuneRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i RuneRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15490,8 +15490,8 @@ pub fn (mut i RuneF641DArrayMapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i RuneF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i RuneF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15546,8 +15546,8 @@ pub fn (mut i RuneF641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i RuneF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i RuneF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15651,8 +15651,8 @@ pub fn (mut i F64BoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i F64BoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i F64BoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15707,8 +15707,8 @@ pub fn (mut i F64BoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i F64BoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i F64BoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15812,8 +15812,8 @@ pub fn (mut i F64StringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i F64StringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i F64StringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15868,8 +15868,8 @@ pub fn (mut i F64StringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i F64StringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i F64StringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -15973,8 +15973,8 @@ pub fn (mut i F64IntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i F64IntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i F64IntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16029,8 +16029,8 @@ pub fn (mut i F64IntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i F64IntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i F64IntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16134,8 +16134,8 @@ pub fn (mut i F64ByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i F64ByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i F64ByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16190,8 +16190,8 @@ pub fn (mut i F64ByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i F64ByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i F64ByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16295,8 +16295,8 @@ pub fn (mut i F64RuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i F64RuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i F64RuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16351,8 +16351,8 @@ pub fn (mut i F64RuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i F64RuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i F64RuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16456,8 +16456,8 @@ pub fn (mut i F64F64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64F64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64F64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16512,8 +16512,8 @@ pub fn (mut i F64F64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64F64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64F64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16617,8 +16617,8 @@ pub fn (mut i F64Bool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F64Bool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i F64Bool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16673,8 +16673,8 @@ pub fn (mut i F64Bool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F64Bool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i F64Bool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16778,8 +16778,8 @@ pub fn (mut i F64String1DArrayMapIterator) skip(n int) &String1DArraySkipIterato
 	}
 }
 
-pub fn (mut i F64String1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i F64String1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16834,8 +16834,8 @@ pub fn (mut i F64String1DArrayMapIterator) take(n int) &String1DArrayTakeIterato
 	}
 }
 
-pub fn (mut i F64String1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i F64String1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16939,8 +16939,8 @@ pub fn (mut i F64Int1DArrayMapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F64Int1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i F64Int1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -16995,8 +16995,8 @@ pub fn (mut i F64Int1DArrayMapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F64Int1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i F64Int1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17100,8 +17100,8 @@ pub fn (mut i F64Byte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F64Byte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i F64Byte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17156,8 +17156,8 @@ pub fn (mut i F64Byte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F64Byte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i F64Byte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17261,8 +17261,8 @@ pub fn (mut i F64Rune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F64Rune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i F64Rune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17317,8 +17317,8 @@ pub fn (mut i F64Rune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F64Rune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i F64Rune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17422,8 +17422,8 @@ pub fn (mut i F64F641DArrayMapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F64F641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F64F641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17478,8 +17478,8 @@ pub fn (mut i F64F641DArrayMapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F64F641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F64F641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17583,8 +17583,8 @@ pub fn (mut i Bool1DArrayBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i Bool1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17639,8 +17639,8 @@ pub fn (mut i Bool1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i Bool1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17744,8 +17744,8 @@ pub fn (mut i Bool1DArrayStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i Bool1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17800,8 +17800,8 @@ pub fn (mut i Bool1DArrayStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i Bool1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17905,8 +17905,8 @@ pub fn (mut i Bool1DArrayIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i Bool1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -17961,8 +17961,8 @@ pub fn (mut i Bool1DArrayIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i Bool1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18066,8 +18066,8 @@ pub fn (mut i Bool1DArrayByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i Bool1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18122,8 +18122,8 @@ pub fn (mut i Bool1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i Bool1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18227,8 +18227,8 @@ pub fn (mut i Bool1DArrayRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i Bool1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18283,8 +18283,8 @@ pub fn (mut i Bool1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i Bool1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18388,8 +18388,8 @@ pub fn (mut i Bool1DArrayF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i Bool1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18444,8 +18444,8 @@ pub fn (mut i Bool1DArrayF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i Bool1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18549,8 +18549,8 @@ pub fn (mut i Bool1DArrayBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIte
 	}
 }
 
-pub fn (mut i Bool1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18605,8 +18605,8 @@ pub fn (mut i Bool1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Bool1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18710,8 +18710,8 @@ pub fn (mut i Bool1DArrayString1DArrayMapIterator) skip(n int) &String1DArraySki
 	}
 }
 
-pub fn (mut i Bool1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18766,8 +18766,8 @@ pub fn (mut i Bool1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTak
 	}
 }
 
-pub fn (mut i Bool1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18871,8 +18871,8 @@ pub fn (mut i Bool1DArrayInt1DArrayMapIterator) skip(n int) &Int1DArraySkipItera
 	}
 }
 
-pub fn (mut i Bool1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -18927,8 +18927,8 @@ pub fn (mut i Bool1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeItera
 	}
 }
 
-pub fn (mut i Bool1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19032,8 +19032,8 @@ pub fn (mut i Bool1DArrayByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIte
 	}
 }
 
-pub fn (mut i Bool1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19088,8 +19088,8 @@ pub fn (mut i Bool1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Bool1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19193,8 +19193,8 @@ pub fn (mut i Bool1DArrayRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIte
 	}
 }
 
-pub fn (mut i Bool1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19249,8 +19249,8 @@ pub fn (mut i Bool1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Bool1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19354,8 +19354,8 @@ pub fn (mut i Bool1DArrayF641DArrayMapIterator) skip(n int) &F641DArraySkipItera
 	}
 }
 
-pub fn (mut i Bool1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19410,8 +19410,8 @@ pub fn (mut i Bool1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeItera
 	}
 }
 
-pub fn (mut i Bool1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19515,8 +19515,8 @@ pub fn (mut i String1DArrayBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i String1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19571,8 +19571,8 @@ pub fn (mut i String1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i String1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19676,8 +19676,8 @@ pub fn (mut i String1DArrayStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i String1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19732,8 +19732,8 @@ pub fn (mut i String1DArrayStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i String1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19837,8 +19837,8 @@ pub fn (mut i String1DArrayIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i String1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19893,8 +19893,8 @@ pub fn (mut i String1DArrayIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i String1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -19998,8 +19998,8 @@ pub fn (mut i String1DArrayByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i String1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20054,8 +20054,8 @@ pub fn (mut i String1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i String1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20159,8 +20159,8 @@ pub fn (mut i String1DArrayRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i String1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20215,8 +20215,8 @@ pub fn (mut i String1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i String1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20320,8 +20320,8 @@ pub fn (mut i String1DArrayF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i String1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20376,8 +20376,8 @@ pub fn (mut i String1DArrayF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i String1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20481,8 +20481,8 @@ pub fn (mut i String1DArrayBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipI
 	}
 }
 
-pub fn (mut i String1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20537,8 +20537,8 @@ pub fn (mut i String1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeI
 	}
 }
 
-pub fn (mut i String1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20642,8 +20642,8 @@ pub fn (mut i String1DArrayString1DArrayMapIterator) skip(n int) &String1DArrayS
 	}
 }
 
-pub fn (mut i String1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20698,8 +20698,8 @@ pub fn (mut i String1DArrayString1DArrayMapIterator) take(n int) &String1DArrayT
 	}
 }
 
-pub fn (mut i String1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20803,8 +20803,8 @@ pub fn (mut i String1DArrayInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIte
 	}
 }
 
-pub fn (mut i String1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20859,8 +20859,8 @@ pub fn (mut i String1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIte
 	}
 }
 
-pub fn (mut i String1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -20964,8 +20964,8 @@ pub fn (mut i String1DArrayByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipI
 	}
 }
 
-pub fn (mut i String1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21020,8 +21020,8 @@ pub fn (mut i String1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeI
 	}
 }
 
-pub fn (mut i String1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21125,8 +21125,8 @@ pub fn (mut i String1DArrayRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipI
 	}
 }
 
-pub fn (mut i String1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21181,8 +21181,8 @@ pub fn (mut i String1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeI
 	}
 }
 
-pub fn (mut i String1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21286,8 +21286,8 @@ pub fn (mut i String1DArrayF641DArrayMapIterator) skip(n int) &F641DArraySkipIte
 	}
 }
 
-pub fn (mut i String1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i String1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21342,8 +21342,8 @@ pub fn (mut i String1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIte
 	}
 }
 
-pub fn (mut i String1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i String1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21447,8 +21447,8 @@ pub fn (mut i Int1DArrayBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i Int1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21503,8 +21503,8 @@ pub fn (mut i Int1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i Int1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21608,8 +21608,8 @@ pub fn (mut i Int1DArrayStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i Int1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21664,8 +21664,8 @@ pub fn (mut i Int1DArrayStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i Int1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21769,8 +21769,8 @@ pub fn (mut i Int1DArrayIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i Int1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21825,8 +21825,8 @@ pub fn (mut i Int1DArrayIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i Int1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21930,8 +21930,8 @@ pub fn (mut i Int1DArrayByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i Int1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -21986,8 +21986,8 @@ pub fn (mut i Int1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i Int1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22091,8 +22091,8 @@ pub fn (mut i Int1DArrayRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i Int1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22147,8 +22147,8 @@ pub fn (mut i Int1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i Int1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22252,8 +22252,8 @@ pub fn (mut i Int1DArrayF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i Int1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22308,8 +22308,8 @@ pub fn (mut i Int1DArrayF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i Int1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22413,8 +22413,8 @@ pub fn (mut i Int1DArrayBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIter
 	}
 }
 
-pub fn (mut i Int1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22469,8 +22469,8 @@ pub fn (mut i Int1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIter
 	}
 }
 
-pub fn (mut i Int1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22574,8 +22574,8 @@ pub fn (mut i Int1DArrayString1DArrayMapIterator) skip(n int) &String1DArraySkip
 	}
 }
 
-pub fn (mut i Int1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22630,8 +22630,8 @@ pub fn (mut i Int1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTake
 	}
 }
 
-pub fn (mut i Int1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22735,8 +22735,8 @@ pub fn (mut i Int1DArrayInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterat
 	}
 }
 
-pub fn (mut i Int1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22791,8 +22791,8 @@ pub fn (mut i Int1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i Int1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22896,8 +22896,8 @@ pub fn (mut i Int1DArrayByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIter
 	}
 }
 
-pub fn (mut i Int1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -22952,8 +22952,8 @@ pub fn (mut i Int1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIter
 	}
 }
 
-pub fn (mut i Int1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23057,8 +23057,8 @@ pub fn (mut i Int1DArrayRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIter
 	}
 }
 
-pub fn (mut i Int1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23113,8 +23113,8 @@ pub fn (mut i Int1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIter
 	}
 }
 
-pub fn (mut i Int1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23218,8 +23218,8 @@ pub fn (mut i Int1DArrayF641DArrayMapIterator) skip(n int) &F641DArraySkipIterat
 	}
 }
 
-pub fn (mut i Int1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23274,8 +23274,8 @@ pub fn (mut i Int1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterat
 	}
 }
 
-pub fn (mut i Int1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23379,8 +23379,8 @@ pub fn (mut i Byte1DArrayBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i Byte1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23435,8 +23435,8 @@ pub fn (mut i Byte1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i Byte1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23540,8 +23540,8 @@ pub fn (mut i Byte1DArrayStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i Byte1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23596,8 +23596,8 @@ pub fn (mut i Byte1DArrayStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i Byte1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23701,8 +23701,8 @@ pub fn (mut i Byte1DArrayIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i Byte1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23757,8 +23757,8 @@ pub fn (mut i Byte1DArrayIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i Byte1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23862,8 +23862,8 @@ pub fn (mut i Byte1DArrayByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i Byte1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -23918,8 +23918,8 @@ pub fn (mut i Byte1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i Byte1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24023,8 +24023,8 @@ pub fn (mut i Byte1DArrayRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i Byte1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24079,8 +24079,8 @@ pub fn (mut i Byte1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i Byte1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24184,8 +24184,8 @@ pub fn (mut i Byte1DArrayF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i Byte1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24240,8 +24240,8 @@ pub fn (mut i Byte1DArrayF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i Byte1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24345,8 +24345,8 @@ pub fn (mut i Byte1DArrayBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIte
 	}
 }
 
-pub fn (mut i Byte1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24401,8 +24401,8 @@ pub fn (mut i Byte1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Byte1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24506,8 +24506,8 @@ pub fn (mut i Byte1DArrayString1DArrayMapIterator) skip(n int) &String1DArraySki
 	}
 }
 
-pub fn (mut i Byte1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24562,8 +24562,8 @@ pub fn (mut i Byte1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTak
 	}
 }
 
-pub fn (mut i Byte1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24667,8 +24667,8 @@ pub fn (mut i Byte1DArrayInt1DArrayMapIterator) skip(n int) &Int1DArraySkipItera
 	}
 }
 
-pub fn (mut i Byte1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24723,8 +24723,8 @@ pub fn (mut i Byte1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeItera
 	}
 }
 
-pub fn (mut i Byte1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24828,8 +24828,8 @@ pub fn (mut i Byte1DArrayByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIte
 	}
 }
 
-pub fn (mut i Byte1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24884,8 +24884,8 @@ pub fn (mut i Byte1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Byte1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -24989,8 +24989,8 @@ pub fn (mut i Byte1DArrayRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIte
 	}
 }
 
-pub fn (mut i Byte1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25045,8 +25045,8 @@ pub fn (mut i Byte1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Byte1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25150,8 +25150,8 @@ pub fn (mut i Byte1DArrayF641DArrayMapIterator) skip(n int) &F641DArraySkipItera
 	}
 }
 
-pub fn (mut i Byte1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25206,8 +25206,8 @@ pub fn (mut i Byte1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeItera
 	}
 }
 
-pub fn (mut i Byte1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25311,8 +25311,8 @@ pub fn (mut i Rune1DArrayBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i Rune1DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25367,8 +25367,8 @@ pub fn (mut i Rune1DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i Rune1DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25472,8 +25472,8 @@ pub fn (mut i Rune1DArrayStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i Rune1DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25528,8 +25528,8 @@ pub fn (mut i Rune1DArrayStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i Rune1DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25633,8 +25633,8 @@ pub fn (mut i Rune1DArrayIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i Rune1DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25689,8 +25689,8 @@ pub fn (mut i Rune1DArrayIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i Rune1DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25794,8 +25794,8 @@ pub fn (mut i Rune1DArrayByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i Rune1DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25850,8 +25850,8 @@ pub fn (mut i Rune1DArrayByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i Rune1DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -25955,8 +25955,8 @@ pub fn (mut i Rune1DArrayRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i Rune1DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26011,8 +26011,8 @@ pub fn (mut i Rune1DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i Rune1DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26116,8 +26116,8 @@ pub fn (mut i Rune1DArrayF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i Rune1DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26172,8 +26172,8 @@ pub fn (mut i Rune1DArrayF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i Rune1DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26277,8 +26277,8 @@ pub fn (mut i Rune1DArrayBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIte
 	}
 }
 
-pub fn (mut i Rune1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26333,8 +26333,8 @@ pub fn (mut i Rune1DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Rune1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26438,8 +26438,8 @@ pub fn (mut i Rune1DArrayString1DArrayMapIterator) skip(n int) &String1DArraySki
 	}
 }
 
-pub fn (mut i Rune1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26494,8 +26494,8 @@ pub fn (mut i Rune1DArrayString1DArrayMapIterator) take(n int) &String1DArrayTak
 	}
 }
 
-pub fn (mut i Rune1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26599,8 +26599,8 @@ pub fn (mut i Rune1DArrayInt1DArrayMapIterator) skip(n int) &Int1DArraySkipItera
 	}
 }
 
-pub fn (mut i Rune1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26655,8 +26655,8 @@ pub fn (mut i Rune1DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeItera
 	}
 }
 
-pub fn (mut i Rune1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26760,8 +26760,8 @@ pub fn (mut i Rune1DArrayByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIte
 	}
 }
 
-pub fn (mut i Rune1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26816,8 +26816,8 @@ pub fn (mut i Rune1DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Rune1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26921,8 +26921,8 @@ pub fn (mut i Rune1DArrayRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIte
 	}
 }
 
-pub fn (mut i Rune1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -26977,8 +26977,8 @@ pub fn (mut i Rune1DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIte
 	}
 }
 
-pub fn (mut i Rune1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27082,8 +27082,8 @@ pub fn (mut i Rune1DArrayF641DArrayMapIterator) skip(n int) &F641DArraySkipItera
 	}
 }
 
-pub fn (mut i Rune1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27138,8 +27138,8 @@ pub fn (mut i Rune1DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeItera
 	}
 }
 
-pub fn (mut i Rune1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27243,8 +27243,8 @@ pub fn (mut i F641DArrayBoolMapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i F641DArrayBoolMapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27299,8 +27299,8 @@ pub fn (mut i F641DArrayBoolMapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i F641DArrayBoolMapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27404,8 +27404,8 @@ pub fn (mut i F641DArrayStringMapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i F641DArrayStringMapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27460,8 +27460,8 @@ pub fn (mut i F641DArrayStringMapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i F641DArrayStringMapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27565,8 +27565,8 @@ pub fn (mut i F641DArrayIntMapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i F641DArrayIntMapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27621,8 +27621,8 @@ pub fn (mut i F641DArrayIntMapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i F641DArrayIntMapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27726,8 +27726,8 @@ pub fn (mut i F641DArrayByteMapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i F641DArrayByteMapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27782,8 +27782,8 @@ pub fn (mut i F641DArrayByteMapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i F641DArrayByteMapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27887,8 +27887,8 @@ pub fn (mut i F641DArrayRuneMapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i F641DArrayRuneMapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -27943,8 +27943,8 @@ pub fn (mut i F641DArrayRuneMapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i F641DArrayRuneMapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28048,8 +28048,8 @@ pub fn (mut i F641DArrayF64MapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F641DArrayF64MapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28104,8 +28104,8 @@ pub fn (mut i F641DArrayF64MapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F641DArrayF64MapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28209,8 +28209,8 @@ pub fn (mut i F641DArrayBool1DArrayMapIterator) skip(n int) &Bool1DArraySkipIter
 	}
 }
 
-pub fn (mut i F641DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i F641DArrayBool1DArrayMapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28265,8 +28265,8 @@ pub fn (mut i F641DArrayBool1DArrayMapIterator) take(n int) &Bool1DArrayTakeIter
 	}
 }
 
-pub fn (mut i F641DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i F641DArrayBool1DArrayMapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28370,8 +28370,8 @@ pub fn (mut i F641DArrayString1DArrayMapIterator) skip(n int) &String1DArraySkip
 	}
 }
 
-pub fn (mut i F641DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i F641DArrayString1DArrayMapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28426,8 +28426,8 @@ pub fn (mut i F641DArrayString1DArrayMapIterator) take(n int) &String1DArrayTake
 	}
 }
 
-pub fn (mut i F641DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i F641DArrayString1DArrayMapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28531,8 +28531,8 @@ pub fn (mut i F641DArrayInt1DArrayMapIterator) skip(n int) &Int1DArraySkipIterat
 	}
 }
 
-pub fn (mut i F641DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i F641DArrayInt1DArrayMapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28587,8 +28587,8 @@ pub fn (mut i F641DArrayInt1DArrayMapIterator) take(n int) &Int1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i F641DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i F641DArrayInt1DArrayMapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28692,8 +28692,8 @@ pub fn (mut i F641DArrayByte1DArrayMapIterator) skip(n int) &Byte1DArraySkipIter
 	}
 }
 
-pub fn (mut i F641DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i F641DArrayByte1DArrayMapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28748,8 +28748,8 @@ pub fn (mut i F641DArrayByte1DArrayMapIterator) take(n int) &Byte1DArrayTakeIter
 	}
 }
 
-pub fn (mut i F641DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i F641DArrayByte1DArrayMapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28853,8 +28853,8 @@ pub fn (mut i F641DArrayRune1DArrayMapIterator) skip(n int) &Rune1DArraySkipIter
 	}
 }
 
-pub fn (mut i F641DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i F641DArrayRune1DArrayMapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -28909,8 +28909,8 @@ pub fn (mut i F641DArrayRune1DArrayMapIterator) take(n int) &Rune1DArrayTakeIter
 	}
 }
 
-pub fn (mut i F641DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i F641DArrayRune1DArrayMapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29014,8 +29014,8 @@ pub fn (mut i F641DArrayF641DArrayMapIterator) skip(n int) &F641DArraySkipIterat
 	}
 }
 
-pub fn (mut i F641DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayF641DArrayMapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29070,8 +29070,8 @@ pub fn (mut i F641DArrayF641DArrayMapIterator) take(n int) &F641DArrayTakeIterat
 	}
 }
 
-pub fn (mut i F641DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayF641DArrayMapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29355,8 +29355,8 @@ pub fn (mut i BoolSkipIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolSkipIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolSkipIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29411,8 +29411,8 @@ pub fn (mut i BoolSkipIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolSkipIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolSkipIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29516,8 +29516,8 @@ pub fn (mut i StringSkipIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringSkipIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringSkipIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29572,8 +29572,8 @@ pub fn (mut i StringSkipIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringSkipIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringSkipIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29677,8 +29677,8 @@ pub fn (mut i IntSkipIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntSkipIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntSkipIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29733,8 +29733,8 @@ pub fn (mut i IntSkipIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntSkipIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntSkipIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29838,8 +29838,8 @@ pub fn (mut i ByteSkipIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteSkipIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteSkipIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29894,8 +29894,8 @@ pub fn (mut i ByteSkipIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteSkipIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteSkipIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -29999,8 +29999,8 @@ pub fn (mut i RuneSkipIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneSkipIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneSkipIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30055,8 +30055,8 @@ pub fn (mut i RuneSkipIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneSkipIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneSkipIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30160,8 +30160,8 @@ pub fn (mut i F64SkipIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64SkipIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64SkipIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30216,8 +30216,8 @@ pub fn (mut i F64SkipIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64SkipIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64SkipIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30321,8 +30321,8 @@ pub fn (mut i Bool1DArraySkipIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArraySkipIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArraySkipIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30377,8 +30377,8 @@ pub fn (mut i Bool1DArraySkipIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArraySkipIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArraySkipIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30482,8 +30482,8 @@ pub fn (mut i String1DArraySkipIterator) skip(n int) &String1DArraySkipIterator 
 	}
 }
 
-pub fn (mut i String1DArraySkipIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArraySkipIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30538,8 +30538,8 @@ pub fn (mut i String1DArraySkipIterator) take(n int) &String1DArrayTakeIterator 
 	}
 }
 
-pub fn (mut i String1DArraySkipIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArraySkipIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30643,8 +30643,8 @@ pub fn (mut i Int1DArraySkipIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArraySkipIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArraySkipIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30699,8 +30699,8 @@ pub fn (mut i Int1DArraySkipIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArraySkipIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArraySkipIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30804,8 +30804,8 @@ pub fn (mut i Byte1DArraySkipIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArraySkipIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArraySkipIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30860,8 +30860,8 @@ pub fn (mut i Byte1DArraySkipIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArraySkipIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArraySkipIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -30965,8 +30965,8 @@ pub fn (mut i Rune1DArraySkipIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArraySkipIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArraySkipIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -31021,8 +31021,8 @@ pub fn (mut i Rune1DArraySkipIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArraySkipIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArraySkipIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -31126,8 +31126,8 @@ pub fn (mut i F641DArraySkipIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArraySkipIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArraySkipIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -31182,21 +31182,21 @@ pub fn (mut i F641DArraySkipIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArraySkipIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArraySkipIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub struct BoolSkip_whileIterator {
+pub struct BoolSkipWhileIterator {
 	predicate fn (_ bool) bool
 mut:
 	iterator BoolIterator
 	done bool
 }
 
-pub fn (mut i BoolSkip_whileIterator) next() ?bool {
+pub fn (mut i BoolSkipWhileIterator) next() ?bool {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31207,14 +31207,14 @@ pub fn (mut i BoolSkip_whileIterator) next() ?bool {
 	return i.iterator.next()
 }
 
-pub struct StringSkip_whileIterator {
+pub struct StringSkipWhileIterator {
 	predicate fn (_ string) bool
 mut:
 	iterator StringIterator
 	done bool
 }
 
-pub fn (mut i StringSkip_whileIterator) next() ?string {
+pub fn (mut i StringSkipWhileIterator) next() ?string {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31225,14 +31225,14 @@ pub fn (mut i StringSkip_whileIterator) next() ?string {
 	return i.iterator.next()
 }
 
-pub struct IntSkip_whileIterator {
+pub struct IntSkipWhileIterator {
 	predicate fn (_ int) bool
 mut:
 	iterator IntIterator
 	done bool
 }
 
-pub fn (mut i IntSkip_whileIterator) next() ?int {
+pub fn (mut i IntSkipWhileIterator) next() ?int {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31243,14 +31243,14 @@ pub fn (mut i IntSkip_whileIterator) next() ?int {
 	return i.iterator.next()
 }
 
-pub struct ByteSkip_whileIterator {
+pub struct ByteSkipWhileIterator {
 	predicate fn (_ byte) bool
 mut:
 	iterator ByteIterator
 	done bool
 }
 
-pub fn (mut i ByteSkip_whileIterator) next() ?byte {
+pub fn (mut i ByteSkipWhileIterator) next() ?byte {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31261,14 +31261,14 @@ pub fn (mut i ByteSkip_whileIterator) next() ?byte {
 	return i.iterator.next()
 }
 
-pub struct RuneSkip_whileIterator {
+pub struct RuneSkipWhileIterator {
 	predicate fn (_ rune) bool
 mut:
 	iterator RuneIterator
 	done bool
 }
 
-pub fn (mut i RuneSkip_whileIterator) next() ?rune {
+pub fn (mut i RuneSkipWhileIterator) next() ?rune {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31279,14 +31279,14 @@ pub fn (mut i RuneSkip_whileIterator) next() ?rune {
 	return i.iterator.next()
 }
 
-pub struct F64Skip_whileIterator {
+pub struct F64SkipWhileIterator {
 	predicate fn (_ f64) bool
 mut:
 	iterator F64Iterator
 	done bool
 }
 
-pub fn (mut i F64Skip_whileIterator) next() ?f64 {
+pub fn (mut i F64SkipWhileIterator) next() ?f64 {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31297,14 +31297,14 @@ pub fn (mut i F64Skip_whileIterator) next() ?f64 {
 	return i.iterator.next()
 }
 
-pub struct Bool1DArraySkip_whileIterator {
+pub struct Bool1DArraySkipWhileIterator {
 	predicate fn (_ []bool) bool
 mut:
 	iterator Bool1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) next() ?[]bool {
+pub fn (mut i Bool1DArraySkipWhileIterator) next() ?[]bool {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31315,14 +31315,14 @@ pub fn (mut i Bool1DArraySkip_whileIterator) next() ?[]bool {
 	return i.iterator.next()
 }
 
-pub struct String1DArraySkip_whileIterator {
+pub struct String1DArraySkipWhileIterator {
 	predicate fn (_ []string) bool
 mut:
 	iterator String1DArrayIterator
 	done bool
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) next() ?[]string {
+pub fn (mut i String1DArraySkipWhileIterator) next() ?[]string {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31333,14 +31333,14 @@ pub fn (mut i String1DArraySkip_whileIterator) next() ?[]string {
 	return i.iterator.next()
 }
 
-pub struct Int1DArraySkip_whileIterator {
+pub struct Int1DArraySkipWhileIterator {
 	predicate fn (_ []int) bool
 mut:
 	iterator Int1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) next() ?[]int {
+pub fn (mut i Int1DArraySkipWhileIterator) next() ?[]int {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31351,14 +31351,14 @@ pub fn (mut i Int1DArraySkip_whileIterator) next() ?[]int {
 	return i.iterator.next()
 }
 
-pub struct Byte1DArraySkip_whileIterator {
+pub struct Byte1DArraySkipWhileIterator {
 	predicate fn (_ []byte) bool
 mut:
 	iterator Byte1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) next() ?[]byte {
+pub fn (mut i Byte1DArraySkipWhileIterator) next() ?[]byte {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31369,14 +31369,14 @@ pub fn (mut i Byte1DArraySkip_whileIterator) next() ?[]byte {
 	return i.iterator.next()
 }
 
-pub struct Rune1DArraySkip_whileIterator {
+pub struct Rune1DArraySkipWhileIterator {
 	predicate fn (_ []rune) bool
 mut:
 	iterator Rune1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) next() ?[]rune {
+pub fn (mut i Rune1DArraySkipWhileIterator) next() ?[]rune {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31387,14 +31387,14 @@ pub fn (mut i Rune1DArraySkip_whileIterator) next() ?[]rune {
 	return i.iterator.next()
 }
 
-pub struct F641DArraySkip_whileIterator {
+pub struct F641DArraySkipWhileIterator {
 	predicate fn (_ []f64) bool
 mut:
 	iterator F641DArrayIterator
 	done bool
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) next() ?[]f64 {
+pub fn (mut i F641DArraySkipWhileIterator) next() ?[]f64 {
 	for !i.done {
 		item := i.iterator.next() ?
 		if !i.predicate(item) {
@@ -31405,112 +31405,112 @@ pub fn (mut i F641DArraySkip_whileIterator) next() ?[]f64 {
 	return i.iterator.next()
 }
 
-pub fn (mut i BoolSkip_whileIterator) filter(filter_fn fn(_ bool) bool) &BoolFilterIterator {
+pub fn (mut i BoolSkipWhileIterator) filter(filter_fn fn(_ bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_bool(map_fn fn(_ bool) bool) &BoolBoolMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_bool(map_fn fn(_ bool) bool) &BoolBoolMapIterator {
 	return &BoolBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_string(map_fn fn(_ bool) string) &BoolStringMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_string(map_fn fn(_ bool) string) &BoolStringMapIterator {
 	return &BoolStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_int(map_fn fn(_ bool) int) &BoolIntMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_int(map_fn fn(_ bool) int) &BoolIntMapIterator {
 	return &BoolIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_byte(map_fn fn(_ bool) byte) &BoolByteMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_byte(map_fn fn(_ bool) byte) &BoolByteMapIterator {
 	return &BoolByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_rune(map_fn fn(_ bool) rune) &BoolRuneMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_rune(map_fn fn(_ bool) rune) &BoolRuneMapIterator {
 	return &BoolRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_f64(map_fn fn(_ bool) f64) &BoolF64MapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_f64(map_fn fn(_ bool) f64) &BoolF64MapIterator {
 	return &BoolF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_bool_arr(map_fn fn(_ bool) []bool) &BoolBool1DArrayMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_bool_arr(map_fn fn(_ bool) []bool) &BoolBool1DArrayMapIterator {
 	return &BoolBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_string_arr(map_fn fn(_ bool) []string) &BoolString1DArrayMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_string_arr(map_fn fn(_ bool) []string) &BoolString1DArrayMapIterator {
 	return &BoolString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_int_arr(map_fn fn(_ bool) []int) &BoolInt1DArrayMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_int_arr(map_fn fn(_ bool) []int) &BoolInt1DArrayMapIterator {
 	return &BoolInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_byte_arr(map_fn fn(_ bool) []byte) &BoolByte1DArrayMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_byte_arr(map_fn fn(_ bool) []byte) &BoolByte1DArrayMapIterator {
 	return &BoolByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_rune_arr(map_fn fn(_ bool) []rune) &BoolRune1DArrayMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_rune_arr(map_fn fn(_ bool) []rune) &BoolRune1DArrayMapIterator {
 	return &BoolRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) map_f64_arr(map_fn fn(_ bool) []f64) &BoolF641DArrayMapIterator {
+pub fn (mut i BoolSkipWhileIterator) map_f64_arr(map_fn fn(_ bool) []f64) &BoolF641DArrayMapIterator {
 	return &BoolF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) skip(n int) &BoolSkipIterator {
+pub fn (mut i BoolSkipWhileIterator) skip(n int) &BoolSkipIterator {
 	return &BoolSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolSkipWhileIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) collect() []bool {
+pub fn (mut i BoolSkipWhileIterator) collect() []bool {
 	mut arr := []bool{}
 	for item in i {
 		arr << item
@@ -31518,160 +31518,160 @@ pub fn (mut i BoolSkip_whileIterator) collect() []bool {
 	return arr
 }
 
-pub fn (mut i BoolSkip_whileIterator) every(n int) &BoolEveryIterator {
+pub fn (mut i BoolSkipWhileIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) rev() &BoolRevIterator {
+pub fn (mut i BoolSkipWhileIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) windows(n int) &BoolBool1DArrayWindowsIterator {
+pub fn (mut i BoolSkipWhileIterator) windows(n int) &BoolBool1DArrayWindowsIterator {
 	return &BoolBool1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) chunks(n int) &BoolBool1DArrayChunksIterator {
+pub fn (mut i BoolSkipWhileIterator) chunks(n int) &BoolBool1DArrayChunksIterator {
 	return &BoolBool1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
+pub fn (mut i BoolSkipWhileIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	return &BoolTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) take(n int) &BoolTakeIterator {
+pub fn (mut i BoolSkipWhileIterator) take(n int) &BoolTakeIterator {
 	return &BoolTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolSkip_whileIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolSkipWhileIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
+pub fn (mut i StringSkipWhileIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_bool(map_fn fn(_ string) bool) &StringBoolMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_bool(map_fn fn(_ string) bool) &StringBoolMapIterator {
 	return &StringBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_string(map_fn fn(_ string) string) &StringStringMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_string(map_fn fn(_ string) string) &StringStringMapIterator {
 	return &StringStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_int(map_fn fn(_ string) int) &StringIntMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_int(map_fn fn(_ string) int) &StringIntMapIterator {
 	return &StringIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_byte(map_fn fn(_ string) byte) &StringByteMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_byte(map_fn fn(_ string) byte) &StringByteMapIterator {
 	return &StringByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_rune(map_fn fn(_ string) rune) &StringRuneMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_rune(map_fn fn(_ string) rune) &StringRuneMapIterator {
 	return &StringRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_f64(map_fn fn(_ string) f64) &StringF64MapIterator {
+pub fn (mut i StringSkipWhileIterator) map_f64(map_fn fn(_ string) f64) &StringF64MapIterator {
 	return &StringF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_bool_arr(map_fn fn(_ string) []bool) &StringBool1DArrayMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_bool_arr(map_fn fn(_ string) []bool) &StringBool1DArrayMapIterator {
 	return &StringBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_string_arr(map_fn fn(_ string) []string) &StringString1DArrayMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_string_arr(map_fn fn(_ string) []string) &StringString1DArrayMapIterator {
 	return &StringString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_int_arr(map_fn fn(_ string) []int) &StringInt1DArrayMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_int_arr(map_fn fn(_ string) []int) &StringInt1DArrayMapIterator {
 	return &StringInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_byte_arr(map_fn fn(_ string) []byte) &StringByte1DArrayMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_byte_arr(map_fn fn(_ string) []byte) &StringByte1DArrayMapIterator {
 	return &StringByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_rune_arr(map_fn fn(_ string) []rune) &StringRune1DArrayMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_rune_arr(map_fn fn(_ string) []rune) &StringRune1DArrayMapIterator {
 	return &StringRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) map_f64_arr(map_fn fn(_ string) []f64) &StringF641DArrayMapIterator {
+pub fn (mut i StringSkipWhileIterator) map_f64_arr(map_fn fn(_ string) []f64) &StringF641DArrayMapIterator {
 	return &StringF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) skip(n int) &StringSkipIterator {
+pub fn (mut i StringSkipWhileIterator) skip(n int) &StringSkipIterator {
 	return &StringSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringSkipWhileIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) collect() []string {
+pub fn (mut i StringSkipWhileIterator) collect() []string {
 	mut arr := []string{}
 	for item in i {
 		arr << item
@@ -31679,160 +31679,160 @@ pub fn (mut i StringSkip_whileIterator) collect() []string {
 	return arr
 }
 
-pub fn (mut i StringSkip_whileIterator) every(n int) &StringEveryIterator {
+pub fn (mut i StringSkipWhileIterator) every(n int) &StringEveryIterator {
 	return &StringEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) rev() &StringRevIterator {
+pub fn (mut i StringSkipWhileIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) windows(n int) &StringString1DArrayWindowsIterator {
+pub fn (mut i StringSkipWhileIterator) windows(n int) &StringString1DArrayWindowsIterator {
 	return &StringString1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) chunks(n int) &StringString1DArrayChunksIterator {
+pub fn (mut i StringSkipWhileIterator) chunks(n int) &StringString1DArrayChunksIterator {
 	return &StringString1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
+pub fn (mut i StringSkipWhileIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) take(n int) &StringTakeIterator {
+pub fn (mut i StringSkipWhileIterator) take(n int) &StringTakeIterator {
 	return &StringTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringSkip_whileIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringSkipWhileIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) filter(filter_fn fn(_ int) bool) &IntFilterIterator {
+pub fn (mut i IntSkipWhileIterator) filter(filter_fn fn(_ int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_bool(map_fn fn(_ int) bool) &IntBoolMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_bool(map_fn fn(_ int) bool) &IntBoolMapIterator {
 	return &IntBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_string(map_fn fn(_ int) string) &IntStringMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_string(map_fn fn(_ int) string) &IntStringMapIterator {
 	return &IntStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_int(map_fn fn(_ int) int) &IntIntMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_int(map_fn fn(_ int) int) &IntIntMapIterator {
 	return &IntIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_byte(map_fn fn(_ int) byte) &IntByteMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_byte(map_fn fn(_ int) byte) &IntByteMapIterator {
 	return &IntByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_rune(map_fn fn(_ int) rune) &IntRuneMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_rune(map_fn fn(_ int) rune) &IntRuneMapIterator {
 	return &IntRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_f64(map_fn fn(_ int) f64) &IntF64MapIterator {
+pub fn (mut i IntSkipWhileIterator) map_f64(map_fn fn(_ int) f64) &IntF64MapIterator {
 	return &IntF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_bool_arr(map_fn fn(_ int) []bool) &IntBool1DArrayMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_bool_arr(map_fn fn(_ int) []bool) &IntBool1DArrayMapIterator {
 	return &IntBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_string_arr(map_fn fn(_ int) []string) &IntString1DArrayMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_string_arr(map_fn fn(_ int) []string) &IntString1DArrayMapIterator {
 	return &IntString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_int_arr(map_fn fn(_ int) []int) &IntInt1DArrayMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_int_arr(map_fn fn(_ int) []int) &IntInt1DArrayMapIterator {
 	return &IntInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_byte_arr(map_fn fn(_ int) []byte) &IntByte1DArrayMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_byte_arr(map_fn fn(_ int) []byte) &IntByte1DArrayMapIterator {
 	return &IntByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_rune_arr(map_fn fn(_ int) []rune) &IntRune1DArrayMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_rune_arr(map_fn fn(_ int) []rune) &IntRune1DArrayMapIterator {
 	return &IntRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) map_f64_arr(map_fn fn(_ int) []f64) &IntF641DArrayMapIterator {
+pub fn (mut i IntSkipWhileIterator) map_f64_arr(map_fn fn(_ int) []f64) &IntF641DArrayMapIterator {
 	return &IntF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) skip(n int) &IntSkipIterator {
+pub fn (mut i IntSkipWhileIterator) skip(n int) &IntSkipIterator {
 	return &IntSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntSkipWhileIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) collect() []int {
+pub fn (mut i IntSkipWhileIterator) collect() []int {
 	mut arr := []int{}
 	for item in i {
 		arr << item
@@ -31840,160 +31840,160 @@ pub fn (mut i IntSkip_whileIterator) collect() []int {
 	return arr
 }
 
-pub fn (mut i IntSkip_whileIterator) every(n int) &IntEveryIterator {
+pub fn (mut i IntSkipWhileIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) rev() &IntRevIterator {
+pub fn (mut i IntSkipWhileIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) windows(n int) &IntInt1DArrayWindowsIterator {
+pub fn (mut i IntSkipWhileIterator) windows(n int) &IntInt1DArrayWindowsIterator {
 	return &IntInt1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) chunks(n int) &IntInt1DArrayChunksIterator {
+pub fn (mut i IntSkipWhileIterator) chunks(n int) &IntInt1DArrayChunksIterator {
 	return &IntInt1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
+pub fn (mut i IntSkipWhileIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	return &IntTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) take(n int) &IntTakeIterator {
+pub fn (mut i IntSkipWhileIterator) take(n int) &IntTakeIterator {
 	return &IntTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntSkip_whileIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntSkipWhileIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
+pub fn (mut i ByteSkipWhileIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_bool(map_fn fn(_ byte) bool) &ByteBoolMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_bool(map_fn fn(_ byte) bool) &ByteBoolMapIterator {
 	return &ByteBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_string(map_fn fn(_ byte) string) &ByteStringMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_string(map_fn fn(_ byte) string) &ByteStringMapIterator {
 	return &ByteStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_int(map_fn fn(_ byte) int) &ByteIntMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_int(map_fn fn(_ byte) int) &ByteIntMapIterator {
 	return &ByteIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_byte(map_fn fn(_ byte) byte) &ByteByteMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_byte(map_fn fn(_ byte) byte) &ByteByteMapIterator {
 	return &ByteByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_rune(map_fn fn(_ byte) rune) &ByteRuneMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_rune(map_fn fn(_ byte) rune) &ByteRuneMapIterator {
 	return &ByteRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_f64(map_fn fn(_ byte) f64) &ByteF64MapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_f64(map_fn fn(_ byte) f64) &ByteF64MapIterator {
 	return &ByteF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_bool_arr(map_fn fn(_ byte) []bool) &ByteBool1DArrayMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_bool_arr(map_fn fn(_ byte) []bool) &ByteBool1DArrayMapIterator {
 	return &ByteBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_string_arr(map_fn fn(_ byte) []string) &ByteString1DArrayMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_string_arr(map_fn fn(_ byte) []string) &ByteString1DArrayMapIterator {
 	return &ByteString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_int_arr(map_fn fn(_ byte) []int) &ByteInt1DArrayMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_int_arr(map_fn fn(_ byte) []int) &ByteInt1DArrayMapIterator {
 	return &ByteInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_byte_arr(map_fn fn(_ byte) []byte) &ByteByte1DArrayMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_byte_arr(map_fn fn(_ byte) []byte) &ByteByte1DArrayMapIterator {
 	return &ByteByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_rune_arr(map_fn fn(_ byte) []rune) &ByteRune1DArrayMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_rune_arr(map_fn fn(_ byte) []rune) &ByteRune1DArrayMapIterator {
 	return &ByteRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) map_f64_arr(map_fn fn(_ byte) []f64) &ByteF641DArrayMapIterator {
+pub fn (mut i ByteSkipWhileIterator) map_f64_arr(map_fn fn(_ byte) []f64) &ByteF641DArrayMapIterator {
 	return &ByteF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) skip(n int) &ByteSkipIterator {
+pub fn (mut i ByteSkipWhileIterator) skip(n int) &ByteSkipIterator {
 	return &ByteSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteSkipWhileIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) collect() []byte {
+pub fn (mut i ByteSkipWhileIterator) collect() []byte {
 	mut arr := []byte{}
 	for item in i {
 		arr << item
@@ -32001,160 +32001,160 @@ pub fn (mut i ByteSkip_whileIterator) collect() []byte {
 	return arr
 }
 
-pub fn (mut i ByteSkip_whileIterator) every(n int) &ByteEveryIterator {
+pub fn (mut i ByteSkipWhileIterator) every(n int) &ByteEveryIterator {
 	return &ByteEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) rev() &ByteRevIterator {
+pub fn (mut i ByteSkipWhileIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) windows(n int) &ByteByte1DArrayWindowsIterator {
+pub fn (mut i ByteSkipWhileIterator) windows(n int) &ByteByte1DArrayWindowsIterator {
 	return &ByteByte1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
+pub fn (mut i ByteSkipWhileIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 	return &ByteByte1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
+pub fn (mut i ByteSkipWhileIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) take(n int) &ByteTakeIterator {
+pub fn (mut i ByteSkipWhileIterator) take(n int) &ByteTakeIterator {
 	return &ByteTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteSkip_whileIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteSkipWhileIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) filter(filter_fn fn(_ rune) bool) &RuneFilterIterator {
+pub fn (mut i RuneSkipWhileIterator) filter(filter_fn fn(_ rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_bool(map_fn fn(_ rune) bool) &RuneBoolMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_bool(map_fn fn(_ rune) bool) &RuneBoolMapIterator {
 	return &RuneBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_string(map_fn fn(_ rune) string) &RuneStringMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_string(map_fn fn(_ rune) string) &RuneStringMapIterator {
 	return &RuneStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_int(map_fn fn(_ rune) int) &RuneIntMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_int(map_fn fn(_ rune) int) &RuneIntMapIterator {
 	return &RuneIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_byte(map_fn fn(_ rune) byte) &RuneByteMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_byte(map_fn fn(_ rune) byte) &RuneByteMapIterator {
 	return &RuneByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_rune(map_fn fn(_ rune) rune) &RuneRuneMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_rune(map_fn fn(_ rune) rune) &RuneRuneMapIterator {
 	return &RuneRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_f64(map_fn fn(_ rune) f64) &RuneF64MapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_f64(map_fn fn(_ rune) f64) &RuneF64MapIterator {
 	return &RuneF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_bool_arr(map_fn fn(_ rune) []bool) &RuneBool1DArrayMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_bool_arr(map_fn fn(_ rune) []bool) &RuneBool1DArrayMapIterator {
 	return &RuneBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_string_arr(map_fn fn(_ rune) []string) &RuneString1DArrayMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_string_arr(map_fn fn(_ rune) []string) &RuneString1DArrayMapIterator {
 	return &RuneString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_int_arr(map_fn fn(_ rune) []int) &RuneInt1DArrayMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_int_arr(map_fn fn(_ rune) []int) &RuneInt1DArrayMapIterator {
 	return &RuneInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_byte_arr(map_fn fn(_ rune) []byte) &RuneByte1DArrayMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_byte_arr(map_fn fn(_ rune) []byte) &RuneByte1DArrayMapIterator {
 	return &RuneByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_rune_arr(map_fn fn(_ rune) []rune) &RuneRune1DArrayMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_rune_arr(map_fn fn(_ rune) []rune) &RuneRune1DArrayMapIterator {
 	return &RuneRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) map_f64_arr(map_fn fn(_ rune) []f64) &RuneF641DArrayMapIterator {
+pub fn (mut i RuneSkipWhileIterator) map_f64_arr(map_fn fn(_ rune) []f64) &RuneF641DArrayMapIterator {
 	return &RuneF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) skip(n int) &RuneSkipIterator {
+pub fn (mut i RuneSkipWhileIterator) skip(n int) &RuneSkipIterator {
 	return &RuneSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneSkipWhileIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) collect() []rune {
+pub fn (mut i RuneSkipWhileIterator) collect() []rune {
 	mut arr := []rune{}
 	for item in i {
 		arr << item
@@ -32162,160 +32162,160 @@ pub fn (mut i RuneSkip_whileIterator) collect() []rune {
 	return arr
 }
 
-pub fn (mut i RuneSkip_whileIterator) every(n int) &RuneEveryIterator {
+pub fn (mut i RuneSkipWhileIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) rev() &RuneRevIterator {
+pub fn (mut i RuneSkipWhileIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) windows(n int) &RuneRune1DArrayWindowsIterator {
+pub fn (mut i RuneSkipWhileIterator) windows(n int) &RuneRune1DArrayWindowsIterator {
 	return &RuneRune1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) chunks(n int) &RuneRune1DArrayChunksIterator {
+pub fn (mut i RuneSkipWhileIterator) chunks(n int) &RuneRune1DArrayChunksIterator {
 	return &RuneRune1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
+pub fn (mut i RuneSkipWhileIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	return &RuneTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) take(n int) &RuneTakeIterator {
+pub fn (mut i RuneSkipWhileIterator) take(n int) &RuneTakeIterator {
 	return &RuneTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneSkip_whileIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneSkipWhileIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
+pub fn (mut i F64SkipWhileIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_bool(map_fn fn(_ f64) bool) &F64BoolMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_bool(map_fn fn(_ f64) bool) &F64BoolMapIterator {
 	return &F64BoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_string(map_fn fn(_ f64) string) &F64StringMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_string(map_fn fn(_ f64) string) &F64StringMapIterator {
 	return &F64StringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_int(map_fn fn(_ f64) int) &F64IntMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_int(map_fn fn(_ f64) int) &F64IntMapIterator {
 	return &F64IntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_byte(map_fn fn(_ f64) byte) &F64ByteMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_byte(map_fn fn(_ f64) byte) &F64ByteMapIterator {
 	return &F64ByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_rune(map_fn fn(_ f64) rune) &F64RuneMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_rune(map_fn fn(_ f64) rune) &F64RuneMapIterator {
 	return &F64RuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_f64(map_fn fn(_ f64) f64) &F64F64MapIterator {
+pub fn (mut i F64SkipWhileIterator) map_f64(map_fn fn(_ f64) f64) &F64F64MapIterator {
 	return &F64F64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_bool_arr(map_fn fn(_ f64) []bool) &F64Bool1DArrayMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_bool_arr(map_fn fn(_ f64) []bool) &F64Bool1DArrayMapIterator {
 	return &F64Bool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_string_arr(map_fn fn(_ f64) []string) &F64String1DArrayMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_string_arr(map_fn fn(_ f64) []string) &F64String1DArrayMapIterator {
 	return &F64String1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_int_arr(map_fn fn(_ f64) []int) &F64Int1DArrayMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_int_arr(map_fn fn(_ f64) []int) &F64Int1DArrayMapIterator {
 	return &F64Int1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_byte_arr(map_fn fn(_ f64) []byte) &F64Byte1DArrayMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_byte_arr(map_fn fn(_ f64) []byte) &F64Byte1DArrayMapIterator {
 	return &F64Byte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_rune_arr(map_fn fn(_ f64) []rune) &F64Rune1DArrayMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_rune_arr(map_fn fn(_ f64) []rune) &F64Rune1DArrayMapIterator {
 	return &F64Rune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) map_f64_arr(map_fn fn(_ f64) []f64) &F64F641DArrayMapIterator {
+pub fn (mut i F64SkipWhileIterator) map_f64_arr(map_fn fn(_ f64) []f64) &F64F641DArrayMapIterator {
 	return &F64F641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) skip(n int) &F64SkipIterator {
+pub fn (mut i F64SkipWhileIterator) skip(n int) &F64SkipIterator {
 	return &F64SkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64SkipWhileIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) collect() []f64 {
+pub fn (mut i F64SkipWhileIterator) collect() []f64 {
 	mut arr := []f64{}
 	for item in i {
 		arr << item
@@ -32323,160 +32323,160 @@ pub fn (mut i F64Skip_whileIterator) collect() []f64 {
 	return arr
 }
 
-pub fn (mut i F64Skip_whileIterator) every(n int) &F64EveryIterator {
+pub fn (mut i F64SkipWhileIterator) every(n int) &F64EveryIterator {
 	return &F64EveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) rev() &F64RevIterator {
+pub fn (mut i F64SkipWhileIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) windows(n int) &F64F641DArrayWindowsIterator {
+pub fn (mut i F64SkipWhileIterator) windows(n int) &F64F641DArrayWindowsIterator {
 	return &F64F641DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) chunks(n int) &F64F641DArrayChunksIterator {
+pub fn (mut i F64SkipWhileIterator) chunks(n int) &F64F641DArrayChunksIterator {
 	return &F64F641DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
+pub fn (mut i F64SkipWhileIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) take(n int) &F64TakeIterator {
+pub fn (mut i F64SkipWhileIterator) take(n int) &F64TakeIterator {
 	return &F64TakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Skip_whileIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64SkipWhileIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) filter(filter_fn fn(_ []bool) bool) &Bool1DArrayFilterIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) filter(filter_fn fn(_ []bool) bool) &Bool1DArrayFilterIterator {
 	return &Bool1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_bool(map_fn fn(_ []bool) bool) &Bool1DArrayBoolMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_bool(map_fn fn(_ []bool) bool) &Bool1DArrayBoolMapIterator {
 	return &Bool1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_string(map_fn fn(_ []bool) string) &Bool1DArrayStringMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_string(map_fn fn(_ []bool) string) &Bool1DArrayStringMapIterator {
 	return &Bool1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_int(map_fn fn(_ []bool) int) &Bool1DArrayIntMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_int(map_fn fn(_ []bool) int) &Bool1DArrayIntMapIterator {
 	return &Bool1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_byte(map_fn fn(_ []bool) byte) &Bool1DArrayByteMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_byte(map_fn fn(_ []bool) byte) &Bool1DArrayByteMapIterator {
 	return &Bool1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_rune(map_fn fn(_ []bool) rune) &Bool1DArrayRuneMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_rune(map_fn fn(_ []bool) rune) &Bool1DArrayRuneMapIterator {
 	return &Bool1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_f64(map_fn fn(_ []bool) f64) &Bool1DArrayF64MapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_f64(map_fn fn(_ []bool) f64) &Bool1DArrayF64MapIterator {
 	return &Bool1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_bool_arr(map_fn fn(_ []bool) []bool) &Bool1DArrayBool1DArrayMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_bool_arr(map_fn fn(_ []bool) []bool) &Bool1DArrayBool1DArrayMapIterator {
 	return &Bool1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_string_arr(map_fn fn(_ []bool) []string) &Bool1DArrayString1DArrayMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_string_arr(map_fn fn(_ []bool) []string) &Bool1DArrayString1DArrayMapIterator {
 	return &Bool1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_int_arr(map_fn fn(_ []bool) []int) &Bool1DArrayInt1DArrayMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_int_arr(map_fn fn(_ []bool) []int) &Bool1DArrayInt1DArrayMapIterator {
 	return &Bool1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_byte_arr(map_fn fn(_ []bool) []byte) &Bool1DArrayByte1DArrayMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_byte_arr(map_fn fn(_ []bool) []byte) &Bool1DArrayByte1DArrayMapIterator {
 	return &Bool1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_rune_arr(map_fn fn(_ []bool) []rune) &Bool1DArrayRune1DArrayMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_rune_arr(map_fn fn(_ []bool) []rune) &Bool1DArrayRune1DArrayMapIterator {
 	return &Bool1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) map_f64_arr(map_fn fn(_ []bool) []f64) &Bool1DArrayF641DArrayMapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) map_f64_arr(map_fn fn(_ []bool) []f64) &Bool1DArrayF641DArrayMapIterator {
 	return &Bool1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) skip(n int) &Bool1DArraySkipIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) skip(n int) &Bool1DArraySkipIterator {
 	return &Bool1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArraySkipWhileIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) collect() [][]bool {
+pub fn (mut i Bool1DArraySkipWhileIterator) collect() [][]bool {
 	mut arr := [][]bool{}
 	for item in i {
 		arr << item
@@ -32484,160 +32484,160 @@ pub fn (mut i Bool1DArraySkip_whileIterator) collect() [][]bool {
 	return arr
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) every(n int) &Bool1DArrayEveryIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) every(n int) &Bool1DArrayEveryIterator {
 	return &Bool1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) rev() &Bool1DArrayRevIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) rev() &Bool1DArrayRevIterator {
 	return &Bool1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) windows(n int) &Bool1DArrayBool2DArrayWindowsIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) windows(n int) &Bool1DArrayBool2DArrayWindowsIterator {
 	return &Bool1DArrayBool2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) chunks(n int) &Bool1DArrayBool2DArrayChunksIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) chunks(n int) &Bool1DArrayBool2DArrayChunksIterator {
 	return &Bool1DArrayBool2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIterator {
 	return &Bool1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) take(n int) &Bool1DArrayTakeIterator {
+pub fn (mut i Bool1DArraySkipWhileIterator) take(n int) &Bool1DArrayTakeIterator {
 	return &Bool1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArraySkip_whileIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArraySkipWhileIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
+pub fn (mut i String1DArraySkipWhileIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_bool(map_fn fn(_ []string) bool) &String1DArrayBoolMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_bool(map_fn fn(_ []string) bool) &String1DArrayBoolMapIterator {
 	return &String1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_string(map_fn fn(_ []string) string) &String1DArrayStringMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_string(map_fn fn(_ []string) string) &String1DArrayStringMapIterator {
 	return &String1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_int(map_fn fn(_ []string) int) &String1DArrayIntMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_int(map_fn fn(_ []string) int) &String1DArrayIntMapIterator {
 	return &String1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_byte(map_fn fn(_ []string) byte) &String1DArrayByteMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_byte(map_fn fn(_ []string) byte) &String1DArrayByteMapIterator {
 	return &String1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_rune(map_fn fn(_ []string) rune) &String1DArrayRuneMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_rune(map_fn fn(_ []string) rune) &String1DArrayRuneMapIterator {
 	return &String1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_f64(map_fn fn(_ []string) f64) &String1DArrayF64MapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_f64(map_fn fn(_ []string) f64) &String1DArrayF64MapIterator {
 	return &String1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_bool_arr(map_fn fn(_ []string) []bool) &String1DArrayBool1DArrayMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_bool_arr(map_fn fn(_ []string) []bool) &String1DArrayBool1DArrayMapIterator {
 	return &String1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_string_arr(map_fn fn(_ []string) []string) &String1DArrayString1DArrayMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_string_arr(map_fn fn(_ []string) []string) &String1DArrayString1DArrayMapIterator {
 	return &String1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_int_arr(map_fn fn(_ []string) []int) &String1DArrayInt1DArrayMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_int_arr(map_fn fn(_ []string) []int) &String1DArrayInt1DArrayMapIterator {
 	return &String1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_byte_arr(map_fn fn(_ []string) []byte) &String1DArrayByte1DArrayMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_byte_arr(map_fn fn(_ []string) []byte) &String1DArrayByte1DArrayMapIterator {
 	return &String1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_rune_arr(map_fn fn(_ []string) []rune) &String1DArrayRune1DArrayMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_rune_arr(map_fn fn(_ []string) []rune) &String1DArrayRune1DArrayMapIterator {
 	return &String1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) map_f64_arr(map_fn fn(_ []string) []f64) &String1DArrayF641DArrayMapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) map_f64_arr(map_fn fn(_ []string) []f64) &String1DArrayF641DArrayMapIterator {
 	return &String1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) skip(n int) &String1DArraySkipIterator {
+pub fn (mut i String1DArraySkipWhileIterator) skip(n int) &String1DArraySkipIterator {
 	return &String1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArraySkipWhileIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) collect() [][]string {
+pub fn (mut i String1DArraySkipWhileIterator) collect() [][]string {
 	mut arr := [][]string{}
 	for item in i {
 		arr << item
@@ -32645,160 +32645,160 @@ pub fn (mut i String1DArraySkip_whileIterator) collect() [][]string {
 	return arr
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) every(n int) &String1DArrayEveryIterator {
+pub fn (mut i String1DArraySkipWhileIterator) every(n int) &String1DArrayEveryIterator {
 	return &String1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) rev() &String1DArrayRevIterator {
+pub fn (mut i String1DArraySkipWhileIterator) rev() &String1DArrayRevIterator {
 	return &String1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) windows(n int) &String1DArrayString2DArrayWindowsIterator {
+pub fn (mut i String1DArraySkipWhileIterator) windows(n int) &String1DArrayString2DArrayWindowsIterator {
 	return &String1DArrayString2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) chunks(n int) &String1DArrayString2DArrayChunksIterator {
+pub fn (mut i String1DArraySkipWhileIterator) chunks(n int) &String1DArrayString2DArrayChunksIterator {
 	return &String1DArrayString2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
+pub fn (mut i String1DArraySkipWhileIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) take(n int) &String1DArrayTakeIterator {
+pub fn (mut i String1DArraySkipWhileIterator) take(n int) &String1DArrayTakeIterator {
 	return &String1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArraySkip_whileIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArraySkipWhileIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) filter(filter_fn fn(_ []int) bool) &Int1DArrayFilterIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) filter(filter_fn fn(_ []int) bool) &Int1DArrayFilterIterator {
 	return &Int1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_bool(map_fn fn(_ []int) bool) &Int1DArrayBoolMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_bool(map_fn fn(_ []int) bool) &Int1DArrayBoolMapIterator {
 	return &Int1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_string(map_fn fn(_ []int) string) &Int1DArrayStringMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_string(map_fn fn(_ []int) string) &Int1DArrayStringMapIterator {
 	return &Int1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_int(map_fn fn(_ []int) int) &Int1DArrayIntMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_int(map_fn fn(_ []int) int) &Int1DArrayIntMapIterator {
 	return &Int1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_byte(map_fn fn(_ []int) byte) &Int1DArrayByteMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_byte(map_fn fn(_ []int) byte) &Int1DArrayByteMapIterator {
 	return &Int1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_rune(map_fn fn(_ []int) rune) &Int1DArrayRuneMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_rune(map_fn fn(_ []int) rune) &Int1DArrayRuneMapIterator {
 	return &Int1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_f64(map_fn fn(_ []int) f64) &Int1DArrayF64MapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_f64(map_fn fn(_ []int) f64) &Int1DArrayF64MapIterator {
 	return &Int1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_bool_arr(map_fn fn(_ []int) []bool) &Int1DArrayBool1DArrayMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_bool_arr(map_fn fn(_ []int) []bool) &Int1DArrayBool1DArrayMapIterator {
 	return &Int1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_string_arr(map_fn fn(_ []int) []string) &Int1DArrayString1DArrayMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_string_arr(map_fn fn(_ []int) []string) &Int1DArrayString1DArrayMapIterator {
 	return &Int1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_int_arr(map_fn fn(_ []int) []int) &Int1DArrayInt1DArrayMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_int_arr(map_fn fn(_ []int) []int) &Int1DArrayInt1DArrayMapIterator {
 	return &Int1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_byte_arr(map_fn fn(_ []int) []byte) &Int1DArrayByte1DArrayMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_byte_arr(map_fn fn(_ []int) []byte) &Int1DArrayByte1DArrayMapIterator {
 	return &Int1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_rune_arr(map_fn fn(_ []int) []rune) &Int1DArrayRune1DArrayMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_rune_arr(map_fn fn(_ []int) []rune) &Int1DArrayRune1DArrayMapIterator {
 	return &Int1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) map_f64_arr(map_fn fn(_ []int) []f64) &Int1DArrayF641DArrayMapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) map_f64_arr(map_fn fn(_ []int) []f64) &Int1DArrayF641DArrayMapIterator {
 	return &Int1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) skip(n int) &Int1DArraySkipIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) skip(n int) &Int1DArraySkipIterator {
 	return &Int1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArraySkipWhileIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) collect() [][]int {
+pub fn (mut i Int1DArraySkipWhileIterator) collect() [][]int {
 	mut arr := [][]int{}
 	for item in i {
 		arr << item
@@ -32806,160 +32806,160 @@ pub fn (mut i Int1DArraySkip_whileIterator) collect() [][]int {
 	return arr
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) every(n int) &Int1DArrayEveryIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) every(n int) &Int1DArrayEveryIterator {
 	return &Int1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) rev() &Int1DArrayRevIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) rev() &Int1DArrayRevIterator {
 	return &Int1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) windows(n int) &Int1DArrayInt2DArrayWindowsIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) windows(n int) &Int1DArrayInt2DArrayWindowsIterator {
 	return &Int1DArrayInt2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) chunks(n int) &Int1DArrayInt2DArrayChunksIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) chunks(n int) &Int1DArrayInt2DArrayChunksIterator {
 	return &Int1DArrayInt2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIterator {
 	return &Int1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) take(n int) &Int1DArrayTakeIterator {
+pub fn (mut i Int1DArraySkipWhileIterator) take(n int) &Int1DArrayTakeIterator {
 	return &Int1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArraySkip_whileIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArraySkipWhileIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_bool(map_fn fn(_ []byte) bool) &Byte1DArrayBoolMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_bool(map_fn fn(_ []byte) bool) &Byte1DArrayBoolMapIterator {
 	return &Byte1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_string(map_fn fn(_ []byte) string) &Byte1DArrayStringMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_string(map_fn fn(_ []byte) string) &Byte1DArrayStringMapIterator {
 	return &Byte1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_int(map_fn fn(_ []byte) int) &Byte1DArrayIntMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_int(map_fn fn(_ []byte) int) &Byte1DArrayIntMapIterator {
 	return &Byte1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_byte(map_fn fn(_ []byte) byte) &Byte1DArrayByteMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_byte(map_fn fn(_ []byte) byte) &Byte1DArrayByteMapIterator {
 	return &Byte1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_rune(map_fn fn(_ []byte) rune) &Byte1DArrayRuneMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_rune(map_fn fn(_ []byte) rune) &Byte1DArrayRuneMapIterator {
 	return &Byte1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_f64(map_fn fn(_ []byte) f64) &Byte1DArrayF64MapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_f64(map_fn fn(_ []byte) f64) &Byte1DArrayF64MapIterator {
 	return &Byte1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_bool_arr(map_fn fn(_ []byte) []bool) &Byte1DArrayBool1DArrayMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_bool_arr(map_fn fn(_ []byte) []bool) &Byte1DArrayBool1DArrayMapIterator {
 	return &Byte1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_string_arr(map_fn fn(_ []byte) []string) &Byte1DArrayString1DArrayMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_string_arr(map_fn fn(_ []byte) []string) &Byte1DArrayString1DArrayMapIterator {
 	return &Byte1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_int_arr(map_fn fn(_ []byte) []int) &Byte1DArrayInt1DArrayMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_int_arr(map_fn fn(_ []byte) []int) &Byte1DArrayInt1DArrayMapIterator {
 	return &Byte1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_byte_arr(map_fn fn(_ []byte) []byte) &Byte1DArrayByte1DArrayMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_byte_arr(map_fn fn(_ []byte) []byte) &Byte1DArrayByte1DArrayMapIterator {
 	return &Byte1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_rune_arr(map_fn fn(_ []byte) []rune) &Byte1DArrayRune1DArrayMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_rune_arr(map_fn fn(_ []byte) []rune) &Byte1DArrayRune1DArrayMapIterator {
 	return &Byte1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) map_f64_arr(map_fn fn(_ []byte) []f64) &Byte1DArrayF641DArrayMapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) map_f64_arr(map_fn fn(_ []byte) []f64) &Byte1DArrayF641DArrayMapIterator {
 	return &Byte1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) skip(n int) &Byte1DArraySkipIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) skip(n int) &Byte1DArraySkipIterator {
 	return &Byte1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArraySkipWhileIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) collect() [][]byte {
+pub fn (mut i Byte1DArraySkipWhileIterator) collect() [][]byte {
 	mut arr := [][]byte{}
 	for item in i {
 		arr << item
@@ -32967,160 +32967,160 @@ pub fn (mut i Byte1DArraySkip_whileIterator) collect() [][]byte {
 	return arr
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) every(n int) &Byte1DArrayEveryIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) every(n int) &Byte1DArrayEveryIterator {
 	return &Byte1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) rev() &Byte1DArrayRevIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) rev() &Byte1DArrayRevIterator {
 	return &Byte1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) windows(n int) &Byte1DArrayByte2DArrayWindowsIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) windows(n int) &Byte1DArrayByte2DArrayWindowsIterator {
 	return &Byte1DArrayByte2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) chunks(n int) &Byte1DArrayByte2DArrayChunksIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) chunks(n int) &Byte1DArrayByte2DArrayChunksIterator {
 	return &Byte1DArrayByte2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) take(n int) &Byte1DArrayTakeIterator {
+pub fn (mut i Byte1DArraySkipWhileIterator) take(n int) &Byte1DArrayTakeIterator {
 	return &Byte1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArraySkip_whileIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArraySkipWhileIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) filter(filter_fn fn(_ []rune) bool) &Rune1DArrayFilterIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) filter(filter_fn fn(_ []rune) bool) &Rune1DArrayFilterIterator {
 	return &Rune1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_bool(map_fn fn(_ []rune) bool) &Rune1DArrayBoolMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_bool(map_fn fn(_ []rune) bool) &Rune1DArrayBoolMapIterator {
 	return &Rune1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_string(map_fn fn(_ []rune) string) &Rune1DArrayStringMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_string(map_fn fn(_ []rune) string) &Rune1DArrayStringMapIterator {
 	return &Rune1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_int(map_fn fn(_ []rune) int) &Rune1DArrayIntMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_int(map_fn fn(_ []rune) int) &Rune1DArrayIntMapIterator {
 	return &Rune1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_byte(map_fn fn(_ []rune) byte) &Rune1DArrayByteMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_byte(map_fn fn(_ []rune) byte) &Rune1DArrayByteMapIterator {
 	return &Rune1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_rune(map_fn fn(_ []rune) rune) &Rune1DArrayRuneMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_rune(map_fn fn(_ []rune) rune) &Rune1DArrayRuneMapIterator {
 	return &Rune1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_f64(map_fn fn(_ []rune) f64) &Rune1DArrayF64MapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_f64(map_fn fn(_ []rune) f64) &Rune1DArrayF64MapIterator {
 	return &Rune1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_bool_arr(map_fn fn(_ []rune) []bool) &Rune1DArrayBool1DArrayMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_bool_arr(map_fn fn(_ []rune) []bool) &Rune1DArrayBool1DArrayMapIterator {
 	return &Rune1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_string_arr(map_fn fn(_ []rune) []string) &Rune1DArrayString1DArrayMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_string_arr(map_fn fn(_ []rune) []string) &Rune1DArrayString1DArrayMapIterator {
 	return &Rune1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_int_arr(map_fn fn(_ []rune) []int) &Rune1DArrayInt1DArrayMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_int_arr(map_fn fn(_ []rune) []int) &Rune1DArrayInt1DArrayMapIterator {
 	return &Rune1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_byte_arr(map_fn fn(_ []rune) []byte) &Rune1DArrayByte1DArrayMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_byte_arr(map_fn fn(_ []rune) []byte) &Rune1DArrayByte1DArrayMapIterator {
 	return &Rune1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_rune_arr(map_fn fn(_ []rune) []rune) &Rune1DArrayRune1DArrayMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_rune_arr(map_fn fn(_ []rune) []rune) &Rune1DArrayRune1DArrayMapIterator {
 	return &Rune1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) map_f64_arr(map_fn fn(_ []rune) []f64) &Rune1DArrayF641DArrayMapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) map_f64_arr(map_fn fn(_ []rune) []f64) &Rune1DArrayF641DArrayMapIterator {
 	return &Rune1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) skip(n int) &Rune1DArraySkipIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) skip(n int) &Rune1DArraySkipIterator {
 	return &Rune1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArraySkipWhileIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) collect() [][]rune {
+pub fn (mut i Rune1DArraySkipWhileIterator) collect() [][]rune {
 	mut arr := [][]rune{}
 	for item in i {
 		arr << item
@@ -33128,160 +33128,160 @@ pub fn (mut i Rune1DArraySkip_whileIterator) collect() [][]rune {
 	return arr
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) every(n int) &Rune1DArrayEveryIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) every(n int) &Rune1DArrayEveryIterator {
 	return &Rune1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) rev() &Rune1DArrayRevIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) rev() &Rune1DArrayRevIterator {
 	return &Rune1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) windows(n int) &Rune1DArrayRune2DArrayWindowsIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) windows(n int) &Rune1DArrayRune2DArrayWindowsIterator {
 	return &Rune1DArrayRune2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) chunks(n int) &Rune1DArrayRune2DArrayChunksIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) chunks(n int) &Rune1DArrayRune2DArrayChunksIterator {
 	return &Rune1DArrayRune2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIterator {
 	return &Rune1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) take(n int) &Rune1DArrayTakeIterator {
+pub fn (mut i Rune1DArraySkipWhileIterator) take(n int) &Rune1DArrayTakeIterator {
 	return &Rune1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArraySkip_whileIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArraySkipWhileIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
+pub fn (mut i F641DArraySkipWhileIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_bool(map_fn fn(_ []f64) bool) &F641DArrayBoolMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_bool(map_fn fn(_ []f64) bool) &F641DArrayBoolMapIterator {
 	return &F641DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_string(map_fn fn(_ []f64) string) &F641DArrayStringMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_string(map_fn fn(_ []f64) string) &F641DArrayStringMapIterator {
 	return &F641DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_int(map_fn fn(_ []f64) int) &F641DArrayIntMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_int(map_fn fn(_ []f64) int) &F641DArrayIntMapIterator {
 	return &F641DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_byte(map_fn fn(_ []f64) byte) &F641DArrayByteMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_byte(map_fn fn(_ []f64) byte) &F641DArrayByteMapIterator {
 	return &F641DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_rune(map_fn fn(_ []f64) rune) &F641DArrayRuneMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_rune(map_fn fn(_ []f64) rune) &F641DArrayRuneMapIterator {
 	return &F641DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_f64(map_fn fn(_ []f64) f64) &F641DArrayF64MapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_f64(map_fn fn(_ []f64) f64) &F641DArrayF64MapIterator {
 	return &F641DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_bool_arr(map_fn fn(_ []f64) []bool) &F641DArrayBool1DArrayMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_bool_arr(map_fn fn(_ []f64) []bool) &F641DArrayBool1DArrayMapIterator {
 	return &F641DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_string_arr(map_fn fn(_ []f64) []string) &F641DArrayString1DArrayMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_string_arr(map_fn fn(_ []f64) []string) &F641DArrayString1DArrayMapIterator {
 	return &F641DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_int_arr(map_fn fn(_ []f64) []int) &F641DArrayInt1DArrayMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_int_arr(map_fn fn(_ []f64) []int) &F641DArrayInt1DArrayMapIterator {
 	return &F641DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_byte_arr(map_fn fn(_ []f64) []byte) &F641DArrayByte1DArrayMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_byte_arr(map_fn fn(_ []f64) []byte) &F641DArrayByte1DArrayMapIterator {
 	return &F641DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_rune_arr(map_fn fn(_ []f64) []rune) &F641DArrayRune1DArrayMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_rune_arr(map_fn fn(_ []f64) []rune) &F641DArrayRune1DArrayMapIterator {
 	return &F641DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) map_f64_arr(map_fn fn(_ []f64) []f64) &F641DArrayF641DArrayMapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) map_f64_arr(map_fn fn(_ []f64) []f64) &F641DArrayF641DArrayMapIterator {
 	return &F641DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) skip(n int) &F641DArraySkipIterator {
+pub fn (mut i F641DArraySkipWhileIterator) skip(n int) &F641DArraySkipIterator {
 	return &F641DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArraySkipWhileIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) collect() [][]f64 {
+pub fn (mut i F641DArraySkipWhileIterator) collect() [][]f64 {
 	mut arr := [][]f64{}
 	for item in i {
 		arr << item
@@ -33289,49 +33289,49 @@ pub fn (mut i F641DArraySkip_whileIterator) collect() [][]f64 {
 	return arr
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) every(n int) &F641DArrayEveryIterator {
+pub fn (mut i F641DArraySkipWhileIterator) every(n int) &F641DArrayEveryIterator {
 	return &F641DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) rev() &F641DArrayRevIterator {
+pub fn (mut i F641DArraySkipWhileIterator) rev() &F641DArrayRevIterator {
 	return &F641DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) windows(n int) &F641DArrayF642DArrayWindowsIterator {
+pub fn (mut i F641DArraySkipWhileIterator) windows(n int) &F641DArrayF642DArrayWindowsIterator {
 	return &F641DArrayF642DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) chunks(n int) &F641DArrayF642DArrayChunksIterator {
+pub fn (mut i F641DArraySkipWhileIterator) chunks(n int) &F641DArrayF642DArrayChunksIterator {
 	return &F641DArrayF642DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
+pub fn (mut i F641DArraySkipWhileIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) take(n int) &F641DArrayTakeIterator {
+pub fn (mut i F641DArraySkipWhileIterator) take(n int) &F641DArrayTakeIterator {
 	return &F641DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArraySkip_whileIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArraySkipWhileIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -33603,8 +33603,8 @@ pub fn (mut i BoolEveryIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolEveryIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolEveryIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -33659,8 +33659,8 @@ pub fn (mut i BoolEveryIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolEveryIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolEveryIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -33764,8 +33764,8 @@ pub fn (mut i StringEveryIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringEveryIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringEveryIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -33820,8 +33820,8 @@ pub fn (mut i StringEveryIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringEveryIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringEveryIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -33925,8 +33925,8 @@ pub fn (mut i IntEveryIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntEveryIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntEveryIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -33981,8 +33981,8 @@ pub fn (mut i IntEveryIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntEveryIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntEveryIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34086,8 +34086,8 @@ pub fn (mut i ByteEveryIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteEveryIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteEveryIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34142,8 +34142,8 @@ pub fn (mut i ByteEveryIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteEveryIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteEveryIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34247,8 +34247,8 @@ pub fn (mut i RuneEveryIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneEveryIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneEveryIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34303,8 +34303,8 @@ pub fn (mut i RuneEveryIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneEveryIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneEveryIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34408,8 +34408,8 @@ pub fn (mut i F64EveryIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64EveryIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64EveryIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34464,8 +34464,8 @@ pub fn (mut i F64EveryIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64EveryIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64EveryIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34569,8 +34569,8 @@ pub fn (mut i Bool1DArrayEveryIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayEveryIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayEveryIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34625,8 +34625,8 @@ pub fn (mut i Bool1DArrayEveryIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayEveryIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayEveryIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34730,8 +34730,8 @@ pub fn (mut i String1DArrayEveryIterator) skip(n int) &String1DArraySkipIterator
 	}
 }
 
-pub fn (mut i String1DArrayEveryIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayEveryIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34786,8 +34786,8 @@ pub fn (mut i String1DArrayEveryIterator) take(n int) &String1DArrayTakeIterator
 	}
 }
 
-pub fn (mut i String1DArrayEveryIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayEveryIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34891,8 +34891,8 @@ pub fn (mut i Int1DArrayEveryIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayEveryIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayEveryIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -34947,8 +34947,8 @@ pub fn (mut i Int1DArrayEveryIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayEveryIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayEveryIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35052,8 +35052,8 @@ pub fn (mut i Byte1DArrayEveryIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayEveryIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayEveryIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35108,8 +35108,8 @@ pub fn (mut i Byte1DArrayEveryIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayEveryIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayEveryIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35213,8 +35213,8 @@ pub fn (mut i Rune1DArrayEveryIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayEveryIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayEveryIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35269,8 +35269,8 @@ pub fn (mut i Rune1DArrayEveryIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayEveryIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayEveryIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35374,8 +35374,8 @@ pub fn (mut i F641DArrayEveryIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayEveryIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayEveryIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35430,8 +35430,8 @@ pub fn (mut i F641DArrayEveryIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayEveryIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayEveryIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35775,8 +35775,8 @@ pub fn (mut i BoolRevIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolRevIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolRevIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35831,8 +35831,8 @@ pub fn (mut i BoolRevIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolRevIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolRevIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35936,8 +35936,8 @@ pub fn (mut i StringRevIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringRevIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringRevIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -35992,8 +35992,8 @@ pub fn (mut i StringRevIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringRevIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringRevIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36097,8 +36097,8 @@ pub fn (mut i IntRevIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntRevIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntRevIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36153,8 +36153,8 @@ pub fn (mut i IntRevIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntRevIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntRevIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36258,8 +36258,8 @@ pub fn (mut i ByteRevIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteRevIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteRevIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36314,8 +36314,8 @@ pub fn (mut i ByteRevIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteRevIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteRevIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36419,8 +36419,8 @@ pub fn (mut i RuneRevIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneRevIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneRevIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36475,8 +36475,8 @@ pub fn (mut i RuneRevIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneRevIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneRevIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36580,8 +36580,8 @@ pub fn (mut i F64RevIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64RevIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64RevIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36636,8 +36636,8 @@ pub fn (mut i F64RevIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64RevIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64RevIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36741,8 +36741,8 @@ pub fn (mut i Bool1DArrayRevIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayRevIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayRevIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36797,8 +36797,8 @@ pub fn (mut i Bool1DArrayRevIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayRevIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayRevIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36902,8 +36902,8 @@ pub fn (mut i String1DArrayRevIterator) skip(n int) &String1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayRevIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayRevIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -36958,8 +36958,8 @@ pub fn (mut i String1DArrayRevIterator) take(n int) &String1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayRevIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayRevIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37063,8 +37063,8 @@ pub fn (mut i Int1DArrayRevIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayRevIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayRevIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37119,8 +37119,8 @@ pub fn (mut i Int1DArrayRevIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayRevIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayRevIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37224,8 +37224,8 @@ pub fn (mut i Byte1DArrayRevIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayRevIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayRevIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37280,8 +37280,8 @@ pub fn (mut i Byte1DArrayRevIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayRevIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayRevIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37385,8 +37385,8 @@ pub fn (mut i Rune1DArrayRevIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayRevIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayRevIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37441,8 +37441,8 @@ pub fn (mut i Rune1DArrayRevIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayRevIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayRevIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37546,8 +37546,8 @@ pub fn (mut i F641DArrayRevIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayRevIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayRevIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37602,8 +37602,8 @@ pub fn (mut i F641DArrayRevIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayRevIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayRevIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37911,8 +37911,8 @@ pub fn (mut i BoolBool1DArrayWindowsIterator) skip(n int) &Bool1DArraySkipIterat
 	}
 }
 
-pub fn (mut i BoolBool1DArrayWindowsIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i BoolBool1DArrayWindowsIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -37967,8 +37967,8 @@ pub fn (mut i BoolBool1DArrayWindowsIterator) take(n int) &Bool1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i BoolBool1DArrayWindowsIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i BoolBool1DArrayWindowsIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38072,8 +38072,8 @@ pub fn (mut i StringString1DArrayWindowsIterator) skip(n int) &String1DArraySkip
 	}
 }
 
-pub fn (mut i StringString1DArrayWindowsIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i StringString1DArrayWindowsIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38128,8 +38128,8 @@ pub fn (mut i StringString1DArrayWindowsIterator) take(n int) &String1DArrayTake
 	}
 }
 
-pub fn (mut i StringString1DArrayWindowsIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i StringString1DArrayWindowsIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38233,8 +38233,8 @@ pub fn (mut i IntInt1DArrayWindowsIterator) skip(n int) &Int1DArraySkipIterator 
 	}
 }
 
-pub fn (mut i IntInt1DArrayWindowsIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i IntInt1DArrayWindowsIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38289,8 +38289,8 @@ pub fn (mut i IntInt1DArrayWindowsIterator) take(n int) &Int1DArrayTakeIterator 
 	}
 }
 
-pub fn (mut i IntInt1DArrayWindowsIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i IntInt1DArrayWindowsIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38394,8 +38394,8 @@ pub fn (mut i ByteByte1DArrayWindowsIterator) skip(n int) &Byte1DArraySkipIterat
 	}
 }
 
-pub fn (mut i ByteByte1DArrayWindowsIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i ByteByte1DArrayWindowsIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38450,8 +38450,8 @@ pub fn (mut i ByteByte1DArrayWindowsIterator) take(n int) &Byte1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i ByteByte1DArrayWindowsIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i ByteByte1DArrayWindowsIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38555,8 +38555,8 @@ pub fn (mut i RuneRune1DArrayWindowsIterator) skip(n int) &Rune1DArraySkipIterat
 	}
 }
 
-pub fn (mut i RuneRune1DArrayWindowsIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i RuneRune1DArrayWindowsIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38611,8 +38611,8 @@ pub fn (mut i RuneRune1DArrayWindowsIterator) take(n int) &Rune1DArrayTakeIterat
 	}
 }
 
-pub fn (mut i RuneRune1DArrayWindowsIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i RuneRune1DArrayWindowsIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38716,8 +38716,8 @@ pub fn (mut i F64F641DArrayWindowsIterator) skip(n int) &F641DArraySkipIterator 
 	}
 }
 
-pub fn (mut i F64F641DArrayWindowsIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F64F641DArrayWindowsIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -38772,8 +38772,8 @@ pub fn (mut i F64F641DArrayWindowsIterator) take(n int) &F641DArrayTakeIterator 
 	}
 }
 
-pub fn (mut i F64F641DArrayWindowsIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F64F641DArrayWindowsIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39081,8 +39081,8 @@ pub fn (mut i BoolBool1DArrayChunksIterator) skip(n int) &Bool1DArraySkipIterato
 	}
 }
 
-pub fn (mut i BoolBool1DArrayChunksIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i BoolBool1DArrayChunksIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39137,8 +39137,8 @@ pub fn (mut i BoolBool1DArrayChunksIterator) take(n int) &Bool1DArrayTakeIterato
 	}
 }
 
-pub fn (mut i BoolBool1DArrayChunksIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i BoolBool1DArrayChunksIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39242,8 +39242,8 @@ pub fn (mut i StringString1DArrayChunksIterator) skip(n int) &String1DArraySkipI
 	}
 }
 
-pub fn (mut i StringString1DArrayChunksIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i StringString1DArrayChunksIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39298,8 +39298,8 @@ pub fn (mut i StringString1DArrayChunksIterator) take(n int) &String1DArrayTakeI
 	}
 }
 
-pub fn (mut i StringString1DArrayChunksIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i StringString1DArrayChunksIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39403,8 +39403,8 @@ pub fn (mut i IntInt1DArrayChunksIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i IntInt1DArrayChunksIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i IntInt1DArrayChunksIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39459,8 +39459,8 @@ pub fn (mut i IntInt1DArrayChunksIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i IntInt1DArrayChunksIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i IntInt1DArrayChunksIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39564,8 +39564,8 @@ pub fn (mut i ByteByte1DArrayChunksIterator) skip(n int) &Byte1DArraySkipIterato
 	}
 }
 
-pub fn (mut i ByteByte1DArrayChunksIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i ByteByte1DArrayChunksIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39620,8 +39620,8 @@ pub fn (mut i ByteByte1DArrayChunksIterator) take(n int) &Byte1DArrayTakeIterato
 	}
 }
 
-pub fn (mut i ByteByte1DArrayChunksIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i ByteByte1DArrayChunksIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39725,8 +39725,8 @@ pub fn (mut i RuneRune1DArrayChunksIterator) skip(n int) &Rune1DArraySkipIterato
 	}
 }
 
-pub fn (mut i RuneRune1DArrayChunksIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i RuneRune1DArrayChunksIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39781,8 +39781,8 @@ pub fn (mut i RuneRune1DArrayChunksIterator) take(n int) &Rune1DArrayTakeIterato
 	}
 }
 
-pub fn (mut i RuneRune1DArrayChunksIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i RuneRune1DArrayChunksIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39886,8 +39886,8 @@ pub fn (mut i F64F641DArrayChunksIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F64F641DArrayChunksIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F64F641DArrayChunksIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -39942,8 +39942,8 @@ pub fn (mut i F64F641DArrayChunksIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F64F641DArrayChunksIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F64F641DArrayChunksIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40191,8 +40191,8 @@ pub fn (mut i BoolTapIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolTapIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolTapIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40247,8 +40247,8 @@ pub fn (mut i BoolTapIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolTapIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolTapIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40352,8 +40352,8 @@ pub fn (mut i StringTapIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringTapIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringTapIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40408,8 +40408,8 @@ pub fn (mut i StringTapIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringTapIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringTapIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40513,8 +40513,8 @@ pub fn (mut i IntTapIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntTapIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntTapIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40569,8 +40569,8 @@ pub fn (mut i IntTapIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntTapIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntTapIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40674,8 +40674,8 @@ pub fn (mut i ByteTapIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteTapIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteTapIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40730,8 +40730,8 @@ pub fn (mut i ByteTapIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteTapIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteTapIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40835,8 +40835,8 @@ pub fn (mut i RuneTapIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneTapIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneTapIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40891,8 +40891,8 @@ pub fn (mut i RuneTapIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneTapIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneTapIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -40996,8 +40996,8 @@ pub fn (mut i F64TapIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64TapIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64TapIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41052,8 +41052,8 @@ pub fn (mut i F64TapIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64TapIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64TapIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41157,8 +41157,8 @@ pub fn (mut i Bool1DArrayTapIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayTapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayTapIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41213,8 +41213,8 @@ pub fn (mut i Bool1DArrayTapIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayTapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayTapIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41318,8 +41318,8 @@ pub fn (mut i String1DArrayTapIterator) skip(n int) &String1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i String1DArrayTapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayTapIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41374,8 +41374,8 @@ pub fn (mut i String1DArrayTapIterator) take(n int) &String1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i String1DArrayTapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayTapIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41479,8 +41479,8 @@ pub fn (mut i Int1DArrayTapIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayTapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayTapIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41535,8 +41535,8 @@ pub fn (mut i Int1DArrayTapIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayTapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayTapIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41640,8 +41640,8 @@ pub fn (mut i Byte1DArrayTapIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayTapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayTapIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41696,8 +41696,8 @@ pub fn (mut i Byte1DArrayTapIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayTapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayTapIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41801,8 +41801,8 @@ pub fn (mut i Rune1DArrayTapIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayTapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayTapIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41857,8 +41857,8 @@ pub fn (mut i Rune1DArrayTapIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayTapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayTapIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -41962,8 +41962,8 @@ pub fn (mut i F641DArrayTapIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayTapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayTapIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42018,8 +42018,8 @@ pub fn (mut i F641DArrayTapIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayTapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayTapIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42303,8 +42303,8 @@ pub fn (mut i BoolTakeIterator) skip(n int) &BoolSkipIterator {
 	}
 }
 
-pub fn (mut i BoolTakeIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolTakeIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42359,8 +42359,8 @@ pub fn (mut i BoolTakeIterator) take(n int) &BoolTakeIterator {
 	}
 }
 
-pub fn (mut i BoolTakeIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolTakeIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42464,8 +42464,8 @@ pub fn (mut i StringTakeIterator) skip(n int) &StringSkipIterator {
 	}
 }
 
-pub fn (mut i StringTakeIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringTakeIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42520,8 +42520,8 @@ pub fn (mut i StringTakeIterator) take(n int) &StringTakeIterator {
 	}
 }
 
-pub fn (mut i StringTakeIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringTakeIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42625,8 +42625,8 @@ pub fn (mut i IntTakeIterator) skip(n int) &IntSkipIterator {
 	}
 }
 
-pub fn (mut i IntTakeIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntTakeIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42681,8 +42681,8 @@ pub fn (mut i IntTakeIterator) take(n int) &IntTakeIterator {
 	}
 }
 
-pub fn (mut i IntTakeIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntTakeIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42786,8 +42786,8 @@ pub fn (mut i ByteTakeIterator) skip(n int) &ByteSkipIterator {
 	}
 }
 
-pub fn (mut i ByteTakeIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteTakeIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42842,8 +42842,8 @@ pub fn (mut i ByteTakeIterator) take(n int) &ByteTakeIterator {
 	}
 }
 
-pub fn (mut i ByteTakeIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteTakeIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -42947,8 +42947,8 @@ pub fn (mut i RuneTakeIterator) skip(n int) &RuneSkipIterator {
 	}
 }
 
-pub fn (mut i RuneTakeIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneTakeIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43003,8 +43003,8 @@ pub fn (mut i RuneTakeIterator) take(n int) &RuneTakeIterator {
 	}
 }
 
-pub fn (mut i RuneTakeIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneTakeIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43108,8 +43108,8 @@ pub fn (mut i F64TakeIterator) skip(n int) &F64SkipIterator {
 	}
 }
 
-pub fn (mut i F64TakeIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64TakeIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43164,8 +43164,8 @@ pub fn (mut i F64TakeIterator) take(n int) &F64TakeIterator {
 	}
 }
 
-pub fn (mut i F64TakeIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64TakeIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43269,8 +43269,8 @@ pub fn (mut i Bool1DArrayTakeIterator) skip(n int) &Bool1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayTakeIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayTakeIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43325,8 +43325,8 @@ pub fn (mut i Bool1DArrayTakeIterator) take(n int) &Bool1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Bool1DArrayTakeIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayTakeIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43430,8 +43430,8 @@ pub fn (mut i String1DArrayTakeIterator) skip(n int) &String1DArraySkipIterator 
 	}
 }
 
-pub fn (mut i String1DArrayTakeIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayTakeIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43486,8 +43486,8 @@ pub fn (mut i String1DArrayTakeIterator) take(n int) &String1DArrayTakeIterator 
 	}
 }
 
-pub fn (mut i String1DArrayTakeIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayTakeIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43591,8 +43591,8 @@ pub fn (mut i Int1DArrayTakeIterator) skip(n int) &Int1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayTakeIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayTakeIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43647,8 +43647,8 @@ pub fn (mut i Int1DArrayTakeIterator) take(n int) &Int1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Int1DArrayTakeIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayTakeIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43752,8 +43752,8 @@ pub fn (mut i Byte1DArrayTakeIterator) skip(n int) &Byte1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayTakeIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayTakeIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43808,8 +43808,8 @@ pub fn (mut i Byte1DArrayTakeIterator) take(n int) &Byte1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Byte1DArrayTakeIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayTakeIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43913,8 +43913,8 @@ pub fn (mut i Rune1DArrayTakeIterator) skip(n int) &Rune1DArraySkipIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayTakeIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayTakeIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -43969,8 +43969,8 @@ pub fn (mut i Rune1DArrayTakeIterator) take(n int) &Rune1DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i Rune1DArrayTakeIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayTakeIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -44074,8 +44074,8 @@ pub fn (mut i F641DArrayTakeIterator) skip(n int) &F641DArraySkipIterator {
 	}
 }
 
-pub fn (mut i F641DArrayTakeIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayTakeIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
@@ -44130,21 +44130,21 @@ pub fn (mut i F641DArrayTakeIterator) take(n int) &F641DArrayTakeIterator {
 	}
 }
 
-pub fn (mut i F641DArrayTakeIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayTakeIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub struct BoolTake_whileIterator {
+pub struct BoolTakeWhileIterator {
 	predicate fn (_ bool) bool
 mut:
 	iterator BoolIterator
 	done bool
 }
 
-pub fn (mut i BoolTake_whileIterator) next() ?bool {
+pub fn (mut i BoolTakeWhileIterator) next() ?bool {
 	if i.done {
 		return none
 	}
@@ -44156,14 +44156,14 @@ pub fn (mut i BoolTake_whileIterator) next() ?bool {
 	return item
 }
 
-pub struct StringTake_whileIterator {
+pub struct StringTakeWhileIterator {
 	predicate fn (_ string) bool
 mut:
 	iterator StringIterator
 	done bool
 }
 
-pub fn (mut i StringTake_whileIterator) next() ?string {
+pub fn (mut i StringTakeWhileIterator) next() ?string {
 	if i.done {
 		return none
 	}
@@ -44175,14 +44175,14 @@ pub fn (mut i StringTake_whileIterator) next() ?string {
 	return item
 }
 
-pub struct IntTake_whileIterator {
+pub struct IntTakeWhileIterator {
 	predicate fn (_ int) bool
 mut:
 	iterator IntIterator
 	done bool
 }
 
-pub fn (mut i IntTake_whileIterator) next() ?int {
+pub fn (mut i IntTakeWhileIterator) next() ?int {
 	if i.done {
 		return none
 	}
@@ -44194,14 +44194,14 @@ pub fn (mut i IntTake_whileIterator) next() ?int {
 	return item
 }
 
-pub struct ByteTake_whileIterator {
+pub struct ByteTakeWhileIterator {
 	predicate fn (_ byte) bool
 mut:
 	iterator ByteIterator
 	done bool
 }
 
-pub fn (mut i ByteTake_whileIterator) next() ?byte {
+pub fn (mut i ByteTakeWhileIterator) next() ?byte {
 	if i.done {
 		return none
 	}
@@ -44213,14 +44213,14 @@ pub fn (mut i ByteTake_whileIterator) next() ?byte {
 	return item
 }
 
-pub struct RuneTake_whileIterator {
+pub struct RuneTakeWhileIterator {
 	predicate fn (_ rune) bool
 mut:
 	iterator RuneIterator
 	done bool
 }
 
-pub fn (mut i RuneTake_whileIterator) next() ?rune {
+pub fn (mut i RuneTakeWhileIterator) next() ?rune {
 	if i.done {
 		return none
 	}
@@ -44232,14 +44232,14 @@ pub fn (mut i RuneTake_whileIterator) next() ?rune {
 	return item
 }
 
-pub struct F64Take_whileIterator {
+pub struct F64TakeWhileIterator {
 	predicate fn (_ f64) bool
 mut:
 	iterator F64Iterator
 	done bool
 }
 
-pub fn (mut i F64Take_whileIterator) next() ?f64 {
+pub fn (mut i F64TakeWhileIterator) next() ?f64 {
 	if i.done {
 		return none
 	}
@@ -44251,14 +44251,14 @@ pub fn (mut i F64Take_whileIterator) next() ?f64 {
 	return item
 }
 
-pub struct Bool1DArrayTake_whileIterator {
+pub struct Bool1DArrayTakeWhileIterator {
 	predicate fn (_ []bool) bool
 mut:
 	iterator Bool1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) next() ?[]bool {
+pub fn (mut i Bool1DArrayTakeWhileIterator) next() ?[]bool {
 	if i.done {
 		return none
 	}
@@ -44270,14 +44270,14 @@ pub fn (mut i Bool1DArrayTake_whileIterator) next() ?[]bool {
 	return item
 }
 
-pub struct String1DArrayTake_whileIterator {
+pub struct String1DArrayTakeWhileIterator {
 	predicate fn (_ []string) bool
 mut:
 	iterator String1DArrayIterator
 	done bool
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) next() ?[]string {
+pub fn (mut i String1DArrayTakeWhileIterator) next() ?[]string {
 	if i.done {
 		return none
 	}
@@ -44289,14 +44289,14 @@ pub fn (mut i String1DArrayTake_whileIterator) next() ?[]string {
 	return item
 }
 
-pub struct Int1DArrayTake_whileIterator {
+pub struct Int1DArrayTakeWhileIterator {
 	predicate fn (_ []int) bool
 mut:
 	iterator Int1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) next() ?[]int {
+pub fn (mut i Int1DArrayTakeWhileIterator) next() ?[]int {
 	if i.done {
 		return none
 	}
@@ -44308,14 +44308,14 @@ pub fn (mut i Int1DArrayTake_whileIterator) next() ?[]int {
 	return item
 }
 
-pub struct Byte1DArrayTake_whileIterator {
+pub struct Byte1DArrayTakeWhileIterator {
 	predicate fn (_ []byte) bool
 mut:
 	iterator Byte1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) next() ?[]byte {
+pub fn (mut i Byte1DArrayTakeWhileIterator) next() ?[]byte {
 	if i.done {
 		return none
 	}
@@ -44327,14 +44327,14 @@ pub fn (mut i Byte1DArrayTake_whileIterator) next() ?[]byte {
 	return item
 }
 
-pub struct Rune1DArrayTake_whileIterator {
+pub struct Rune1DArrayTakeWhileIterator {
 	predicate fn (_ []rune) bool
 mut:
 	iterator Rune1DArrayIterator
 	done bool
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) next() ?[]rune {
+pub fn (mut i Rune1DArrayTakeWhileIterator) next() ?[]rune {
 	if i.done {
 		return none
 	}
@@ -44346,14 +44346,14 @@ pub fn (mut i Rune1DArrayTake_whileIterator) next() ?[]rune {
 	return item
 }
 
-pub struct F641DArrayTake_whileIterator {
+pub struct F641DArrayTakeWhileIterator {
 	predicate fn (_ []f64) bool
 mut:
 	iterator F641DArrayIterator
 	done bool
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) next() ?[]f64 {
+pub fn (mut i F641DArrayTakeWhileIterator) next() ?[]f64 {
 	if i.done {
 		return none
 	}
@@ -44365,112 +44365,112 @@ pub fn (mut i F641DArrayTake_whileIterator) next() ?[]f64 {
 	return item
 }
 
-pub fn (mut i BoolTake_whileIterator) filter(filter_fn fn(_ bool) bool) &BoolFilterIterator {
+pub fn (mut i BoolTakeWhileIterator) filter(filter_fn fn(_ bool) bool) &BoolFilterIterator {
 	return &BoolFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_bool(map_fn fn(_ bool) bool) &BoolBoolMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_bool(map_fn fn(_ bool) bool) &BoolBoolMapIterator {
 	return &BoolBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_string(map_fn fn(_ bool) string) &BoolStringMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_string(map_fn fn(_ bool) string) &BoolStringMapIterator {
 	return &BoolStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_int(map_fn fn(_ bool) int) &BoolIntMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_int(map_fn fn(_ bool) int) &BoolIntMapIterator {
 	return &BoolIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_byte(map_fn fn(_ bool) byte) &BoolByteMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_byte(map_fn fn(_ bool) byte) &BoolByteMapIterator {
 	return &BoolByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_rune(map_fn fn(_ bool) rune) &BoolRuneMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_rune(map_fn fn(_ bool) rune) &BoolRuneMapIterator {
 	return &BoolRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_f64(map_fn fn(_ bool) f64) &BoolF64MapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_f64(map_fn fn(_ bool) f64) &BoolF64MapIterator {
 	return &BoolF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_bool_arr(map_fn fn(_ bool) []bool) &BoolBool1DArrayMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_bool_arr(map_fn fn(_ bool) []bool) &BoolBool1DArrayMapIterator {
 	return &BoolBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_string_arr(map_fn fn(_ bool) []string) &BoolString1DArrayMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_string_arr(map_fn fn(_ bool) []string) &BoolString1DArrayMapIterator {
 	return &BoolString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_int_arr(map_fn fn(_ bool) []int) &BoolInt1DArrayMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_int_arr(map_fn fn(_ bool) []int) &BoolInt1DArrayMapIterator {
 	return &BoolInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_byte_arr(map_fn fn(_ bool) []byte) &BoolByte1DArrayMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_byte_arr(map_fn fn(_ bool) []byte) &BoolByte1DArrayMapIterator {
 	return &BoolByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_rune_arr(map_fn fn(_ bool) []rune) &BoolRune1DArrayMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_rune_arr(map_fn fn(_ bool) []rune) &BoolRune1DArrayMapIterator {
 	return &BoolRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) map_f64_arr(map_fn fn(_ bool) []f64) &BoolF641DArrayMapIterator {
+pub fn (mut i BoolTakeWhileIterator) map_f64_arr(map_fn fn(_ bool) []f64) &BoolF641DArrayMapIterator {
 	return &BoolF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) skip(n int) &BoolSkipIterator {
+pub fn (mut i BoolTakeWhileIterator) skip(n int) &BoolSkipIterator {
 	return &BoolSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) skip_while(pred fn(_ bool) bool) &BoolSkip_whileIterator {
-	return &BoolSkip_whileIterator{
+pub fn (mut i BoolTakeWhileIterator) skip_while(pred fn(_ bool) bool) &BoolSkipWhileIterator {
+	return &BoolSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) collect() []bool {
+pub fn (mut i BoolTakeWhileIterator) collect() []bool {
 	mut arr := []bool{}
 	for item in i {
 		arr << item
@@ -44478,160 +44478,160 @@ pub fn (mut i BoolTake_whileIterator) collect() []bool {
 	return arr
 }
 
-pub fn (mut i BoolTake_whileIterator) every(n int) &BoolEveryIterator {
+pub fn (mut i BoolTakeWhileIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) rev() &BoolRevIterator {
+pub fn (mut i BoolTakeWhileIterator) rev() &BoolRevIterator {
 	return &BoolRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) windows(n int) &BoolBool1DArrayWindowsIterator {
+pub fn (mut i BoolTakeWhileIterator) windows(n int) &BoolBool1DArrayWindowsIterator {
 	return &BoolBool1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) chunks(n int) &BoolBool1DArrayChunksIterator {
+pub fn (mut i BoolTakeWhileIterator) chunks(n int) &BoolBool1DArrayChunksIterator {
 	return &BoolBool1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
+pub fn (mut i BoolTakeWhileIterator) tap(tap_fn fn(_ bool)) &BoolTapIterator {
 	return &BoolTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) take(n int) &BoolTakeIterator {
+pub fn (mut i BoolTakeWhileIterator) take(n int) &BoolTakeIterator {
 	return &BoolTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i BoolTake_whileIterator) take_while(pred fn(_ bool) bool) &BoolTake_whileIterator {
-	return &BoolTake_whileIterator{
+pub fn (mut i BoolTakeWhileIterator) take_while(pred fn(_ bool) bool) &BoolTakeWhileIterator {
+	return &BoolTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
+pub fn (mut i StringTakeWhileIterator) filter(filter_fn fn(_ string) bool) &StringFilterIterator {
 	return &StringFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_bool(map_fn fn(_ string) bool) &StringBoolMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_bool(map_fn fn(_ string) bool) &StringBoolMapIterator {
 	return &StringBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_string(map_fn fn(_ string) string) &StringStringMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_string(map_fn fn(_ string) string) &StringStringMapIterator {
 	return &StringStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_int(map_fn fn(_ string) int) &StringIntMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_int(map_fn fn(_ string) int) &StringIntMapIterator {
 	return &StringIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_byte(map_fn fn(_ string) byte) &StringByteMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_byte(map_fn fn(_ string) byte) &StringByteMapIterator {
 	return &StringByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_rune(map_fn fn(_ string) rune) &StringRuneMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_rune(map_fn fn(_ string) rune) &StringRuneMapIterator {
 	return &StringRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_f64(map_fn fn(_ string) f64) &StringF64MapIterator {
+pub fn (mut i StringTakeWhileIterator) map_f64(map_fn fn(_ string) f64) &StringF64MapIterator {
 	return &StringF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_bool_arr(map_fn fn(_ string) []bool) &StringBool1DArrayMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_bool_arr(map_fn fn(_ string) []bool) &StringBool1DArrayMapIterator {
 	return &StringBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_string_arr(map_fn fn(_ string) []string) &StringString1DArrayMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_string_arr(map_fn fn(_ string) []string) &StringString1DArrayMapIterator {
 	return &StringString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_int_arr(map_fn fn(_ string) []int) &StringInt1DArrayMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_int_arr(map_fn fn(_ string) []int) &StringInt1DArrayMapIterator {
 	return &StringInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_byte_arr(map_fn fn(_ string) []byte) &StringByte1DArrayMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_byte_arr(map_fn fn(_ string) []byte) &StringByte1DArrayMapIterator {
 	return &StringByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_rune_arr(map_fn fn(_ string) []rune) &StringRune1DArrayMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_rune_arr(map_fn fn(_ string) []rune) &StringRune1DArrayMapIterator {
 	return &StringRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) map_f64_arr(map_fn fn(_ string) []f64) &StringF641DArrayMapIterator {
+pub fn (mut i StringTakeWhileIterator) map_f64_arr(map_fn fn(_ string) []f64) &StringF641DArrayMapIterator {
 	return &StringF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) skip(n int) &StringSkipIterator {
+pub fn (mut i StringTakeWhileIterator) skip(n int) &StringSkipIterator {
 	return &StringSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) skip_while(pred fn(_ string) bool) &StringSkip_whileIterator {
-	return &StringSkip_whileIterator{
+pub fn (mut i StringTakeWhileIterator) skip_while(pred fn(_ string) bool) &StringSkipWhileIterator {
+	return &StringSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) collect() []string {
+pub fn (mut i StringTakeWhileIterator) collect() []string {
 	mut arr := []string{}
 	for item in i {
 		arr << item
@@ -44639,160 +44639,160 @@ pub fn (mut i StringTake_whileIterator) collect() []string {
 	return arr
 }
 
-pub fn (mut i StringTake_whileIterator) every(n int) &StringEveryIterator {
+pub fn (mut i StringTakeWhileIterator) every(n int) &StringEveryIterator {
 	return &StringEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) rev() &StringRevIterator {
+pub fn (mut i StringTakeWhileIterator) rev() &StringRevIterator {
 	return &StringRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) windows(n int) &StringString1DArrayWindowsIterator {
+pub fn (mut i StringTakeWhileIterator) windows(n int) &StringString1DArrayWindowsIterator {
 	return &StringString1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) chunks(n int) &StringString1DArrayChunksIterator {
+pub fn (mut i StringTakeWhileIterator) chunks(n int) &StringString1DArrayChunksIterator {
 	return &StringString1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
+pub fn (mut i StringTakeWhileIterator) tap(tap_fn fn(_ string)) &StringTapIterator {
 	return &StringTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) take(n int) &StringTakeIterator {
+pub fn (mut i StringTakeWhileIterator) take(n int) &StringTakeIterator {
 	return &StringTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i StringTake_whileIterator) take_while(pred fn(_ string) bool) &StringTake_whileIterator {
-	return &StringTake_whileIterator{
+pub fn (mut i StringTakeWhileIterator) take_while(pred fn(_ string) bool) &StringTakeWhileIterator {
+	return &StringTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) filter(filter_fn fn(_ int) bool) &IntFilterIterator {
+pub fn (mut i IntTakeWhileIterator) filter(filter_fn fn(_ int) bool) &IntFilterIterator {
 	return &IntFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_bool(map_fn fn(_ int) bool) &IntBoolMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_bool(map_fn fn(_ int) bool) &IntBoolMapIterator {
 	return &IntBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_string(map_fn fn(_ int) string) &IntStringMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_string(map_fn fn(_ int) string) &IntStringMapIterator {
 	return &IntStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_int(map_fn fn(_ int) int) &IntIntMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_int(map_fn fn(_ int) int) &IntIntMapIterator {
 	return &IntIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_byte(map_fn fn(_ int) byte) &IntByteMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_byte(map_fn fn(_ int) byte) &IntByteMapIterator {
 	return &IntByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_rune(map_fn fn(_ int) rune) &IntRuneMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_rune(map_fn fn(_ int) rune) &IntRuneMapIterator {
 	return &IntRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_f64(map_fn fn(_ int) f64) &IntF64MapIterator {
+pub fn (mut i IntTakeWhileIterator) map_f64(map_fn fn(_ int) f64) &IntF64MapIterator {
 	return &IntF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_bool_arr(map_fn fn(_ int) []bool) &IntBool1DArrayMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_bool_arr(map_fn fn(_ int) []bool) &IntBool1DArrayMapIterator {
 	return &IntBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_string_arr(map_fn fn(_ int) []string) &IntString1DArrayMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_string_arr(map_fn fn(_ int) []string) &IntString1DArrayMapIterator {
 	return &IntString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_int_arr(map_fn fn(_ int) []int) &IntInt1DArrayMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_int_arr(map_fn fn(_ int) []int) &IntInt1DArrayMapIterator {
 	return &IntInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_byte_arr(map_fn fn(_ int) []byte) &IntByte1DArrayMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_byte_arr(map_fn fn(_ int) []byte) &IntByte1DArrayMapIterator {
 	return &IntByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_rune_arr(map_fn fn(_ int) []rune) &IntRune1DArrayMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_rune_arr(map_fn fn(_ int) []rune) &IntRune1DArrayMapIterator {
 	return &IntRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) map_f64_arr(map_fn fn(_ int) []f64) &IntF641DArrayMapIterator {
+pub fn (mut i IntTakeWhileIterator) map_f64_arr(map_fn fn(_ int) []f64) &IntF641DArrayMapIterator {
 	return &IntF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) skip(n int) &IntSkipIterator {
+pub fn (mut i IntTakeWhileIterator) skip(n int) &IntSkipIterator {
 	return &IntSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) skip_while(pred fn(_ int) bool) &IntSkip_whileIterator {
-	return &IntSkip_whileIterator{
+pub fn (mut i IntTakeWhileIterator) skip_while(pred fn(_ int) bool) &IntSkipWhileIterator {
+	return &IntSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) collect() []int {
+pub fn (mut i IntTakeWhileIterator) collect() []int {
 	mut arr := []int{}
 	for item in i {
 		arr << item
@@ -44800,160 +44800,160 @@ pub fn (mut i IntTake_whileIterator) collect() []int {
 	return arr
 }
 
-pub fn (mut i IntTake_whileIterator) every(n int) &IntEveryIterator {
+pub fn (mut i IntTakeWhileIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) rev() &IntRevIterator {
+pub fn (mut i IntTakeWhileIterator) rev() &IntRevIterator {
 	return &IntRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) windows(n int) &IntInt1DArrayWindowsIterator {
+pub fn (mut i IntTakeWhileIterator) windows(n int) &IntInt1DArrayWindowsIterator {
 	return &IntInt1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) chunks(n int) &IntInt1DArrayChunksIterator {
+pub fn (mut i IntTakeWhileIterator) chunks(n int) &IntInt1DArrayChunksIterator {
 	return &IntInt1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
+pub fn (mut i IntTakeWhileIterator) tap(tap_fn fn(_ int)) &IntTapIterator {
 	return &IntTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) take(n int) &IntTakeIterator {
+pub fn (mut i IntTakeWhileIterator) take(n int) &IntTakeIterator {
 	return &IntTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i IntTake_whileIterator) take_while(pred fn(_ int) bool) &IntTake_whileIterator {
-	return &IntTake_whileIterator{
+pub fn (mut i IntTakeWhileIterator) take_while(pred fn(_ int) bool) &IntTakeWhileIterator {
+	return &IntTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
+pub fn (mut i ByteTakeWhileIterator) filter(filter_fn fn(_ byte) bool) &ByteFilterIterator {
 	return &ByteFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_bool(map_fn fn(_ byte) bool) &ByteBoolMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_bool(map_fn fn(_ byte) bool) &ByteBoolMapIterator {
 	return &ByteBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_string(map_fn fn(_ byte) string) &ByteStringMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_string(map_fn fn(_ byte) string) &ByteStringMapIterator {
 	return &ByteStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_int(map_fn fn(_ byte) int) &ByteIntMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_int(map_fn fn(_ byte) int) &ByteIntMapIterator {
 	return &ByteIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_byte(map_fn fn(_ byte) byte) &ByteByteMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_byte(map_fn fn(_ byte) byte) &ByteByteMapIterator {
 	return &ByteByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_rune(map_fn fn(_ byte) rune) &ByteRuneMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_rune(map_fn fn(_ byte) rune) &ByteRuneMapIterator {
 	return &ByteRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_f64(map_fn fn(_ byte) f64) &ByteF64MapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_f64(map_fn fn(_ byte) f64) &ByteF64MapIterator {
 	return &ByteF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_bool_arr(map_fn fn(_ byte) []bool) &ByteBool1DArrayMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_bool_arr(map_fn fn(_ byte) []bool) &ByteBool1DArrayMapIterator {
 	return &ByteBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_string_arr(map_fn fn(_ byte) []string) &ByteString1DArrayMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_string_arr(map_fn fn(_ byte) []string) &ByteString1DArrayMapIterator {
 	return &ByteString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_int_arr(map_fn fn(_ byte) []int) &ByteInt1DArrayMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_int_arr(map_fn fn(_ byte) []int) &ByteInt1DArrayMapIterator {
 	return &ByteInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_byte_arr(map_fn fn(_ byte) []byte) &ByteByte1DArrayMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_byte_arr(map_fn fn(_ byte) []byte) &ByteByte1DArrayMapIterator {
 	return &ByteByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_rune_arr(map_fn fn(_ byte) []rune) &ByteRune1DArrayMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_rune_arr(map_fn fn(_ byte) []rune) &ByteRune1DArrayMapIterator {
 	return &ByteRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) map_f64_arr(map_fn fn(_ byte) []f64) &ByteF641DArrayMapIterator {
+pub fn (mut i ByteTakeWhileIterator) map_f64_arr(map_fn fn(_ byte) []f64) &ByteF641DArrayMapIterator {
 	return &ByteF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) skip(n int) &ByteSkipIterator {
+pub fn (mut i ByteTakeWhileIterator) skip(n int) &ByteSkipIterator {
 	return &ByteSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) skip_while(pred fn(_ byte) bool) &ByteSkip_whileIterator {
-	return &ByteSkip_whileIterator{
+pub fn (mut i ByteTakeWhileIterator) skip_while(pred fn(_ byte) bool) &ByteSkipWhileIterator {
+	return &ByteSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) collect() []byte {
+pub fn (mut i ByteTakeWhileIterator) collect() []byte {
 	mut arr := []byte{}
 	for item in i {
 		arr << item
@@ -44961,160 +44961,160 @@ pub fn (mut i ByteTake_whileIterator) collect() []byte {
 	return arr
 }
 
-pub fn (mut i ByteTake_whileIterator) every(n int) &ByteEveryIterator {
+pub fn (mut i ByteTakeWhileIterator) every(n int) &ByteEveryIterator {
 	return &ByteEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) rev() &ByteRevIterator {
+pub fn (mut i ByteTakeWhileIterator) rev() &ByteRevIterator {
 	return &ByteRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) windows(n int) &ByteByte1DArrayWindowsIterator {
+pub fn (mut i ByteTakeWhileIterator) windows(n int) &ByteByte1DArrayWindowsIterator {
 	return &ByteByte1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
+pub fn (mut i ByteTakeWhileIterator) chunks(n int) &ByteByte1DArrayChunksIterator {
 	return &ByteByte1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
+pub fn (mut i ByteTakeWhileIterator) tap(tap_fn fn(_ byte)) &ByteTapIterator {
 	return &ByteTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) take(n int) &ByteTakeIterator {
+pub fn (mut i ByteTakeWhileIterator) take(n int) &ByteTakeIterator {
 	return &ByteTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i ByteTake_whileIterator) take_while(pred fn(_ byte) bool) &ByteTake_whileIterator {
-	return &ByteTake_whileIterator{
+pub fn (mut i ByteTakeWhileIterator) take_while(pred fn(_ byte) bool) &ByteTakeWhileIterator {
+	return &ByteTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) filter(filter_fn fn(_ rune) bool) &RuneFilterIterator {
+pub fn (mut i RuneTakeWhileIterator) filter(filter_fn fn(_ rune) bool) &RuneFilterIterator {
 	return &RuneFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_bool(map_fn fn(_ rune) bool) &RuneBoolMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_bool(map_fn fn(_ rune) bool) &RuneBoolMapIterator {
 	return &RuneBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_string(map_fn fn(_ rune) string) &RuneStringMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_string(map_fn fn(_ rune) string) &RuneStringMapIterator {
 	return &RuneStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_int(map_fn fn(_ rune) int) &RuneIntMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_int(map_fn fn(_ rune) int) &RuneIntMapIterator {
 	return &RuneIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_byte(map_fn fn(_ rune) byte) &RuneByteMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_byte(map_fn fn(_ rune) byte) &RuneByteMapIterator {
 	return &RuneByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_rune(map_fn fn(_ rune) rune) &RuneRuneMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_rune(map_fn fn(_ rune) rune) &RuneRuneMapIterator {
 	return &RuneRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_f64(map_fn fn(_ rune) f64) &RuneF64MapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_f64(map_fn fn(_ rune) f64) &RuneF64MapIterator {
 	return &RuneF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_bool_arr(map_fn fn(_ rune) []bool) &RuneBool1DArrayMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_bool_arr(map_fn fn(_ rune) []bool) &RuneBool1DArrayMapIterator {
 	return &RuneBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_string_arr(map_fn fn(_ rune) []string) &RuneString1DArrayMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_string_arr(map_fn fn(_ rune) []string) &RuneString1DArrayMapIterator {
 	return &RuneString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_int_arr(map_fn fn(_ rune) []int) &RuneInt1DArrayMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_int_arr(map_fn fn(_ rune) []int) &RuneInt1DArrayMapIterator {
 	return &RuneInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_byte_arr(map_fn fn(_ rune) []byte) &RuneByte1DArrayMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_byte_arr(map_fn fn(_ rune) []byte) &RuneByte1DArrayMapIterator {
 	return &RuneByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_rune_arr(map_fn fn(_ rune) []rune) &RuneRune1DArrayMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_rune_arr(map_fn fn(_ rune) []rune) &RuneRune1DArrayMapIterator {
 	return &RuneRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) map_f64_arr(map_fn fn(_ rune) []f64) &RuneF641DArrayMapIterator {
+pub fn (mut i RuneTakeWhileIterator) map_f64_arr(map_fn fn(_ rune) []f64) &RuneF641DArrayMapIterator {
 	return &RuneF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) skip(n int) &RuneSkipIterator {
+pub fn (mut i RuneTakeWhileIterator) skip(n int) &RuneSkipIterator {
 	return &RuneSkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) skip_while(pred fn(_ rune) bool) &RuneSkip_whileIterator {
-	return &RuneSkip_whileIterator{
+pub fn (mut i RuneTakeWhileIterator) skip_while(pred fn(_ rune) bool) &RuneSkipWhileIterator {
+	return &RuneSkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) collect() []rune {
+pub fn (mut i RuneTakeWhileIterator) collect() []rune {
 	mut arr := []rune{}
 	for item in i {
 		arr << item
@@ -45122,160 +45122,160 @@ pub fn (mut i RuneTake_whileIterator) collect() []rune {
 	return arr
 }
 
-pub fn (mut i RuneTake_whileIterator) every(n int) &RuneEveryIterator {
+pub fn (mut i RuneTakeWhileIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) rev() &RuneRevIterator {
+pub fn (mut i RuneTakeWhileIterator) rev() &RuneRevIterator {
 	return &RuneRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) windows(n int) &RuneRune1DArrayWindowsIterator {
+pub fn (mut i RuneTakeWhileIterator) windows(n int) &RuneRune1DArrayWindowsIterator {
 	return &RuneRune1DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) chunks(n int) &RuneRune1DArrayChunksIterator {
+pub fn (mut i RuneTakeWhileIterator) chunks(n int) &RuneRune1DArrayChunksIterator {
 	return &RuneRune1DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
+pub fn (mut i RuneTakeWhileIterator) tap(tap_fn fn(_ rune)) &RuneTapIterator {
 	return &RuneTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) take(n int) &RuneTakeIterator {
+pub fn (mut i RuneTakeWhileIterator) take(n int) &RuneTakeIterator {
 	return &RuneTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i RuneTake_whileIterator) take_while(pred fn(_ rune) bool) &RuneTake_whileIterator {
-	return &RuneTake_whileIterator{
+pub fn (mut i RuneTakeWhileIterator) take_while(pred fn(_ rune) bool) &RuneTakeWhileIterator {
+	return &RuneTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
+pub fn (mut i F64TakeWhileIterator) filter(filter_fn fn(_ f64) bool) &F64FilterIterator {
 	return &F64FilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_bool(map_fn fn(_ f64) bool) &F64BoolMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_bool(map_fn fn(_ f64) bool) &F64BoolMapIterator {
 	return &F64BoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_string(map_fn fn(_ f64) string) &F64StringMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_string(map_fn fn(_ f64) string) &F64StringMapIterator {
 	return &F64StringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_int(map_fn fn(_ f64) int) &F64IntMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_int(map_fn fn(_ f64) int) &F64IntMapIterator {
 	return &F64IntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_byte(map_fn fn(_ f64) byte) &F64ByteMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_byte(map_fn fn(_ f64) byte) &F64ByteMapIterator {
 	return &F64ByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_rune(map_fn fn(_ f64) rune) &F64RuneMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_rune(map_fn fn(_ f64) rune) &F64RuneMapIterator {
 	return &F64RuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_f64(map_fn fn(_ f64) f64) &F64F64MapIterator {
+pub fn (mut i F64TakeWhileIterator) map_f64(map_fn fn(_ f64) f64) &F64F64MapIterator {
 	return &F64F64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_bool_arr(map_fn fn(_ f64) []bool) &F64Bool1DArrayMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_bool_arr(map_fn fn(_ f64) []bool) &F64Bool1DArrayMapIterator {
 	return &F64Bool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_string_arr(map_fn fn(_ f64) []string) &F64String1DArrayMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_string_arr(map_fn fn(_ f64) []string) &F64String1DArrayMapIterator {
 	return &F64String1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_int_arr(map_fn fn(_ f64) []int) &F64Int1DArrayMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_int_arr(map_fn fn(_ f64) []int) &F64Int1DArrayMapIterator {
 	return &F64Int1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_byte_arr(map_fn fn(_ f64) []byte) &F64Byte1DArrayMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_byte_arr(map_fn fn(_ f64) []byte) &F64Byte1DArrayMapIterator {
 	return &F64Byte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_rune_arr(map_fn fn(_ f64) []rune) &F64Rune1DArrayMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_rune_arr(map_fn fn(_ f64) []rune) &F64Rune1DArrayMapIterator {
 	return &F64Rune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) map_f64_arr(map_fn fn(_ f64) []f64) &F64F641DArrayMapIterator {
+pub fn (mut i F64TakeWhileIterator) map_f64_arr(map_fn fn(_ f64) []f64) &F64F641DArrayMapIterator {
 	return &F64F641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) skip(n int) &F64SkipIterator {
+pub fn (mut i F64TakeWhileIterator) skip(n int) &F64SkipIterator {
 	return &F64SkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) skip_while(pred fn(_ f64) bool) &F64Skip_whileIterator {
-	return &F64Skip_whileIterator{
+pub fn (mut i F64TakeWhileIterator) skip_while(pred fn(_ f64) bool) &F64SkipWhileIterator {
+	return &F64SkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) collect() []f64 {
+pub fn (mut i F64TakeWhileIterator) collect() []f64 {
 	mut arr := []f64{}
 	for item in i {
 		arr << item
@@ -45283,160 +45283,160 @@ pub fn (mut i F64Take_whileIterator) collect() []f64 {
 	return arr
 }
 
-pub fn (mut i F64Take_whileIterator) every(n int) &F64EveryIterator {
+pub fn (mut i F64TakeWhileIterator) every(n int) &F64EveryIterator {
 	return &F64EveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) rev() &F64RevIterator {
+pub fn (mut i F64TakeWhileIterator) rev() &F64RevIterator {
 	return &F64RevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) windows(n int) &F64F641DArrayWindowsIterator {
+pub fn (mut i F64TakeWhileIterator) windows(n int) &F64F641DArrayWindowsIterator {
 	return &F64F641DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) chunks(n int) &F64F641DArrayChunksIterator {
+pub fn (mut i F64TakeWhileIterator) chunks(n int) &F64F641DArrayChunksIterator {
 	return &F64F641DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
+pub fn (mut i F64TakeWhileIterator) tap(tap_fn fn(_ f64)) &F64TapIterator {
 	return &F64TapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) take(n int) &F64TakeIterator {
+pub fn (mut i F64TakeWhileIterator) take(n int) &F64TakeIterator {
 	return &F64TakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F64Take_whileIterator) take_while(pred fn(_ f64) bool) &F64Take_whileIterator {
-	return &F64Take_whileIterator{
+pub fn (mut i F64TakeWhileIterator) take_while(pred fn(_ f64) bool) &F64TakeWhileIterator {
+	return &F64TakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) filter(filter_fn fn(_ []bool) bool) &Bool1DArrayFilterIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) filter(filter_fn fn(_ []bool) bool) &Bool1DArrayFilterIterator {
 	return &Bool1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_bool(map_fn fn(_ []bool) bool) &Bool1DArrayBoolMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_bool(map_fn fn(_ []bool) bool) &Bool1DArrayBoolMapIterator {
 	return &Bool1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_string(map_fn fn(_ []bool) string) &Bool1DArrayStringMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_string(map_fn fn(_ []bool) string) &Bool1DArrayStringMapIterator {
 	return &Bool1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_int(map_fn fn(_ []bool) int) &Bool1DArrayIntMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_int(map_fn fn(_ []bool) int) &Bool1DArrayIntMapIterator {
 	return &Bool1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_byte(map_fn fn(_ []bool) byte) &Bool1DArrayByteMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_byte(map_fn fn(_ []bool) byte) &Bool1DArrayByteMapIterator {
 	return &Bool1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_rune(map_fn fn(_ []bool) rune) &Bool1DArrayRuneMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_rune(map_fn fn(_ []bool) rune) &Bool1DArrayRuneMapIterator {
 	return &Bool1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_f64(map_fn fn(_ []bool) f64) &Bool1DArrayF64MapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_f64(map_fn fn(_ []bool) f64) &Bool1DArrayF64MapIterator {
 	return &Bool1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_bool_arr(map_fn fn(_ []bool) []bool) &Bool1DArrayBool1DArrayMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_bool_arr(map_fn fn(_ []bool) []bool) &Bool1DArrayBool1DArrayMapIterator {
 	return &Bool1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_string_arr(map_fn fn(_ []bool) []string) &Bool1DArrayString1DArrayMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_string_arr(map_fn fn(_ []bool) []string) &Bool1DArrayString1DArrayMapIterator {
 	return &Bool1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_int_arr(map_fn fn(_ []bool) []int) &Bool1DArrayInt1DArrayMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_int_arr(map_fn fn(_ []bool) []int) &Bool1DArrayInt1DArrayMapIterator {
 	return &Bool1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_byte_arr(map_fn fn(_ []bool) []byte) &Bool1DArrayByte1DArrayMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_byte_arr(map_fn fn(_ []bool) []byte) &Bool1DArrayByte1DArrayMapIterator {
 	return &Bool1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_rune_arr(map_fn fn(_ []bool) []rune) &Bool1DArrayRune1DArrayMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_rune_arr(map_fn fn(_ []bool) []rune) &Bool1DArrayRune1DArrayMapIterator {
 	return &Bool1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) map_f64_arr(map_fn fn(_ []bool) []f64) &Bool1DArrayF641DArrayMapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) map_f64_arr(map_fn fn(_ []bool) []f64) &Bool1DArrayF641DArrayMapIterator {
 	return &Bool1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) skip(n int) &Bool1DArraySkipIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) skip(n int) &Bool1DArraySkipIterator {
 	return &Bool1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkip_whileIterator {
-	return &Bool1DArraySkip_whileIterator{
+pub fn (mut i Bool1DArrayTakeWhileIterator) skip_while(pred fn(_ []bool) bool) &Bool1DArraySkipWhileIterator {
+	return &Bool1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) collect() [][]bool {
+pub fn (mut i Bool1DArrayTakeWhileIterator) collect() [][]bool {
 	mut arr := [][]bool{}
 	for item in i {
 		arr << item
@@ -45444,160 +45444,160 @@ pub fn (mut i Bool1DArrayTake_whileIterator) collect() [][]bool {
 	return arr
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) every(n int) &Bool1DArrayEveryIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) every(n int) &Bool1DArrayEveryIterator {
 	return &Bool1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) rev() &Bool1DArrayRevIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) rev() &Bool1DArrayRevIterator {
 	return &Bool1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) windows(n int) &Bool1DArrayBool2DArrayWindowsIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) windows(n int) &Bool1DArrayBool2DArrayWindowsIterator {
 	return &Bool1DArrayBool2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) chunks(n int) &Bool1DArrayBool2DArrayChunksIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) chunks(n int) &Bool1DArrayBool2DArrayChunksIterator {
 	return &Bool1DArrayBool2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) tap(tap_fn fn(_ []bool)) &Bool1DArrayTapIterator {
 	return &Bool1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) take(n int) &Bool1DArrayTakeIterator {
+pub fn (mut i Bool1DArrayTakeWhileIterator) take(n int) &Bool1DArrayTakeIterator {
 	return &Bool1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Bool1DArrayTake_whileIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTake_whileIterator {
-	return &Bool1DArrayTake_whileIterator{
+pub fn (mut i Bool1DArrayTakeWhileIterator) take_while(pred fn(_ []bool) bool) &Bool1DArrayTakeWhileIterator {
+	return &Bool1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) filter(filter_fn fn(_ []string) bool) &String1DArrayFilterIterator {
 	return &String1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_bool(map_fn fn(_ []string) bool) &String1DArrayBoolMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_bool(map_fn fn(_ []string) bool) &String1DArrayBoolMapIterator {
 	return &String1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_string(map_fn fn(_ []string) string) &String1DArrayStringMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_string(map_fn fn(_ []string) string) &String1DArrayStringMapIterator {
 	return &String1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_int(map_fn fn(_ []string) int) &String1DArrayIntMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_int(map_fn fn(_ []string) int) &String1DArrayIntMapIterator {
 	return &String1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_byte(map_fn fn(_ []string) byte) &String1DArrayByteMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_byte(map_fn fn(_ []string) byte) &String1DArrayByteMapIterator {
 	return &String1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_rune(map_fn fn(_ []string) rune) &String1DArrayRuneMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_rune(map_fn fn(_ []string) rune) &String1DArrayRuneMapIterator {
 	return &String1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_f64(map_fn fn(_ []string) f64) &String1DArrayF64MapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_f64(map_fn fn(_ []string) f64) &String1DArrayF64MapIterator {
 	return &String1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_bool_arr(map_fn fn(_ []string) []bool) &String1DArrayBool1DArrayMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_bool_arr(map_fn fn(_ []string) []bool) &String1DArrayBool1DArrayMapIterator {
 	return &String1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_string_arr(map_fn fn(_ []string) []string) &String1DArrayString1DArrayMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_string_arr(map_fn fn(_ []string) []string) &String1DArrayString1DArrayMapIterator {
 	return &String1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_int_arr(map_fn fn(_ []string) []int) &String1DArrayInt1DArrayMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_int_arr(map_fn fn(_ []string) []int) &String1DArrayInt1DArrayMapIterator {
 	return &String1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_byte_arr(map_fn fn(_ []string) []byte) &String1DArrayByte1DArrayMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_byte_arr(map_fn fn(_ []string) []byte) &String1DArrayByte1DArrayMapIterator {
 	return &String1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_rune_arr(map_fn fn(_ []string) []rune) &String1DArrayRune1DArrayMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_rune_arr(map_fn fn(_ []string) []rune) &String1DArrayRune1DArrayMapIterator {
 	return &String1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) map_f64_arr(map_fn fn(_ []string) []f64) &String1DArrayF641DArrayMapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) map_f64_arr(map_fn fn(_ []string) []f64) &String1DArrayF641DArrayMapIterator {
 	return &String1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) skip(n int) &String1DArraySkipIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) skip(n int) &String1DArraySkipIterator {
 	return &String1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkip_whileIterator {
-	return &String1DArraySkip_whileIterator{
+pub fn (mut i String1DArrayTakeWhileIterator) skip_while(pred fn(_ []string) bool) &String1DArraySkipWhileIterator {
+	return &String1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) collect() [][]string {
+pub fn (mut i String1DArrayTakeWhileIterator) collect() [][]string {
 	mut arr := [][]string{}
 	for item in i {
 		arr << item
@@ -45605,160 +45605,160 @@ pub fn (mut i String1DArrayTake_whileIterator) collect() [][]string {
 	return arr
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) every(n int) &String1DArrayEveryIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) every(n int) &String1DArrayEveryIterator {
 	return &String1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) rev() &String1DArrayRevIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) rev() &String1DArrayRevIterator {
 	return &String1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) windows(n int) &String1DArrayString2DArrayWindowsIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) windows(n int) &String1DArrayString2DArrayWindowsIterator {
 	return &String1DArrayString2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) chunks(n int) &String1DArrayString2DArrayChunksIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) chunks(n int) &String1DArrayString2DArrayChunksIterator {
 	return &String1DArrayString2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) tap(tap_fn fn(_ []string)) &String1DArrayTapIterator {
 	return &String1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) take(n int) &String1DArrayTakeIterator {
+pub fn (mut i String1DArrayTakeWhileIterator) take(n int) &String1DArrayTakeIterator {
 	return &String1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i String1DArrayTake_whileIterator) take_while(pred fn(_ []string) bool) &String1DArrayTake_whileIterator {
-	return &String1DArrayTake_whileIterator{
+pub fn (mut i String1DArrayTakeWhileIterator) take_while(pred fn(_ []string) bool) &String1DArrayTakeWhileIterator {
+	return &String1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) filter(filter_fn fn(_ []int) bool) &Int1DArrayFilterIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) filter(filter_fn fn(_ []int) bool) &Int1DArrayFilterIterator {
 	return &Int1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_bool(map_fn fn(_ []int) bool) &Int1DArrayBoolMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_bool(map_fn fn(_ []int) bool) &Int1DArrayBoolMapIterator {
 	return &Int1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_string(map_fn fn(_ []int) string) &Int1DArrayStringMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_string(map_fn fn(_ []int) string) &Int1DArrayStringMapIterator {
 	return &Int1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_int(map_fn fn(_ []int) int) &Int1DArrayIntMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_int(map_fn fn(_ []int) int) &Int1DArrayIntMapIterator {
 	return &Int1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_byte(map_fn fn(_ []int) byte) &Int1DArrayByteMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_byte(map_fn fn(_ []int) byte) &Int1DArrayByteMapIterator {
 	return &Int1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_rune(map_fn fn(_ []int) rune) &Int1DArrayRuneMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_rune(map_fn fn(_ []int) rune) &Int1DArrayRuneMapIterator {
 	return &Int1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_f64(map_fn fn(_ []int) f64) &Int1DArrayF64MapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_f64(map_fn fn(_ []int) f64) &Int1DArrayF64MapIterator {
 	return &Int1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_bool_arr(map_fn fn(_ []int) []bool) &Int1DArrayBool1DArrayMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_bool_arr(map_fn fn(_ []int) []bool) &Int1DArrayBool1DArrayMapIterator {
 	return &Int1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_string_arr(map_fn fn(_ []int) []string) &Int1DArrayString1DArrayMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_string_arr(map_fn fn(_ []int) []string) &Int1DArrayString1DArrayMapIterator {
 	return &Int1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_int_arr(map_fn fn(_ []int) []int) &Int1DArrayInt1DArrayMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_int_arr(map_fn fn(_ []int) []int) &Int1DArrayInt1DArrayMapIterator {
 	return &Int1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_byte_arr(map_fn fn(_ []int) []byte) &Int1DArrayByte1DArrayMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_byte_arr(map_fn fn(_ []int) []byte) &Int1DArrayByte1DArrayMapIterator {
 	return &Int1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_rune_arr(map_fn fn(_ []int) []rune) &Int1DArrayRune1DArrayMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_rune_arr(map_fn fn(_ []int) []rune) &Int1DArrayRune1DArrayMapIterator {
 	return &Int1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) map_f64_arr(map_fn fn(_ []int) []f64) &Int1DArrayF641DArrayMapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) map_f64_arr(map_fn fn(_ []int) []f64) &Int1DArrayF641DArrayMapIterator {
 	return &Int1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) skip(n int) &Int1DArraySkipIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) skip(n int) &Int1DArraySkipIterator {
 	return &Int1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkip_whileIterator {
-	return &Int1DArraySkip_whileIterator{
+pub fn (mut i Int1DArrayTakeWhileIterator) skip_while(pred fn(_ []int) bool) &Int1DArraySkipWhileIterator {
+	return &Int1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) collect() [][]int {
+pub fn (mut i Int1DArrayTakeWhileIterator) collect() [][]int {
 	mut arr := [][]int{}
 	for item in i {
 		arr << item
@@ -45766,160 +45766,160 @@ pub fn (mut i Int1DArrayTake_whileIterator) collect() [][]int {
 	return arr
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) every(n int) &Int1DArrayEveryIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) every(n int) &Int1DArrayEveryIterator {
 	return &Int1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) rev() &Int1DArrayRevIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) rev() &Int1DArrayRevIterator {
 	return &Int1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) windows(n int) &Int1DArrayInt2DArrayWindowsIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) windows(n int) &Int1DArrayInt2DArrayWindowsIterator {
 	return &Int1DArrayInt2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) chunks(n int) &Int1DArrayInt2DArrayChunksIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) chunks(n int) &Int1DArrayInt2DArrayChunksIterator {
 	return &Int1DArrayInt2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) tap(tap_fn fn(_ []int)) &Int1DArrayTapIterator {
 	return &Int1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) take(n int) &Int1DArrayTakeIterator {
+pub fn (mut i Int1DArrayTakeWhileIterator) take(n int) &Int1DArrayTakeIterator {
 	return &Int1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Int1DArrayTake_whileIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTake_whileIterator {
-	return &Int1DArrayTake_whileIterator{
+pub fn (mut i Int1DArrayTakeWhileIterator) take_while(pred fn(_ []int) bool) &Int1DArrayTakeWhileIterator {
+	return &Int1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) filter(filter_fn fn(_ []byte) bool) &Byte1DArrayFilterIterator {
 	return &Byte1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_bool(map_fn fn(_ []byte) bool) &Byte1DArrayBoolMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_bool(map_fn fn(_ []byte) bool) &Byte1DArrayBoolMapIterator {
 	return &Byte1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_string(map_fn fn(_ []byte) string) &Byte1DArrayStringMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_string(map_fn fn(_ []byte) string) &Byte1DArrayStringMapIterator {
 	return &Byte1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_int(map_fn fn(_ []byte) int) &Byte1DArrayIntMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_int(map_fn fn(_ []byte) int) &Byte1DArrayIntMapIterator {
 	return &Byte1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_byte(map_fn fn(_ []byte) byte) &Byte1DArrayByteMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_byte(map_fn fn(_ []byte) byte) &Byte1DArrayByteMapIterator {
 	return &Byte1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_rune(map_fn fn(_ []byte) rune) &Byte1DArrayRuneMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_rune(map_fn fn(_ []byte) rune) &Byte1DArrayRuneMapIterator {
 	return &Byte1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_f64(map_fn fn(_ []byte) f64) &Byte1DArrayF64MapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_f64(map_fn fn(_ []byte) f64) &Byte1DArrayF64MapIterator {
 	return &Byte1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_bool_arr(map_fn fn(_ []byte) []bool) &Byte1DArrayBool1DArrayMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_bool_arr(map_fn fn(_ []byte) []bool) &Byte1DArrayBool1DArrayMapIterator {
 	return &Byte1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_string_arr(map_fn fn(_ []byte) []string) &Byte1DArrayString1DArrayMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_string_arr(map_fn fn(_ []byte) []string) &Byte1DArrayString1DArrayMapIterator {
 	return &Byte1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_int_arr(map_fn fn(_ []byte) []int) &Byte1DArrayInt1DArrayMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_int_arr(map_fn fn(_ []byte) []int) &Byte1DArrayInt1DArrayMapIterator {
 	return &Byte1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_byte_arr(map_fn fn(_ []byte) []byte) &Byte1DArrayByte1DArrayMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_byte_arr(map_fn fn(_ []byte) []byte) &Byte1DArrayByte1DArrayMapIterator {
 	return &Byte1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_rune_arr(map_fn fn(_ []byte) []rune) &Byte1DArrayRune1DArrayMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_rune_arr(map_fn fn(_ []byte) []rune) &Byte1DArrayRune1DArrayMapIterator {
 	return &Byte1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) map_f64_arr(map_fn fn(_ []byte) []f64) &Byte1DArrayF641DArrayMapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) map_f64_arr(map_fn fn(_ []byte) []f64) &Byte1DArrayF641DArrayMapIterator {
 	return &Byte1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) skip(n int) &Byte1DArraySkipIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) skip(n int) &Byte1DArraySkipIterator {
 	return &Byte1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkip_whileIterator {
-	return &Byte1DArraySkip_whileIterator{
+pub fn (mut i Byte1DArrayTakeWhileIterator) skip_while(pred fn(_ []byte) bool) &Byte1DArraySkipWhileIterator {
+	return &Byte1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) collect() [][]byte {
+pub fn (mut i Byte1DArrayTakeWhileIterator) collect() [][]byte {
 	mut arr := [][]byte{}
 	for item in i {
 		arr << item
@@ -45927,160 +45927,160 @@ pub fn (mut i Byte1DArrayTake_whileIterator) collect() [][]byte {
 	return arr
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) every(n int) &Byte1DArrayEveryIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) every(n int) &Byte1DArrayEveryIterator {
 	return &Byte1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) rev() &Byte1DArrayRevIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) rev() &Byte1DArrayRevIterator {
 	return &Byte1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) windows(n int) &Byte1DArrayByte2DArrayWindowsIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) windows(n int) &Byte1DArrayByte2DArrayWindowsIterator {
 	return &Byte1DArrayByte2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) chunks(n int) &Byte1DArrayByte2DArrayChunksIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) chunks(n int) &Byte1DArrayByte2DArrayChunksIterator {
 	return &Byte1DArrayByte2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) tap(tap_fn fn(_ []byte)) &Byte1DArrayTapIterator {
 	return &Byte1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) take(n int) &Byte1DArrayTakeIterator {
+pub fn (mut i Byte1DArrayTakeWhileIterator) take(n int) &Byte1DArrayTakeIterator {
 	return &Byte1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Byte1DArrayTake_whileIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTake_whileIterator {
-	return &Byte1DArrayTake_whileIterator{
+pub fn (mut i Byte1DArrayTakeWhileIterator) take_while(pred fn(_ []byte) bool) &Byte1DArrayTakeWhileIterator {
+	return &Byte1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) filter(filter_fn fn(_ []rune) bool) &Rune1DArrayFilterIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) filter(filter_fn fn(_ []rune) bool) &Rune1DArrayFilterIterator {
 	return &Rune1DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_bool(map_fn fn(_ []rune) bool) &Rune1DArrayBoolMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_bool(map_fn fn(_ []rune) bool) &Rune1DArrayBoolMapIterator {
 	return &Rune1DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_string(map_fn fn(_ []rune) string) &Rune1DArrayStringMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_string(map_fn fn(_ []rune) string) &Rune1DArrayStringMapIterator {
 	return &Rune1DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_int(map_fn fn(_ []rune) int) &Rune1DArrayIntMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_int(map_fn fn(_ []rune) int) &Rune1DArrayIntMapIterator {
 	return &Rune1DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_byte(map_fn fn(_ []rune) byte) &Rune1DArrayByteMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_byte(map_fn fn(_ []rune) byte) &Rune1DArrayByteMapIterator {
 	return &Rune1DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_rune(map_fn fn(_ []rune) rune) &Rune1DArrayRuneMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_rune(map_fn fn(_ []rune) rune) &Rune1DArrayRuneMapIterator {
 	return &Rune1DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_f64(map_fn fn(_ []rune) f64) &Rune1DArrayF64MapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_f64(map_fn fn(_ []rune) f64) &Rune1DArrayF64MapIterator {
 	return &Rune1DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_bool_arr(map_fn fn(_ []rune) []bool) &Rune1DArrayBool1DArrayMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_bool_arr(map_fn fn(_ []rune) []bool) &Rune1DArrayBool1DArrayMapIterator {
 	return &Rune1DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_string_arr(map_fn fn(_ []rune) []string) &Rune1DArrayString1DArrayMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_string_arr(map_fn fn(_ []rune) []string) &Rune1DArrayString1DArrayMapIterator {
 	return &Rune1DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_int_arr(map_fn fn(_ []rune) []int) &Rune1DArrayInt1DArrayMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_int_arr(map_fn fn(_ []rune) []int) &Rune1DArrayInt1DArrayMapIterator {
 	return &Rune1DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_byte_arr(map_fn fn(_ []rune) []byte) &Rune1DArrayByte1DArrayMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_byte_arr(map_fn fn(_ []rune) []byte) &Rune1DArrayByte1DArrayMapIterator {
 	return &Rune1DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_rune_arr(map_fn fn(_ []rune) []rune) &Rune1DArrayRune1DArrayMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_rune_arr(map_fn fn(_ []rune) []rune) &Rune1DArrayRune1DArrayMapIterator {
 	return &Rune1DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) map_f64_arr(map_fn fn(_ []rune) []f64) &Rune1DArrayF641DArrayMapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) map_f64_arr(map_fn fn(_ []rune) []f64) &Rune1DArrayF641DArrayMapIterator {
 	return &Rune1DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) skip(n int) &Rune1DArraySkipIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) skip(n int) &Rune1DArraySkipIterator {
 	return &Rune1DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkip_whileIterator {
-	return &Rune1DArraySkip_whileIterator{
+pub fn (mut i Rune1DArrayTakeWhileIterator) skip_while(pred fn(_ []rune) bool) &Rune1DArraySkipWhileIterator {
+	return &Rune1DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) collect() [][]rune {
+pub fn (mut i Rune1DArrayTakeWhileIterator) collect() [][]rune {
 	mut arr := [][]rune{}
 	for item in i {
 		arr << item
@@ -46088,160 +46088,160 @@ pub fn (mut i Rune1DArrayTake_whileIterator) collect() [][]rune {
 	return arr
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) every(n int) &Rune1DArrayEveryIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) every(n int) &Rune1DArrayEveryIterator {
 	return &Rune1DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) rev() &Rune1DArrayRevIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) rev() &Rune1DArrayRevIterator {
 	return &Rune1DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) windows(n int) &Rune1DArrayRune2DArrayWindowsIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) windows(n int) &Rune1DArrayRune2DArrayWindowsIterator {
 	return &Rune1DArrayRune2DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) chunks(n int) &Rune1DArrayRune2DArrayChunksIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) chunks(n int) &Rune1DArrayRune2DArrayChunksIterator {
 	return &Rune1DArrayRune2DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) tap(tap_fn fn(_ []rune)) &Rune1DArrayTapIterator {
 	return &Rune1DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) take(n int) &Rune1DArrayTakeIterator {
+pub fn (mut i Rune1DArrayTakeWhileIterator) take(n int) &Rune1DArrayTakeIterator {
 	return &Rune1DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i Rune1DArrayTake_whileIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTake_whileIterator {
-	return &Rune1DArrayTake_whileIterator{
+pub fn (mut i Rune1DArrayTakeWhileIterator) take_while(pred fn(_ []rune) bool) &Rune1DArrayTakeWhileIterator {
+	return &Rune1DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) filter(filter_fn fn(_ []f64) bool) &F641DArrayFilterIterator {
 	return &F641DArrayFilterIterator{
 		filter_fn: filter_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_bool(map_fn fn(_ []f64) bool) &F641DArrayBoolMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_bool(map_fn fn(_ []f64) bool) &F641DArrayBoolMapIterator {
 	return &F641DArrayBoolMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_string(map_fn fn(_ []f64) string) &F641DArrayStringMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_string(map_fn fn(_ []f64) string) &F641DArrayStringMapIterator {
 	return &F641DArrayStringMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_int(map_fn fn(_ []f64) int) &F641DArrayIntMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_int(map_fn fn(_ []f64) int) &F641DArrayIntMapIterator {
 	return &F641DArrayIntMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_byte(map_fn fn(_ []f64) byte) &F641DArrayByteMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_byte(map_fn fn(_ []f64) byte) &F641DArrayByteMapIterator {
 	return &F641DArrayByteMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_rune(map_fn fn(_ []f64) rune) &F641DArrayRuneMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_rune(map_fn fn(_ []f64) rune) &F641DArrayRuneMapIterator {
 	return &F641DArrayRuneMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_f64(map_fn fn(_ []f64) f64) &F641DArrayF64MapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_f64(map_fn fn(_ []f64) f64) &F641DArrayF64MapIterator {
 	return &F641DArrayF64MapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_bool_arr(map_fn fn(_ []f64) []bool) &F641DArrayBool1DArrayMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_bool_arr(map_fn fn(_ []f64) []bool) &F641DArrayBool1DArrayMapIterator {
 	return &F641DArrayBool1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_string_arr(map_fn fn(_ []f64) []string) &F641DArrayString1DArrayMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_string_arr(map_fn fn(_ []f64) []string) &F641DArrayString1DArrayMapIterator {
 	return &F641DArrayString1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_int_arr(map_fn fn(_ []f64) []int) &F641DArrayInt1DArrayMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_int_arr(map_fn fn(_ []f64) []int) &F641DArrayInt1DArrayMapIterator {
 	return &F641DArrayInt1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_byte_arr(map_fn fn(_ []f64) []byte) &F641DArrayByte1DArrayMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_byte_arr(map_fn fn(_ []f64) []byte) &F641DArrayByte1DArrayMapIterator {
 	return &F641DArrayByte1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_rune_arr(map_fn fn(_ []f64) []rune) &F641DArrayRune1DArrayMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_rune_arr(map_fn fn(_ []f64) []rune) &F641DArrayRune1DArrayMapIterator {
 	return &F641DArrayRune1DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) map_f64_arr(map_fn fn(_ []f64) []f64) &F641DArrayF641DArrayMapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) map_f64_arr(map_fn fn(_ []f64) []f64) &F641DArrayF641DArrayMapIterator {
 	return &F641DArrayF641DArrayMapIterator{
 		map_fn: map_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) skip(n int) &F641DArraySkipIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) skip(n int) &F641DArraySkipIterator {
 	return &F641DArraySkipIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkip_whileIterator {
-	return &F641DArraySkip_whileIterator{
+pub fn (mut i F641DArrayTakeWhileIterator) skip_while(pred fn(_ []f64) bool) &F641DArraySkipWhileIterator {
+	return &F641DArraySkipWhileIterator{
 		predicate: pred
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) collect() [][]f64 {
+pub fn (mut i F641DArrayTakeWhileIterator) collect() [][]f64 {
 	mut arr := [][]f64{}
 	for item in i {
 		arr << item
@@ -46249,49 +46249,49 @@ pub fn (mut i F641DArrayTake_whileIterator) collect() [][]f64 {
 	return arr
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) every(n int) &F641DArrayEveryIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) every(n int) &F641DArrayEveryIterator {
 	return &F641DArrayEveryIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) rev() &F641DArrayRevIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) rev() &F641DArrayRevIterator {
 	return &F641DArrayRevIterator{
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) windows(n int) &F641DArrayF642DArrayWindowsIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) windows(n int) &F641DArrayF642DArrayWindowsIterator {
 	return &F641DArrayF642DArrayWindowsIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) chunks(n int) &F641DArrayF642DArrayChunksIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) chunks(n int) &F641DArrayF642DArrayChunksIterator {
 	return &F641DArrayF642DArrayChunksIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) tap(tap_fn fn(_ []f64)) &F641DArrayTapIterator {
 	return &F641DArrayTapIterator{
 		tap_fn: tap_fn
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) take(n int) &F641DArrayTakeIterator {
+pub fn (mut i F641DArrayTakeWhileIterator) take(n int) &F641DArrayTakeIterator {
 	return &F641DArrayTakeIterator{
 		n: n
 		iterator: i
 	}
 }
 
-pub fn (mut i F641DArrayTake_whileIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTake_whileIterator {
-	return &F641DArrayTake_whileIterator{
+pub fn (mut i F641DArrayTakeWhileIterator) take_while(pred fn(_ []f64) bool) &F641DArrayTakeWhileIterator {
+	return &F641DArrayTakeWhileIterator{
 		predicate: pred
 		iterator: i
 	}

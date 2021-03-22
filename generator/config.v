@@ -88,10 +88,10 @@ fn to_array(types []string) IterConfig {
 fn (c IterConfig) iter_out(iter string, info TypeInfo) string {
 	return match c.kind {
 		.passthrough {
-			info.type_in() + iter.capitalize() + 'Iterator'
+			info.type_in() + to_camel(iter) + 'Iterator'
 		}
 		.transform {
-			info.type_in() + info.type_out() + iter.capitalize() + 'Iterator'
+			info.type_in() + info.type_out() + to_camel(iter) + 'Iterator'
 		}
 	}
 }
@@ -110,10 +110,10 @@ fn (i TypeInfo) type_out() string {
 
 fn name(typ string) string {
 	if typ.starts_with('[][]') {
-		return typ[4..].capitalize() + '2DArray'
+		return to_camel(typ[4..]) + '2DArray'
 	}
 	if typ.starts_with('[]') {
-		return typ[2..].capitalize() + '1DArray'
+		return to_camel(typ[2..]) + '1DArray'
 	}
 	return typ.capitalize()
 }
@@ -123,4 +123,8 @@ fn fn_name(typ string) string {
 		return typ[2..] + '_arr'
 	}
 	return typ
+}
+
+fn to_camel(s string) string {
+	return s.split('_').map(it.capitalize()).join('')
 }
