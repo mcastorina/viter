@@ -13,6 +13,7 @@ fn config() (map[string]IterConfig, []string) {
 		'skip':       single
 		'skip_while': single
 		'collect':    single
+		'fold':       passthrough(types.filter(!it.starts_with('[]')))
 		'every':      single
 		'rev':        single
 		'windows':    to_array(types)

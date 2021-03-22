@@ -401,6 +401,14 @@ pub fn (mut i BoolArrayIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolArrayIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolArrayIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -574,6 +582,14 @@ pub fn (mut i StringArrayIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringArrayIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringArrayIterator) every(n int) &StringEveryIterator {
@@ -751,6 +767,14 @@ pub fn (mut i IntArrayIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntArrayIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntArrayIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -924,6 +948,14 @@ pub fn (mut i ByteArrayIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteArrayIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteArrayIterator) every(n int) &ByteEveryIterator {
@@ -1101,6 +1133,14 @@ pub fn (mut i RuneArrayIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneArrayIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneArrayIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -1274,6 +1314,14 @@ pub fn (mut i F64ArrayIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64ArrayIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64ArrayIterator) every(n int) &F64EveryIterator {
@@ -2693,6 +2741,14 @@ pub fn (mut i BoolFilterIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolFilterIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolFilterIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -2866,6 +2922,14 @@ pub fn (mut i StringFilterIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringFilterIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringFilterIterator) every(n int) &StringEveryIterator {
@@ -3043,6 +3107,14 @@ pub fn (mut i IntFilterIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntFilterIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntFilterIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -3216,6 +3288,14 @@ pub fn (mut i ByteFilterIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteFilterIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteFilterIterator) every(n int) &ByteEveryIterator {
@@ -3393,6 +3473,14 @@ pub fn (mut i RuneFilterIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneFilterIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneFilterIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -3566,6 +3654,14 @@ pub fn (mut i F64FilterIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64FilterIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64FilterIterator) every(n int) &F64EveryIterator {
@@ -6377,6 +6473,14 @@ pub fn (mut i BoolBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -6550,6 +6654,14 @@ pub fn (mut i BoolStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i BoolStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i BoolStringMapIterator) every(n int) &StringEveryIterator {
@@ -6727,6 +6839,14 @@ pub fn (mut i BoolIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i BoolIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -6900,6 +7020,14 @@ pub fn (mut i BoolByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i BoolByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i BoolByteMapIterator) every(n int) &ByteEveryIterator {
@@ -7077,6 +7205,14 @@ pub fn (mut i BoolRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i BoolRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -7250,6 +7386,14 @@ pub fn (mut i BoolF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i BoolF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i BoolF64MapIterator) every(n int) &F64EveryIterator {
@@ -8477,6 +8621,14 @@ pub fn (mut i StringBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i StringBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i StringBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -8650,6 +8802,14 @@ pub fn (mut i StringStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringStringMapIterator) every(n int) &StringEveryIterator {
@@ -8827,6 +8987,14 @@ pub fn (mut i StringIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i StringIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i StringIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -9000,6 +9168,14 @@ pub fn (mut i StringByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringByteMapIterator) every(n int) &ByteEveryIterator {
@@ -9177,6 +9353,14 @@ pub fn (mut i StringRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i StringRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i StringRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -9350,6 +9534,14 @@ pub fn (mut i StringF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringF64MapIterator) every(n int) &F64EveryIterator {
@@ -10577,6 +10769,14 @@ pub fn (mut i IntBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i IntBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -10750,6 +10950,14 @@ pub fn (mut i IntStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i IntStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i IntStringMapIterator) every(n int) &StringEveryIterator {
@@ -10927,6 +11135,14 @@ pub fn (mut i IntIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -11100,6 +11316,14 @@ pub fn (mut i IntByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i IntByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i IntByteMapIterator) every(n int) &ByteEveryIterator {
@@ -11277,6 +11501,14 @@ pub fn (mut i IntRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i IntRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -11450,6 +11682,14 @@ pub fn (mut i IntF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i IntF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i IntF64MapIterator) every(n int) &F64EveryIterator {
@@ -12677,6 +12917,14 @@ pub fn (mut i ByteBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i ByteBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i ByteBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -12850,6 +13098,14 @@ pub fn (mut i ByteStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteStringMapIterator) every(n int) &StringEveryIterator {
@@ -13027,6 +13283,14 @@ pub fn (mut i ByteIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i ByteIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i ByteIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -13200,6 +13464,14 @@ pub fn (mut i ByteByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteByteMapIterator) every(n int) &ByteEveryIterator {
@@ -13377,6 +13649,14 @@ pub fn (mut i ByteRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i ByteRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i ByteRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -13550,6 +13830,14 @@ pub fn (mut i ByteF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteF64MapIterator) every(n int) &F64EveryIterator {
@@ -14777,6 +15065,14 @@ pub fn (mut i RuneBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i RuneBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -14950,6 +15246,14 @@ pub fn (mut i RuneStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i RuneStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i RuneStringMapIterator) every(n int) &StringEveryIterator {
@@ -15127,6 +15431,14 @@ pub fn (mut i RuneIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i RuneIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -15300,6 +15612,14 @@ pub fn (mut i RuneByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i RuneByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i RuneByteMapIterator) every(n int) &ByteEveryIterator {
@@ -15477,6 +15797,14 @@ pub fn (mut i RuneRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -15650,6 +15978,14 @@ pub fn (mut i RuneF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i RuneF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i RuneF64MapIterator) every(n int) &F64EveryIterator {
@@ -16877,6 +17213,14 @@ pub fn (mut i F64BoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i F64BoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i F64BoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -17050,6 +17394,14 @@ pub fn (mut i F64StringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64StringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64StringMapIterator) every(n int) &StringEveryIterator {
@@ -17227,6 +17579,14 @@ pub fn (mut i F64IntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i F64IntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i F64IntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -17400,6 +17760,14 @@ pub fn (mut i F64ByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64ByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64ByteMapIterator) every(n int) &ByteEveryIterator {
@@ -17577,6 +17945,14 @@ pub fn (mut i F64RuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i F64RuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i F64RuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -17750,6 +18126,14 @@ pub fn (mut i F64F64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64F64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64F64MapIterator) every(n int) &F64EveryIterator {
@@ -18977,6 +19361,14 @@ pub fn (mut i Bool1DArrayBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i Bool1DArrayBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Bool1DArrayBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -19150,6 +19542,14 @@ pub fn (mut i Bool1DArrayStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Bool1DArrayStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Bool1DArrayStringMapIterator) every(n int) &StringEveryIterator {
@@ -19327,6 +19727,14 @@ pub fn (mut i Bool1DArrayIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i Bool1DArrayIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Bool1DArrayIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -19500,6 +19908,14 @@ pub fn (mut i Bool1DArrayByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Bool1DArrayByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Bool1DArrayByteMapIterator) every(n int) &ByteEveryIterator {
@@ -19677,6 +20093,14 @@ pub fn (mut i Bool1DArrayRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i Bool1DArrayRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Bool1DArrayRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -19850,6 +20274,14 @@ pub fn (mut i Bool1DArrayF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Bool1DArrayF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Bool1DArrayF64MapIterator) every(n int) &F64EveryIterator {
@@ -21077,6 +21509,14 @@ pub fn (mut i String1DArrayBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i String1DArrayBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i String1DArrayBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -21250,6 +21690,14 @@ pub fn (mut i String1DArrayStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i String1DArrayStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i String1DArrayStringMapIterator) every(n int) &StringEveryIterator {
@@ -21427,6 +21875,14 @@ pub fn (mut i String1DArrayIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i String1DArrayIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i String1DArrayIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -21600,6 +22056,14 @@ pub fn (mut i String1DArrayByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i String1DArrayByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i String1DArrayByteMapIterator) every(n int) &ByteEveryIterator {
@@ -21777,6 +22241,14 @@ pub fn (mut i String1DArrayRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i String1DArrayRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i String1DArrayRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -21950,6 +22422,14 @@ pub fn (mut i String1DArrayF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i String1DArrayF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i String1DArrayF64MapIterator) every(n int) &F64EveryIterator {
@@ -23177,6 +23657,14 @@ pub fn (mut i Int1DArrayBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i Int1DArrayBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Int1DArrayBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -23350,6 +23838,14 @@ pub fn (mut i Int1DArrayStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Int1DArrayStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Int1DArrayStringMapIterator) every(n int) &StringEveryIterator {
@@ -23527,6 +24023,14 @@ pub fn (mut i Int1DArrayIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i Int1DArrayIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Int1DArrayIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -23700,6 +24204,14 @@ pub fn (mut i Int1DArrayByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Int1DArrayByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Int1DArrayByteMapIterator) every(n int) &ByteEveryIterator {
@@ -23877,6 +24389,14 @@ pub fn (mut i Int1DArrayRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i Int1DArrayRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Int1DArrayRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -24050,6 +24570,14 @@ pub fn (mut i Int1DArrayF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Int1DArrayF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Int1DArrayF64MapIterator) every(n int) &F64EveryIterator {
@@ -25277,6 +25805,14 @@ pub fn (mut i Byte1DArrayBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i Byte1DArrayBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Byte1DArrayBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -25450,6 +25986,14 @@ pub fn (mut i Byte1DArrayStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Byte1DArrayStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Byte1DArrayStringMapIterator) every(n int) &StringEveryIterator {
@@ -25627,6 +26171,14 @@ pub fn (mut i Byte1DArrayIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i Byte1DArrayIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Byte1DArrayIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -25800,6 +26352,14 @@ pub fn (mut i Byte1DArrayByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Byte1DArrayByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Byte1DArrayByteMapIterator) every(n int) &ByteEveryIterator {
@@ -25977,6 +26537,14 @@ pub fn (mut i Byte1DArrayRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i Byte1DArrayRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Byte1DArrayRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -26150,6 +26718,14 @@ pub fn (mut i Byte1DArrayF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Byte1DArrayF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Byte1DArrayF64MapIterator) every(n int) &F64EveryIterator {
@@ -27377,6 +27953,14 @@ pub fn (mut i Rune1DArrayBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i Rune1DArrayBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Rune1DArrayBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -27550,6 +28134,14 @@ pub fn (mut i Rune1DArrayStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Rune1DArrayStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Rune1DArrayStringMapIterator) every(n int) &StringEveryIterator {
@@ -27727,6 +28319,14 @@ pub fn (mut i Rune1DArrayIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i Rune1DArrayIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Rune1DArrayIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -27900,6 +28500,14 @@ pub fn (mut i Rune1DArrayByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Rune1DArrayByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Rune1DArrayByteMapIterator) every(n int) &ByteEveryIterator {
@@ -28077,6 +28685,14 @@ pub fn (mut i Rune1DArrayRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i Rune1DArrayRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i Rune1DArrayRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -28250,6 +28866,14 @@ pub fn (mut i Rune1DArrayF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i Rune1DArrayF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i Rune1DArrayF64MapIterator) every(n int) &F64EveryIterator {
@@ -29477,6 +30101,14 @@ pub fn (mut i F641DArrayBoolMapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i F641DArrayBoolMapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i F641DArrayBoolMapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -29650,6 +30282,14 @@ pub fn (mut i F641DArrayStringMapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F641DArrayStringMapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F641DArrayStringMapIterator) every(n int) &StringEveryIterator {
@@ -29827,6 +30467,14 @@ pub fn (mut i F641DArrayIntMapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i F641DArrayIntMapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i F641DArrayIntMapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -30000,6 +30648,14 @@ pub fn (mut i F641DArrayByteMapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F641DArrayByteMapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F641DArrayByteMapIterator) every(n int) &ByteEveryIterator {
@@ -30177,6 +30833,14 @@ pub fn (mut i F641DArrayRuneMapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i F641DArrayRuneMapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i F641DArrayRuneMapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -30350,6 +31014,14 @@ pub fn (mut i F641DArrayF64MapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F641DArrayF64MapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F641DArrayF64MapIterator) every(n int) &F64EveryIterator {
@@ -31757,6 +32429,14 @@ pub fn (mut i BoolSkipIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolSkipIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolSkipIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -31930,6 +32610,14 @@ pub fn (mut i StringSkipIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringSkipIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringSkipIterator) every(n int) &StringEveryIterator {
@@ -32107,6 +32795,14 @@ pub fn (mut i IntSkipIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntSkipIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntSkipIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -32280,6 +32976,14 @@ pub fn (mut i ByteSkipIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteSkipIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteSkipIterator) every(n int) &ByteEveryIterator {
@@ -32457,6 +33161,14 @@ pub fn (mut i RuneSkipIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneSkipIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneSkipIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -32630,6 +33342,14 @@ pub fn (mut i F64SkipIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64SkipIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64SkipIterator) every(n int) &F64EveryIterator {
@@ -34073,6 +34793,14 @@ pub fn (mut i BoolSkipWhileIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolSkipWhileIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolSkipWhileIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -34246,6 +34974,14 @@ pub fn (mut i StringSkipWhileIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringSkipWhileIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringSkipWhileIterator) every(n int) &StringEveryIterator {
@@ -34423,6 +35159,14 @@ pub fn (mut i IntSkipWhileIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntSkipWhileIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntSkipWhileIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -34596,6 +35340,14 @@ pub fn (mut i ByteSkipWhileIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteSkipWhileIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteSkipWhileIterator) every(n int) &ByteEveryIterator {
@@ -34773,6 +35525,14 @@ pub fn (mut i RuneSkipWhileIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneSkipWhileIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneSkipWhileIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -34946,6 +35706,14 @@ pub fn (mut i F64SkipWhileIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64SkipWhileIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64SkipWhileIterator) every(n int) &F64EveryIterator {
@@ -36341,6 +37109,14 @@ pub fn (mut i BoolEveryIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolEveryIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolEveryIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -36514,6 +37290,14 @@ pub fn (mut i StringEveryIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringEveryIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringEveryIterator) every(n int) &StringEveryIterator {
@@ -36691,6 +37475,14 @@ pub fn (mut i IntEveryIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntEveryIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntEveryIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -36864,6 +37656,14 @@ pub fn (mut i ByteEveryIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteEveryIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteEveryIterator) every(n int) &ByteEveryIterator {
@@ -37041,6 +37841,14 @@ pub fn (mut i RuneEveryIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneEveryIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneEveryIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -37214,6 +38022,14 @@ pub fn (mut i F64EveryIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64EveryIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64EveryIterator) every(n int) &F64EveryIterator {
@@ -38681,6 +39497,14 @@ pub fn (mut i BoolRevIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolRevIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolRevIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -38854,6 +39678,14 @@ pub fn (mut i StringRevIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringRevIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringRevIterator) every(n int) &StringEveryIterator {
@@ -39031,6 +39863,14 @@ pub fn (mut i IntRevIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntRevIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntRevIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -39204,6 +40044,14 @@ pub fn (mut i ByteRevIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteRevIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteRevIterator) every(n int) &ByteEveryIterator {
@@ -39381,6 +40229,14 @@ pub fn (mut i RuneRevIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneRevIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneRevIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -39554,6 +40410,14 @@ pub fn (mut i F64RevIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64RevIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64RevIterator) every(n int) &F64EveryIterator {
@@ -43433,6 +44297,14 @@ pub fn (mut i BoolTapIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolTapIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolTapIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -43606,6 +44478,14 @@ pub fn (mut i StringTapIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringTapIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringTapIterator) every(n int) &StringEveryIterator {
@@ -43783,6 +44663,14 @@ pub fn (mut i IntTapIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntTapIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntTapIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -43956,6 +44844,14 @@ pub fn (mut i ByteTapIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteTapIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteTapIterator) every(n int) &ByteEveryIterator {
@@ -44133,6 +45029,14 @@ pub fn (mut i RuneTapIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneTapIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneTapIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -44306,6 +45210,14 @@ pub fn (mut i F64TapIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64TapIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64TapIterator) every(n int) &F64EveryIterator {
@@ -45713,6 +46625,14 @@ pub fn (mut i BoolTakeIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolTakeIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolTakeIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -45886,6 +46806,14 @@ pub fn (mut i StringTakeIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringTakeIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringTakeIterator) every(n int) &StringEveryIterator {
@@ -46063,6 +46991,14 @@ pub fn (mut i IntTakeIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntTakeIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntTakeIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -46236,6 +47172,14 @@ pub fn (mut i ByteTakeIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteTakeIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteTakeIterator) every(n int) &ByteEveryIterator {
@@ -46413,6 +47357,14 @@ pub fn (mut i RuneTakeIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneTakeIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneTakeIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -46586,6 +47538,14 @@ pub fn (mut i F64TakeIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64TakeIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64TakeIterator) every(n int) &F64EveryIterator {
@@ -48041,6 +49001,14 @@ pub fn (mut i BoolTakeWhileIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolTakeWhileIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolTakeWhileIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -48214,6 +49182,14 @@ pub fn (mut i StringTakeWhileIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringTakeWhileIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringTakeWhileIterator) every(n int) &StringEveryIterator {
@@ -48391,6 +49367,14 @@ pub fn (mut i IntTakeWhileIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntTakeWhileIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntTakeWhileIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -48564,6 +49548,14 @@ pub fn (mut i ByteTakeWhileIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteTakeWhileIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteTakeWhileIterator) every(n int) &ByteEveryIterator {
@@ -48741,6 +49733,14 @@ pub fn (mut i RuneTakeWhileIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneTakeWhileIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneTakeWhileIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -48914,6 +49914,14 @@ pub fn (mut i F64TakeWhileIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64TakeWhileIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64TakeWhileIterator) every(n int) &F64EveryIterator {
@@ -50261,6 +51269,14 @@ pub fn (mut i BoolChainIterator) collect() []bool {
 	return arr
 }
 
+pub fn (mut i BoolChainIterator) fold(init bool, f fn (bool, bool) bool) bool {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i BoolChainIterator) every(n int) &BoolEveryIterator {
 	return &BoolEveryIterator{
 		n: n
@@ -50434,6 +51450,14 @@ pub fn (mut i StringChainIterator) collect() []string {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i StringChainIterator) fold(init string, f fn (string, string) string) string {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i StringChainIterator) every(n int) &StringEveryIterator {
@@ -50611,6 +51635,14 @@ pub fn (mut i IntChainIterator) collect() []int {
 	return arr
 }
 
+pub fn (mut i IntChainIterator) fold(init int, f fn (int, int) int) int {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i IntChainIterator) every(n int) &IntEveryIterator {
 	return &IntEveryIterator{
 		n: n
@@ -50784,6 +51816,14 @@ pub fn (mut i ByteChainIterator) collect() []byte {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i ByteChainIterator) fold(init byte, f fn (byte, byte) byte) byte {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i ByteChainIterator) every(n int) &ByteEveryIterator {
@@ -50961,6 +52001,14 @@ pub fn (mut i RuneChainIterator) collect() []rune {
 	return arr
 }
 
+pub fn (mut i RuneChainIterator) fold(init rune, f fn (rune, rune) rune) rune {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
+}
+
 pub fn (mut i RuneChainIterator) every(n int) &RuneEveryIterator {
 	return &RuneEveryIterator{
 		n: n
@@ -51134,6 +52182,14 @@ pub fn (mut i F64ChainIterator) collect() []f64 {
 		arr << item
 	}
 	return arr
+}
+
+pub fn (mut i F64ChainIterator) fold(init f64, f fn (f64, f64) f64) f64 {
+	mut result := init
+	for item in i {
+		result = f(result, item)
+	}
+	return result
 }
 
 pub fn (mut i F64ChainIterator) every(n int) &F64EveryIterator {

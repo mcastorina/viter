@@ -19,6 +19,8 @@ fn main() {
 }
 ```
 
+See test files for more examples.
+
 ## Supported Types
 Common V primitive types are supported. You cannot use this module with
 custom types (yet). If you would like another primitive type supported,
@@ -50,6 +52,7 @@ The currently implemented methods are:
 * `take` `take_while`
 * `chain` `chain_arr`
 * `collect`
+* `fold`
 * `tap`
 
 ## Speed
