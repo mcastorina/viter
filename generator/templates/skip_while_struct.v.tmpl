@@ -1,0 +1,17 @@
+pub struct IterOut {
+	predicate fn (_ TypeIn) bool
+mut:
+	iterator IterIn
+	done bool
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	for !i.done {
+		item := i.iterator.next() ?
+		if !i.predicate(item) {
+			i.done = true
+			return item
+		}
+	}
+	return i.iterator.next()
+}

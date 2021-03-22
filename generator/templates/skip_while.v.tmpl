@@ -1,0 +1,6 @@
+pub fn (mut i IterIn) skip_while(pred fn(_ TypeIn) bool) &IterOut {
+	return &IterOut{
+		predicate: pred
+		iterator: i
+	}
+}

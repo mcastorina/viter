@@ -43,16 +43,18 @@ The currently implemented methods are:
 * `filter`
 * `map`
 * `skip`
+* `skip_while`
 * `every`
 * `windows`
 * `chunks`
 * `rev`
 * `take`
+* `take_while`
 * `collect`
 * `tap`
 
 ## Speed
-This module has ~40k generated lines of code, which means compilation
+This module has ~50k generated lines of code, which means compilation
 may be noticeably slower but still less than 1s in debug mode.
 
 This module uses lazy iterator evaluation, meaning there are no

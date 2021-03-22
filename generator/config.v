@@ -7,17 +7,19 @@ fn config() (map[string]IterConfig, []string) {
 
 	single := passthrough(types)
 	return map{
-		'array':   single
-		'filter':  single
-		'map':     permute(types)
-		'skip':    single
-		'collect': single
-		'every':   single
-		'rev':     single
-		'windows': to_array(types)
-		'chunks':  to_array(types)
-		'tap':     single
-		'take':    single
+		'array':      single
+		'filter':     single
+		'map':        permute(types)
+		'skip':       single
+		'skip_while': single
+		'collect':    single
+		'every':      single
+		'rev':        single
+		'windows':    to_array(types)
+		'chunks':     to_array(types)
+		'tap':        single
+		'take':       single
+		'take_while': single
 	}, types
 }
 
