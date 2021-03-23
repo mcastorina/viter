@@ -9,3 +9,7 @@ pub fn (mut i IterOut) next() ?TypeOut {
 		i.next_iterator.next() or { return none }
 	}
 }
+
+pub fn (i IterOut) str() string {
+	return 'chain'
+}

@@ -14,3 +14,7 @@ pub fn (mut i IterOut) next() ?TypeOut {
 	}
 	return i.windows[i.windows.len - i.n..].clone()
 }
+
+pub fn (i IterOut) str() string {
+	return 'windows'
+}

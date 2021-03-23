@@ -23,6 +23,7 @@ you would use the `iter_int_arr()` function.
 * [chain_arr](#chain_arr)
 * [chunks](#chunks)
 * [collect](#collect)
+* [debug](#debug)
 * [every](#every)
 * [filter](#filter)
 * [fold](#fold)
@@ -114,6 +115,20 @@ last function called.
 ```v
 out := viter.iter_int([1, 2, 3]).collect()
 println(out) // [1, 2, 3]
+```
+
+### debug
+```
+iter.debug()
+```
+Print the element to stderr and continue iterating. This is a simpler
+way to debug than using [tap](#tap).
+
+```v
+mut iter := viter.iter_int([1, 2]).debug()
+
+iter.next() ? // array -> 1
+iter.next() ? // array -> 2
 ```
 
 ### every
@@ -268,9 +283,9 @@ mut iter := viter.iter_int([1, 2, 3]).tap(fn (i int) {
     println(i)
 })
 
-iter.next() // 1
-iter.next() // 2
-iter.next() // 3
+iter.next() ? // 1
+iter.next() ? // 2
+iter.next() ? // 3
 ```
 
 ### windows

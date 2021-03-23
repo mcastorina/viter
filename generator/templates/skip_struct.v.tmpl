@@ -12,3 +12,7 @@ pub fn (mut i IterOut) next() ?TypeIn {
 	}
 	return i.iterator.next()
 }
+
+pub fn (i IterOut) str() string {
+	return 'skip'
+}

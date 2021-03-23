@@ -1,0 +1,17 @@
+pub struct IterOut {
+mut:
+	iterator IterIn
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	item := i.iterator.next() ?
+	iface := '$i.iterator'
+	start := iface.index('(') or { -1 } + 1
+	end := iface.index(')') or { iface.len }
+    eprintln('${iface[start .. end]} -> $item')
+	return item
+}
+
+pub fn (i IterOut) str() string {
+	return 'debug'
+}

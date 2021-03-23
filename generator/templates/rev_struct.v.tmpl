@@ -17,3 +17,7 @@ pub fn (mut i IterOut) next() ?TypeIn {
 	i.index--
 	return i.buffer[i.index]
 }
+
+pub fn (i IterOut) str() string {
+	return 'rev'
+}

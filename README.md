@@ -53,7 +53,7 @@ The currently implemented methods are:
 * `chain` `chain_arr`
 * `collect`
 * `fold`
-* `tap`
+* `tap` `debug`
 
 ## Speed
 This module has ~50k generated lines of code, which means compilation

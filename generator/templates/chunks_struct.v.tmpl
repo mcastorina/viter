@@ -14,3 +14,7 @@ pub fn (mut i IterOut) next() ?TypeOut {
 	}
 	return chunks
 }
+
+pub fn (i IterOut) str() string {
+	return 'chunks'
+}

@@ -9,3 +9,7 @@ pub fn (mut i IterOut) next() ?TypeIn {
 	i.tap_fn(item)
 	return item
 }
+
+pub fn (i IterOut) str() string {
+	return 'tap'
+}

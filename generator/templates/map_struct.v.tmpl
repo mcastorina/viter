@@ -8,3 +8,7 @@ pub fn (mut i IterOut) next() ?TypeOut {
 	item := i.iterator.next()?
 	return i.map_fn(item)
 }
+
+pub fn (i IterOut) str() string {
+	return 'map'
+}

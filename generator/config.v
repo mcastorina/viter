@@ -22,6 +22,7 @@ fn config() (map[string]IterConfig, []string) {
 		'windows':    to_array(basic_types)
 		'chunks':     to_array(basic_types)
 		'tap':        single
+		'debug':      single
 		'take':       single
 		'take_while': single
 		'chain':      single
