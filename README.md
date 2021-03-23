@@ -49,6 +49,7 @@ The currently implemented methods are:
 * `windows`
 * `chunks`
 * `rev`
+* `cycle`
 * `take` `take_while`
 * `chain` `chain_arr`
 * `count`

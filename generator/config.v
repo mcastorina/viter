@@ -15,6 +15,7 @@ fn config() (map[string]IterConfig, []string) {
 		'chunks':     to_array(basic_types)
 		'collect':    single
 		'count':      single
+		'cycle':      single
 		'debug':      single
 		'every':      single
 		'filter':     single

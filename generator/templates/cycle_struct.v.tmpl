@@ -1,0 +1,22 @@
+pub struct IterOut {
+mut:
+	iterator IterIn
+	memory []TypeIn
+	index int
+}
+
+pub fn (mut i IterOut) next() ?TypeIn {
+	if item := i.iterator.next() {
+		i.memory << item
+		return item
+	}
+	if i.memory.len == 0 {
+		return none
+	}
+	i.index = (i.index % i.memory.len) + 1
+	return i.memory[i.index - 1]
+}
+
+pub fn (i IterOut) str() string {
+	return 'cycle'
+}

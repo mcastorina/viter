@@ -24,6 +24,7 @@ you would use the `iter_int_arr()` function.
 * [chunks](#chunks)
 * [collect](#collect)
 * [count](#count)
+* [cycle](#cycle)
 * [debug](#debug)
 * [every](#every)
 * [filter](#filter)
@@ -128,6 +129,23 @@ Consume the iterator and returns the number of elements.
 out := viter.iter_int([1, 2, 3]).count()
 
 println(out) // 3
+```
+
+### cycle
+```
+iter.cycle()
+```
+Continuously repeat the iterator forever. Returns `none` if the iterator
+has nothing to cycle. This method is usually used with [take](#take).
+
+```v
+mut iter := viter.iter_int([1, 2, 3]).cycle()
+
+println(iter.next()) // Option(1)
+println(iter.next()) // Option(2)
+println(iter.next()) // Option(3)
+println(iter.next()) // Option(1)
+println(iter.next()) // Option(2)
 ```
 
 ### debug
