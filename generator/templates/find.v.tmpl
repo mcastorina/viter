@@ -1,0 +1,8 @@
+pub fn (mut i IterIn) find(item TypeIn) ?TypeIn {
+	for needle in i {
+		if needle == item {
+			return needle
+		}
+	}
+	return none
+}

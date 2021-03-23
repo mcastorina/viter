@@ -11,22 +11,23 @@ fn config() (map[string]IterConfig, []string) {
 	single := passthrough(all_types)
 	return map{
 		'array':      single
-		'filter':     single
-		'map':        permute(all_types)
-		'skip':       single
-		'skip_while': single
+		'chain':      single
+		'chunks':     to_array(basic_types)
 		'collect':    single
 		'count':      single
-		'fold':       passthrough(basic_types)
-		'every':      single
-		'rev':        single
-		'windows':    to_array(basic_types)
-		'chunks':     to_array(basic_types)
-		'tap':        single
 		'debug':      single
+		'every':      single
+		'filter':     single
+		'find':       single
+		'fold':       passthrough(basic_types)
+		'map':        permute(all_types)
+		'rev':        single
+		'skip':       single
+		'skip_while': single
 		'take':       single
 		'take_while': single
-		'chain':      single
+		'tap':        single
+		'windows':    to_array(basic_types)
 	}, all_types
 }
 
