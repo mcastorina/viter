@@ -51,12 +51,13 @@ The currently implemented methods are:
 * `rev`
 * `take` `take_while`
 * `chain` `chain_arr`
+* `count`
 * `collect`
 * `fold`
 * `tap` `debug`
 
 ## Speed
-This module has ~50k generated lines of code, which means compilation
+This module has ~60k generated lines of code, which means compilation
 may be noticeably slower but still less than 1s in debug mode.
 
 This module uses lazy iterator evaluation, meaning there are no

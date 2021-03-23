@@ -23,6 +23,7 @@ you would use the `iter_int_arr()` function.
 * [chain_arr](#chain_arr)
 * [chunks](#chunks)
 * [collect](#collect)
+* [count](#count)
 * [debug](#debug)
 * [every](#every)
 * [filter](#filter)
@@ -115,6 +116,18 @@ last function called.
 ```v
 out := viter.iter_int([1, 2, 3]).collect()
 println(out) // [1, 2, 3]
+```
+
+### count
+```
+iter.count()
+```
+Consume the iterator and returns the number of elements.
+
+```v
+out := viter.iter_int([1, 2, 3]).count()
+
+println(out) // 3
 ```
 
 ### debug

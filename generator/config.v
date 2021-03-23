@@ -16,6 +16,7 @@ fn config() (map[string]IterConfig, []string) {
 		'skip':       single
 		'skip_while': single
 		'collect':    single
+		'count':      single
 		'fold':       passthrough(basic_types)
 		'every':      single
 		'rev':        single
